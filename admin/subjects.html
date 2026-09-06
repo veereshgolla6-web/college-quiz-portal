@@ -1,0 +1,2007 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Admin Subject Management - Quiz & Assessment Portal">
+
+    <meta name="author"
+          content="Quiz & Assessment Portal">
+
+    <title>Subjects | Admin | Quiz & Assessment Portal</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Application CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <!-- =========================================================
+         ADMIN APPLICATION
+    ========================================================== -->
+    <div class="app-shell" id="adminApp">
+
+        <!-- =====================================================
+             SIDEBAR
+        ====================================================== -->
+        <aside class="sidebar" id="adminSidebar">
+
+            <div class="sidebar-header">
+
+                <a href="dashboard.html" class="brand">
+
+                    <span class="brand-icon">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </span>
+
+                    <span class="brand-content">
+                        <strong>Quiz Portal</strong>
+                        <small>Administration</small>
+                    </span>
+
+                </a>
+
+                <button type="button"
+                        class="sidebar-close"
+                        id="sidebarClose"
+                        aria-label="Close navigation">
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+            </div>
+
+
+            <!-- =================================================
+                 NAVIGATION
+            ================================================== -->
+            <nav class="sidebar-navigation"
+                 aria-label="Admin navigation">
+
+                <!-- Main -->
+                <div class="nav-section">
+
+                    <span class="nav-section-title">
+                        Main
+                    </span>
+
+                    <a href="dashboard.html"
+                       class="nav-link">
+
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-grid-2"></i>
+                        </span>
+
+                        <span>Dashboard</span>
+
+                    </a>
+
+                </div>
+
+
+                <!-- Management -->
+                <div class="nav-section">
+
+                    <span class="nav-section-title">
+                        Management
+                    </span>
+
+                    <a href="students.html"
+                       class="nav-link">
+
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-user-graduate"></i>
+                        </span>
+
+                        <span>Students</span>
+
+                    </a>
+
+
+                    <a href="teachers.html"
+                       class="nav-link">
+
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-chalkboard-user"></i>
+                        </span>
+
+                        <span>Teachers</span>
+
+                    </a>
+
+
+                    <a href="departments.html"
+                       class="nav-link">
+
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-building-columns"></i>
+                        </span>
+
+                        <span>Departments</span>
+
+                    </a>
+
+
+                    <a href="subjects.html"
+                       class="nav-link active"
+                       aria-current="page">
+
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-book-open"></i>
+                        </span>
+
+                        <span>Subjects</span>
+
+                    </a>
+
+
+                    <a href="quizzes.html"
+                       class="nav-link">
+
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-circle-question"></i>
+                        </span>
+
+                        <span>Quizzes</span>
+
+                    </a>
+
+                </div>
+
+
+                <!-- Performance -->
+                <div class="nav-section">
+
+                    <span class="nav-section-title">
+                        Performance
+                    </span>
+
+
+                    <a href="results.html"
+                       class="nav-link">
+
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-square-poll-vertical"></i>
+                        </span>
+
+                        <span>Results</span>
+
+                    </a>
+
+
+                    <a href="leaderboard.html"
+                       class="nav-link">
+
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-ranking-star"></i>
+                        </span>
+
+                        <span>Leaderboard</span>
+
+                    </a>
+
+
+                    <a href="reports.html"
+                       class="nav-link">
+
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </span>
+
+                        <span>Reports</span>
+
+                    </a>
+
+                </div>
+
+
+                <!-- System -->
+                <div class="nav-section">
+
+                    <span class="nav-section-title">
+                        System
+                    </span>
+
+
+                    <a href="settings.html"
+                       class="nav-link">
+
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-gear"></i>
+                        </span>
+
+                        <span>Settings</span>
+
+                    </a>
+
+
+                    <a href="profile.html"
+                       class="nav-link">
+
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-user-circle"></i>
+                        </span>
+
+                        <span>My Profile</span>
+
+                    </a>
+
+
+                    <a href="help.html"
+                       class="nav-link">
+
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-circle-question"></i>
+                        </span>
+
+                        <span>Help &amp; Support</span>
+
+                    </a>
+
+                </div>
+
+            </nav>
+
+
+            <!-- Sidebar Footer -->
+            <div class="sidebar-footer">
+
+                <button type="button"
+                        class="sidebar-logout"
+                        id="sidebarLogout">
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                    </span>
+
+                    <span>Logout</span>
+
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- Mobile Sidebar Overlay -->
+        <div class="sidebar-overlay"
+             id="sidebarOverlay">
+        </div>
+
+
+        <!-- =====================================================
+             MAIN CONTENT
+        ====================================================== -->
+        <main class="main-content">
+
+            <!-- =================================================
+                 TOPBAR
+            ================================================== -->
+            <header class="topbar">
+
+                <div class="topbar-left">
+
+                    <button type="button"
+                            class="mobile-menu-button"
+                            id="mobileMenuButton"
+                            aria-label="Open navigation">
+
+                        <i class="fa-solid fa-bars"></i>
+
+                    </button>
+
+
+                    <div class="breadcrumb">
+
+                        <a href="dashboard.html">
+                            Admin
+                        </a>
+
+                        <span class="breadcrumb-separator">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </span>
+
+                        <span>Subjects</span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="topbar-right">
+
+                    <!-- Notifications -->
+                    <div class="topbar-notifications">
+
+                        <button type="button"
+                                class="topbar-icon-button"
+                                id="notificationButton"
+                                aria-label="Notifications"
+                                aria-expanded="false">
+
+                            <i class="fa-regular fa-bell"></i>
+
+                            <span class="notification-count"
+                                  id="notificationCount">
+                                0
+                            </span>
+
+                        </button>
+
+
+                        <div class="notification-panel"
+                             id="notificationPanel"
+                             hidden>
+
+                            <div class="notification-panel-header">
+
+                                <div>
+
+                                    <strong>
+                                        Notifications
+                                    </strong>
+
+                                    <small id="notificationSummary">
+                                        No new notifications
+                                    </small>
+
+                                </div>
+
+
+                                <button type="button"
+                                        id="notificationPanelClose"
+                                        aria-label="Close notifications">
+
+                                    <i class="fa-solid fa-xmark"></i>
+
+                                </button>
+
+                            </div>
+
+
+                            <div class="notification-list"
+                                 id="notificationList">
+
+                                <div class="notification-empty">
+
+                                    <i class="fa-regular fa-bell-slash"></i>
+
+                                    <p>
+                                        No new notifications
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="notification-panel-footer">
+
+                                <button type="button"
+                                        id="markNotificationsRead">
+
+                                    Mark all as read
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Profile -->
+                    <div class="topbar-profile-wrapper">
+
+                        <button type="button"
+                                class="topbar-profile"
+                                id="topbarProfile"
+                                aria-expanded="false">
+
+                            <span class="profile-avatar">
+                                <i class="fa-solid fa-user-shield"></i>
+                            </span>
+
+
+                            <span class="profile-info">
+
+                                <strong id="topbarAdminName">
+                                    Administrator
+                                </strong>
+
+                                <small>
+                                    Admin
+                                </small>
+
+                            </span>
+
+
+                            <i class="fa-solid fa-chevron-down profile-chevron"></i>
+
+                        </button>
+
+
+                        <div class="profile-menu"
+                             id="adminProfileMenu"
+                             hidden>
+
+                            <a href="profile.html">
+
+                                <i class="fa-regular fa-user"></i>
+
+                                <span>My Profile</span>
+
+                            </a>
+
+
+                            <a href="settings.html">
+
+                                <i class="fa-solid fa-gear"></i>
+
+                                <span>Settings</span>
+
+                            </a>
+
+
+                            <div class="profile-menu-divider"></div>
+
+
+                            <button type="button"
+                                    id="profileMenuLogout">
+
+                                <i class="fa-solid fa-right-from-bracket"></i>
+
+                                <span>Logout</span>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- =================================================
+                 PAGE CONTENT
+            ================================================== -->
+            <div class="page-content">
+
+                <!-- Page Header -->
+                <section class="page-header">
+
+                    <div class="page-header-content">
+
+                        <div>
+
+                            <span class="page-eyebrow">
+                                Academic Management
+                            </span>
+
+                            <h1>
+                                Subjects
+                            </h1>
+
+                            <p>
+                                Manage subjects, course codes, departments,
+                                faculty assignments and academic structure.
+                            </p>
+
+                        </div>
+
+
+                        <div class="page-header-actions">
+
+                            <button type="button"
+                                    class="button button-secondary"
+                                    id="exportSubjectsButton">
+
+                                <i class="fa-solid fa-file-export"></i>
+
+                                <span>Export</span>
+
+                            </button>
+
+
+                            <button type="button"
+                                    class="button button-primary"
+                                    id="addSubjectButton">
+
+                                <i class="fa-solid fa-plus"></i>
+
+                                <span>Add Subject</span>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     SUBJECT STATISTICS
+                ================================================== -->
+                <section class="stats-grid subject-stats"
+                         aria-label="Subject statistics">
+
+                    <!-- Total Subjects -->
+                    <article class="stat-card">
+
+                        <div class="stat-card-icon">
+                            <i class="fa-solid fa-book-open"></i>
+                        </div>
+
+                        <div class="stat-card-content">
+
+                            <span class="stat-label">
+                                Total Subjects
+                            </span>
+
+                            <strong class="stat-value"
+                                    id="subjectsTotal">
+                                0
+                            </strong>
+
+                            <span class="stat-description">
+                                Registered subjects
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Active Subjects -->
+                    <article class="stat-card">
+
+                        <div class="stat-card-icon">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+
+                        <div class="stat-card-content">
+
+                            <span class="stat-label">
+                                Active Subjects
+                            </span>
+
+                            <strong class="stat-value"
+                                    id="activeSubjects">
+                                0
+                            </strong>
+
+                            <span class="stat-description">
+                                Currently available
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Departments -->
+                    <article class="stat-card">
+
+                        <div class="stat-card-icon">
+                            <i class="fa-solid fa-building-columns"></i>
+                        </div>
+
+                        <div class="stat-card-content">
+
+                            <span class="stat-label">
+                                Departments
+                            </span>
+
+                            <strong class="stat-value"
+                                    id="subjectDepartments">
+                                0
+                            </strong>
+
+                            <span class="stat-description">
+                                With assigned subjects
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Quiz Usage -->
+                    <article class="stat-card">
+
+                        <div class="stat-card-icon">
+                            <i class="fa-solid fa-circle-question"></i>
+                        </div>
+
+                        <div class="stat-card-content">
+
+                            <span class="stat-label">
+                                Quiz Usage
+                            </span>
+
+                            <strong class="stat-value"
+                                    id="subjectQuizUsage">
+                                0
+                            </strong>
+
+                            <span class="stat-description">
+                                Quizzes linked to subjects
+                            </span>
+
+                        </div>
+
+                    </article>
+
+                </section>
+
+
+                <!-- =================================================
+                     SUBJECT DIRECTORY
+                ================================================== -->
+                <section class="content-card subject-management-card">
+
+                    <!-- Card Header -->
+                    <div class="content-card-header">
+
+                        <div class="content-card-title">
+
+                            <span class="section-icon">
+                                <i class="fa-solid fa-book-open"></i>
+                            </span>
+
+                            <div>
+
+                                <h2>
+                                    Subject Directory
+                                </h2>
+
+                                <p>
+                                    View and manage all registered subjects.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         FILTER TOOLBAR
+                    ================================================== -->
+                    <div class="filter-toolbar">
+
+                        <!-- Search -->
+                        <div class="filter-search">
+
+                            <label for="subjectSearch"
+                                   class="sr-only">
+                                Search subjects
+                            </label>
+
+                            <div class="search-input-wrapper">
+
+                                <i class="fa-solid fa-magnifying-glass"></i>
+
+                                <input
+                                    type="search"
+                                    id="subjectSearch"
+                                    placeholder="Search by subject name or code..."
+                                    autocomplete="off">
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Department -->
+                        <div class="filter-group">
+
+                            <label for="subjectDepartmentFilter">
+                                Department
+                            </label>
+
+                            <select id="subjectDepartmentFilter">
+
+                                <option value="all">
+                                    All Departments
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- Semester -->
+                        <div class="filter-group">
+
+                            <label for="subjectSemesterFilter">
+                                Semester
+                            </label>
+
+                            <select id="subjectSemesterFilter">
+
+                                <option value="all">
+                                    All Semesters
+                                </option>
+
+                                <option value="1">
+                                    Semester 1
+                                </option>
+
+                                <option value="2">
+                                    Semester 2
+                                </option>
+
+                                <option value="3">
+                                    Semester 3
+                                </option>
+
+                                <option value="4">
+                                    Semester 4
+                                </option>
+
+                                <option value="5">
+                                    Semester 5
+                                </option>
+
+                                <option value="6">
+                                    Semester 6
+                                </option>
+
+                                <option value="7">
+                                    Semester 7
+                                </option>
+
+                                <option value="8">
+                                    Semester 8
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- Status -->
+                        <div class="filter-group">
+
+                            <label for="subjectStatusFilter">
+                                Status
+                            </label>
+
+                            <select id="subjectStatusFilter">
+
+                                <option value="all">
+                                    All Statuses
+                                </option>
+
+                                <option value="active">
+                                    Active
+                                </option>
+
+                                <option value="inactive">
+                                    Inactive
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- Clear -->
+                        <button type="button"
+                                class="button button-ghost"
+                                id="clearSubjectFilters">
+
+                            <i class="fa-solid fa-filter-circle-xmark"></i>
+
+                            <span>
+                                Clear Filters
+                            </span>
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         BULK ACTIONS
+                    ================================================== -->
+                    <div class="bulk-action-bar"
+                         id="subjectBulkActionBar"
+                         hidden>
+
+                        <div class="bulk-selection-info">
+
+                            <span class="bulk-selection-icon">
+                                <i class="fa-solid fa-check-double"></i>
+                            </span>
+
+                            <strong>
+
+                                <span id="selectedSubjectCount">
+                                    0
+                                </span>
+
+                                subjects selected
+
+                            </strong>
+
+                        </div>
+
+
+                        <div class="bulk-action-buttons">
+
+                            <button type="button"
+                                    class="button button-small"
+                                    id="bulkActivateSubjects">
+
+                                <i class="fa-solid fa-circle-check"></i>
+
+                                Activate
+
+                            </button>
+
+
+                            <button type="button"
+                                    class="button button-small"
+                                    id="bulkDeactivateSubjects">
+
+                                <i class="fa-solid fa-circle-pause"></i>
+
+                                Deactivate
+
+                            </button>
+
+
+                            <button type="button"
+                                    class="button button-small button-danger"
+                                    id="bulkDeleteSubjects">
+
+                                <i class="fa-solid fa-trash"></i>
+
+                                Delete
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         SUBJECT TABLE
+                    ================================================== -->
+                    <div class="table-container">
+
+                        <table class="data-table"
+                               id="subjectsTable">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th class="checkbox-column">
+
+                                        <label class="checkbox-wrapper">
+
+                                            <input type="checkbox"
+                                                   id="selectAllSubjects">
+
+                                            <span class="custom-checkbox"></span>
+
+                                        </label>
+
+                                    </th>
+
+
+                                    <th>
+                                        Subject
+                                    </th>
+
+
+                                    <th>
+                                        Course Code
+                                    </th>
+
+
+                                    <th>
+                                        Department
+                                    </th>
+
+
+                                    <th>
+                                        Semester
+                                    </th>
+
+
+                                    <th>
+                                        Credits
+                                    </th>
+
+
+                                    <th>
+                                        Teachers
+                                    </th>
+
+
+                                    <th>
+                                        Quizzes
+                                    </th>
+
+
+                                    <th>
+                                        Status
+                                    </th>
+
+
+                                    <th class="actions-column">
+                                        Actions
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="subjectsTableBody">
+
+                                <!-- Dynamic subject records -->
+
+                                <tr class="table-empty-state">
+
+                                    <td colspan="10">
+
+                                        <div class="empty-state">
+
+                                            <div class="empty-state-icon">
+
+                                                <i class="fa-solid fa-book-open"></i>
+
+                                            </div>
+
+
+                                            <h3>
+                                                No subjects yet
+                                            </h3>
+
+
+                                            <p>
+                                                Add your first subject to
+                                                begin organizing the academic
+                                                curriculum.
+                                            </p>
+
+
+                                            <button type="button"
+                                                    class="button button-primary"
+                                                    id="emptyAddSubjectButton">
+
+                                                <i class="fa-solid fa-plus"></i>
+
+                                                Add Subject
+
+                                            </button>
+
+                                        </div>
+
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         TABLE FOOTER
+                    ================================================== -->
+                    <div class="table-footer">
+
+                        <div class="table-summary">
+
+                            Showing
+
+                            <strong id="subjectShowingFrom">
+                                0
+                            </strong>
+
+                            –
+
+                            <strong id="subjectShowingTo">
+                                0
+                            </strong>
+
+                            of
+
+                            <strong id="subjectTotalCount">
+                                0
+                            </strong>
+
+                            subjects
+
+                        </div>
+
+
+                        <div class="pagination">
+
+                            <button type="button"
+                                    class="pagination-button"
+                                    id="subjectPreviousPage"
+                                    disabled
+                                    aria-label="Previous page">
+
+                                <i class="fa-solid fa-chevron-left"></i>
+
+                            </button>
+
+
+                            <span class="pagination-current"
+                                  id="subjectCurrentPage">
+                                1
+                            </span>
+
+
+                            <button type="button"
+                                    class="pagination-button"
+                                    id="subjectNextPage"
+                                    disabled
+                                    aria-label="Next page">
+
+                                <i class="fa-solid fa-chevron-right"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     CURRICULUM INFORMATION
+                ================================================== -->
+                <section class="content-card">
+
+                    <div class="content-card-header">
+
+                        <div class="content-card-title">
+
+                            <span class="section-icon">
+                                <i class="fa-solid fa-layer-group"></i>
+                            </span>
+
+                            <div>
+
+                                <h2>
+                                    Curriculum Management
+                                </h2>
+
+                                <p>
+                                    Organize subjects across departments
+                                    and academic semesters.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="information-grid">
+
+                        <article class="information-card">
+
+                            <div class="information-card-icon">
+                                <i class="fa-solid fa-code"></i>
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Course Codes
+                                </h3>
+
+                                <p>
+                                    Maintain unique course codes for every
+                                    subject in the academic curriculum.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="information-card">
+
+                            <div class="information-card-icon">
+                                <i class="fa-solid fa-building-columns"></i>
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Department Mapping
+                                </h3>
+
+                                <p>
+                                    Associate every subject with its
+                                    appropriate academic department.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="information-card">
+
+                            <div class="information-card-icon">
+                                <i class="fa-solid fa-calendar-days"></i>
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Semester Planning
+                                </h3>
+
+                                <p>
+                                    Organize subjects according to semester
+                                    and academic progression.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="information-card">
+
+                            <div class="information-card-icon">
+                                <i class="fa-solid fa-person-chalkboard"></i>
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Faculty Assignment
+                                </h3>
+
+                                <p>
+                                    Track teachers responsible for individual
+                                    subjects and assessments.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <!-- =========================================================
+         ADD / EDIT SUBJECT MODAL
+    ========================================================== -->
+    <div class="modal-overlay"
+         id="subjectModal"
+         hidden>
+
+        <div class="modal modal-large"
+             role="dialog"
+             aria-modal="true"
+             aria-labelledby="subjectModalTitle">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+
+                <div class="modal-title">
+
+                    <span class="modal-icon">
+                        <i class="fa-solid fa-book-open"></i>
+                    </span>
+
+                    <div>
+
+                        <h2 id="subjectModalTitle">
+                            Add Subject
+                        </h2>
+
+                        <p>
+                            Enter the subject information below.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button type="button"
+                        class="modal-close"
+                        id="closeSubjectModal"
+                        aria-label="Close modal">
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+            </div>
+
+
+            <!-- Form -->
+            <form id="subjectForm"
+                  novalidate>
+
+                <input type="hidden"
+                       id="subjectRecordId"
+                       name="subjectRecordId">
+
+
+                <div class="modal-body">
+
+                    <!-- =================================================
+                         BASIC INFORMATION
+                    ================================================== -->
+                    <div class="form-section">
+
+                        <div class="form-section-header">
+
+                            <h3>
+                                Subject Information
+                            </h3>
+
+                            <p>
+                                Enter the official subject details.
+                            </p>
+
+                        </div>
+
+
+                        <div class="form-grid">
+
+                            <!-- Subject Name -->
+                            <div class="form-field form-field-full">
+
+                                <label for="subjectName">
+
+                                    Subject Name
+
+                                    <span class="required">
+                                        *
+                                    </span>
+
+                                </label>
+
+
+                                <input
+                                    type="text"
+                                    id="subjectName"
+                                    name="subjectName"
+                                    placeholder="e.g. Data Structures and Algorithms"
+                                    maxlength="150"
+                                    required>
+
+
+                                <small class="form-help">
+                                    Use the official subject title.
+                                </small>
+
+                            </div>
+
+
+                            <!-- Course Code -->
+                            <div class="form-field">
+
+                                <label for="subjectCode">
+
+                                    Course Code
+
+                                    <span class="required">
+                                        *
+                                    </span>
+
+                                </label>
+
+
+                                <input
+                                    type="text"
+                                    id="subjectCode"
+                                    name="subjectCode"
+                                    placeholder="e.g. CS301"
+                                    maxlength="30"
+                                    required>
+
+
+                                <small class="form-help">
+                                    Enter a unique course code.
+                                </small>
+
+                            </div>
+
+
+                            <!-- Department -->
+                            <div class="form-field">
+
+                                <label for="subjectDepartment">
+
+                                    Department
+
+                                    <span class="required">
+                                        *
+                                    </span>
+
+                                </label>
+
+
+                                <select
+                                    id="subjectDepartment"
+                                    name="subjectDepartment"
+                                    required>
+
+                                    <option value="">
+                                        Select Department
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <!-- Semester -->
+                            <div class="form-field">
+
+                                <label for="subjectSemester">
+
+                                    Semester
+
+                                    <span class="required">
+                                        *
+                                    </span>
+
+                                </label>
+
+
+                                <select
+                                    id="subjectSemester"
+                                    name="subjectSemester"
+                                    required>
+
+                                    <option value="">
+                                        Select Semester
+                                    </option>
+
+                                    <option value="1">
+                                        Semester 1
+                                    </option>
+
+                                    <option value="2">
+                                        Semester 2
+                                    </option>
+
+                                    <option value="3">
+                                        Semester 3
+                                    </option>
+
+                                    <option value="4">
+                                        Semester 4
+                                    </option>
+
+                                    <option value="5">
+                                        Semester 5
+                                    </option>
+
+                                    <option value="6">
+                                        Semester 6
+                                    </option>
+
+                                    <option value="7">
+                                        Semester 7
+                                    </option>
+
+                                    <option value="8">
+                                        Semester 8
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <!-- Credits -->
+                            <div class="form-field">
+
+                                <label for="subjectCredits">
+                                    Credits
+                                </label>
+
+
+                                <input
+                                    type="number"
+                                    id="subjectCredits"
+                                    name="subjectCredits"
+                                    min="0"
+                                    max="20"
+                                    step="0.5"
+                                    placeholder="e.g. 3">
+
+
+                                <small class="form-help">
+                                    Enter the academic credit value.
+                                </small>
+
+                            </div>
+
+
+                            <!-- Status -->
+                            <div class="form-field">
+
+                                <label for="subjectStatus">
+
+                                    Status
+
+                                    <span class="required">
+                                        *
+                                    </span>
+
+                                </label>
+
+
+                                <select
+                                    id="subjectStatus"
+                                    name="subjectStatus"
+                                    required>
+
+                                    <option value="active">
+                                        Active
+                                    </option>
+
+                                    <option value="inactive">
+                                        Inactive
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <!-- Description -->
+                            <div class="form-field form-field-full">
+
+                                <label for="subjectDescription">
+                                    Description
+                                </label>
+
+
+                                <textarea
+                                    id="subjectDescription"
+                                    name="subjectDescription"
+                                    rows="4"
+                                    maxlength="600"
+                                    placeholder="Enter a short description of the subject..."></textarea>
+
+
+                                <small class="form-help">
+                                    Optional description for administrative
+                                    and academic reference.
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         ACADEMIC DETAILS
+                    ================================================== -->
+                    <div class="form-section">
+
+                        <div class="form-section-header">
+
+                            <h3>
+                                Academic Details
+                            </h3>
+
+                            <p>
+                                Define the academic structure of the subject.
+                            </p>
+
+                        </div>
+
+
+                        <div class="form-grid">
+
+                            <!-- Subject Type -->
+                            <div class="form-field">
+
+                                <label for="subjectType">
+                                    Subject Type
+                                </label>
+
+
+                                <select id="subjectType"
+                                        name="subjectType">
+
+                                    <option value="theory">
+                                        Theory
+                                    </option>
+
+                                    <option value="practical">
+                                        Practical
+                                    </option>
+
+                                    <option value="lab">
+                                        Laboratory
+                                    </option>
+
+                                    <option value="project">
+                                        Project
+                                    </option>
+
+                                    <option value="elective">
+                                        Elective
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <!-- Max Marks -->
+                            <div class="form-field">
+
+                                <label for="subjectMaxMarks">
+                                    Maximum Marks
+                                </label>
+
+
+                                <input
+                                    type="number"
+                                    id="subjectMaxMarks"
+                                    name="subjectMaxMarks"
+                                    min="1"
+                                    max="1000"
+                                    placeholder="e.g. 100">
+
+                            </div>
+
+
+                            <!-- Internal Marks -->
+                            <div class="form-field">
+
+                                <label for="subjectInternalMarks">
+                                    Internal Marks
+                                </label>
+
+
+                                <input
+                                    type="number"
+                                    id="subjectInternalMarks"
+                                    name="subjectInternalMarks"
+                                    min="0"
+                                    max="500"
+                                    placeholder="e.g. 40">
+
+                            </div>
+
+
+                            <!-- External Marks -->
+                            <div class="form-field">
+
+                                <label for="subjectExternalMarks">
+                                    External Marks
+                                </label>
+
+
+                                <input
+                                    type="number"
+                                    id="subjectExternalMarks"
+                                    name="subjectExternalMarks"
+                                    min="0"
+                                    max="500"
+                                    placeholder="e.g. 60">
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         FACULTY ASSIGNMENT
+                    ================================================== -->
+                    <div class="form-section">
+
+                        <div class="form-section-header">
+
+                            <h3>
+                                Faculty Assignment
+                            </h3>
+
+                            <p>
+                                Associate teachers with this subject.
+                            </p>
+
+                        </div>
+
+
+                        <div class="form-grid">
+
+                            <div class="form-field form-field-full">
+
+                                <label for="subjectTeachers">
+                                    Assigned Teachers
+                                </label>
+
+
+                                <select
+                                    id="subjectTeachers"
+                                    name="subjectTeachers"
+                                    multiple
+                                    size="5">
+
+                                </select>
+
+
+                                <small class="form-help">
+                                    Multiple faculty members can be assigned
+                                    to the same subject.
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         INFORMATION MESSAGE
+                    ================================================== -->
+                    <div class="info-message">
+
+                        <span class="info-message-icon">
+                            <i class="fa-solid fa-circle-info"></i>
+                        </span>
+
+
+                        <div>
+
+                            <strong>
+                                Subject relationships
+                            </strong>
+
+                            <p>
+                                Subjects can later be connected to quizzes,
+                                question banks, teachers and student
+                                performance records.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Modal Footer -->
+                <div class="modal-footer">
+
+                    <button type="button"
+                            class="button button-secondary"
+                            id="cancelSubjectModal">
+
+                        Cancel
+
+                    </button>
+
+
+                    <button type="submit"
+                            class="button button-primary"
+                            id="saveSubjectButton">
+
+                        <i class="fa-solid fa-floppy-disk"></i>
+
+                        <span>
+                            Save Subject
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         DELETE SUBJECT MODAL
+    ========================================================== -->
+    <div class="modal-overlay"
+         id="deleteSubjectModal"
+         hidden>
+
+        <div class="modal modal-small"
+             role="dialog"
+             aria-modal="true"
+             aria-labelledby="deleteSubjectTitle">
+
+            <div class="modal-header">
+
+                <div class="modal-title">
+
+                    <span class="modal-icon modal-icon-danger">
+                        <i class="fa-solid fa-trash"></i>
+                    </span>
+
+
+                    <div>
+
+                        <h2 id="deleteSubjectTitle">
+                            Delete Subject
+                        </h2>
+
+                        <p>
+                            This action requires confirmation.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button type="button"
+                        class="modal-close"
+                        id="closeDeleteSubjectModal"
+                        aria-label="Close modal">
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+                <div class="confirmation-message">
+
+                    <div class="confirmation-icon">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+
+
+                    <h3>
+                        Are you sure?
+                    </h3>
+
+
+                    <p>
+                        You are about to delete this subject.
+                        Existing quizzes and academic records may be
+                        associated with it.
+                    </p>
+
+
+                    <p class="confirmation-warning">
+                        This action cannot be undone.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button type="button"
+                        class="button button-secondary"
+                        id="cancelDeleteSubject">
+
+                    Cancel
+
+                </button>
+
+
+                <button type="button"
+                        class="button button-danger"
+                        id="confirmDeleteSubject">
+
+                    <i class="fa-solid fa-trash"></i>
+
+                    Delete Subject
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         TOAST NOTIFICATION
+    ========================================================== -->
+    <div class="toast-container"
+         id="toastContainer"
+         aria-live="polite"
+         aria-atomic="true">
+
+        <div class="toast"
+             id="adminToast"
+             hidden>
+
+            <div class="toast-icon"
+                 id="toastIcon">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+            </div>
+
+
+            <div class="toast-content">
+
+                <strong id="toastTitle">
+                    Success
+                </strong>
+
+
+                <p id="toastMessage">
+                    Subject updated successfully.
+                </p>
+
+            </div>
+
+
+            <button type="button"
+                    class="toast-close"
+                    id="toastClose"
+                    aria-label="Close notification">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         LOGOUT MODAL
+    ========================================================== -->
+    <div class="modal-overlay"
+         id="logoutModal"
+         hidden>
+
+        <div class="modal modal-small"
+             role="dialog"
+             aria-modal="true"
+             aria-labelledby="logoutModalTitle">
+
+            <div class="modal-header">
+
+                <div class="modal-title">
+
+                    <span class="modal-icon modal-icon-warning">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                    </span>
+
+
+                    <div>
+
+                        <h2 id="logoutModalTitle">
+                            Sign Out
+                        </h2>
+
+                        <p>
+                            End your current administrator session.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button type="button"
+                        class="modal-close"
+                        id="closeLogoutModal"
+                        aria-label="Close modal">
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+                <div class="confirmation-message">
+
+                    <div class="confirmation-icon">
+                        <i class="fa-solid fa-circle-question"></i>
+                    </div>
+
+
+                    <h3>
+                        Sign out of the portal?
+                    </h3>
+
+
+                    <p>
+                        You will need to sign in again to access the
+                        administration panel.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button type="button"
+                        class="button button-secondary"
+                        id="cancelLogout">
+
+                    Cancel
+
+                </button>
+
+
+                <button type="button"
+                        class="button button-danger"
+                        id="confirmLogout">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    Sign Out
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         APPLICATION JAVASCRIPT
+         Functionality will be implemented in the JS phase.
+    ========================================================== -->
+    <script src="../js/app.js"></script>
+
+</body>
+</html>
