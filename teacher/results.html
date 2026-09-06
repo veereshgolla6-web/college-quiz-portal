@@ -1,0 +1,1533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Teacher Results and Assessment Performance">
+    <title>Results | College Quiz & Assessment Portal</title>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+<div class="app-layout">
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="sidebar" id="teacherSidebar">
+
+        <div class="sidebar-header">
+
+            <a href="dashboard.html" class="brand">
+
+                <div class="brand-logo">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+
+                <div class="brand-text">
+                    <strong>College Quiz</strong>
+                    <span>Assessment Portal</span>
+                </div>
+
+            </a>
+
+            <button
+                type="button"
+                class="sidebar-close"
+                id="sidebarCloseButton"
+                aria-label="Close sidebar">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <nav class="sidebar-nav" aria-label="Teacher navigation">
+
+            <div class="nav-section">
+
+                <span class="nav-section-title">MAIN</span>
+
+                <a href="dashboard.html" class="nav-link">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="create-quiz.html" class="nav-link">
+                    <i class="fa-solid fa-circle-plus"></i>
+                    <span>Create Quiz</span>
+                </a>
+
+                <a href="questions.html" class="nav-link">
+                    <i class="fa-solid fa-database"></i>
+                    <span>Question Bank</span>
+                </a>
+
+                <a href="quizzes.html" class="nav-link">
+                    <i class="fa-solid fa-file-circle-check"></i>
+                    <span>My Quizzes</span>
+                </a>
+
+            </div>
+
+
+            <div class="nav-section">
+
+                <span class="nav-section-title">ANALYTICS</span>
+
+                <a href="results.html"
+                   class="nav-link active"
+                   aria-current="page">
+
+                    <i class="fa-solid fa-square-poll-vertical"></i>
+                    <span>Results</span>
+
+                </a>
+
+                <a href="analytics.html" class="nav-link">
+
+                    <i class="fa-solid fa-chart-pie"></i>
+                    <span>Analytics</span>
+
+                </a>
+
+            </div>
+
+
+            <div class="nav-section">
+
+                <span class="nav-section-title">ACCOUNT</span>
+
+                <a href="profile.html" class="nav-link">
+
+                    <i class="fa-solid fa-user-circle"></i>
+                    <span>My Profile</span>
+
+                </a>
+
+                <a href="help.html" class="nav-link">
+
+                    <i class="fa-solid fa-circle-question"></i>
+                    <span>Help & Support</span>
+
+                </a>
+
+            </div>
+
+        </nav>
+
+
+        <div class="sidebar-footer">
+
+            <button
+                type="button"
+                class="sidebar-logout"
+                id="sidebarLogout">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <div class="topbar-left">
+
+                <button
+                    type="button"
+                    class="mobile-menu-button"
+                    id="mobileMenuButton"
+                    aria-label="Open menu">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+
+                <div class="breadcrumb">
+
+                    <a href="dashboard.html">
+                        Teacher Portal
+                    </a>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                    <span>Results</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+                <button
+                    type="button"
+                    class="topbar-icon-button"
+                    id="globalSearchButton"
+                    aria-label="Search">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                </button>
+
+
+                <!-- Notifications -->
+
+                <div class="notification-wrapper">
+
+                    <button
+                        type="button"
+                        class="topbar-icon-button"
+                        id="notificationButton"
+                        aria-label="Notifications">
+
+                        <i class="fa-regular fa-bell"></i>
+
+                        <span
+                            class="notification-count"
+                            id="notificationCount">
+                            3
+                        </span>
+
+                    </button>
+
+
+                    <div
+                        class="notification-panel"
+                        id="notificationPanel">
+
+                        <div class="notification-panel-header">
+
+                            <div>
+
+                                <strong>Notifications</strong>
+                                <span>Recent updates</span>
+
+                            </div>
+
+                            <button
+                                type="button"
+                                id="markNotificationsRead">
+
+                                Mark all read
+
+                            </button>
+
+                        </div>
+
+
+                        <div
+                            class="notification-list"
+                            id="teacherNotificationList">
+
+                            <div class="notification-item unread">
+
+                                <div class="notification-icon">
+
+                                    <i class="fa-solid fa-chart-line"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        New results available
+                                    </strong>
+
+                                    <p>
+                                        Students have completed an assessment.
+                                    </p>
+
+                                    <small>
+                                        Just now
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="notification-item">
+
+                                <div class="notification-icon">
+
+                                    <i class="fa-solid fa-user-graduate"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Student activity
+                                    </strong>
+
+                                    <p>
+                                        New quiz attempts were recorded.
+                                    </p>
+
+                                    <small>
+                                        1 hour ago
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <a href="#" class="view-all-notifications">
+                            View all notifications
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Teacher -->
+
+                <div class="topbar-profile">
+
+                    <div class="topbar-avatar" id="topbarAvatar">
+                        T
+                    </div>
+
+                    <div class="topbar-profile-info">
+
+                        <strong id="topbarTeacherName">
+                            Teacher
+                        </strong>
+
+                        <span>Teacher</span>
+
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             PAGE CONTENT
+        ================================================== -->
+
+        <div class="page-content">
+
+            <!-- PAGE HEADER -->
+
+            <section class="page-header">
+
+                <div class="page-header-content">
+
+                    <div class="page-title-area">
+
+                        <div class="page-title-icon">
+
+                            <i class="fa-solid fa-square-poll-vertical"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span class="page-eyebrow">
+                                ASSESSMENT PERFORMANCE
+                            </span>
+
+                            <h1>Results</h1>
+
+                            <p>
+                                Review student submissions, scores,
+                                performance and assessment outcomes.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="page-header-actions">
+
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            id="printResultsButton">
+
+                            <i class="fa-solid fa-print"></i>
+                            Print
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            id="exportResultsButton">
+
+                            <i class="fa-solid fa-file-export"></i>
+                            Export Results
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 RESULT STATISTICS
+            ================================================== -->
+
+            <section class="stats-grid">
+
+                <article class="stat-card">
+
+                    <div class="stat-card-icon">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+
+                    <div class="stat-card-content">
+
+                        <span>Total Attempts</span>
+
+                        <strong id="teacherTotalAttempts">
+                            0
+                        </strong>
+
+                        <small>
+                            Across your quizzes
+                        </small>
+
+                    </div>
+
+                </article>
+
+
+                <article class="stat-card">
+
+                    <div class="stat-card-icon">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+
+                    <div class="stat-card-content">
+
+                        <span>Average Score</span>
+
+                        <strong id="teacherOverallAverage">
+                            0%
+                        </strong>
+
+                        <small>
+                            Overall performance
+                        </small>
+
+                    </div>
+
+                </article>
+
+
+                <article class="stat-card">
+
+                    <div class="stat-card-icon">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+
+                    <div class="stat-card-content">
+
+                        <span>Highest Score</span>
+
+                        <strong id="teacherHighestScore">
+                            0%
+                        </strong>
+
+                        <small>
+                            Best student result
+                        </small>
+
+                    </div>
+
+                </article>
+
+
+                <article class="stat-card">
+
+                    <div class="stat-card-icon">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+
+                    <div class="stat-card-content">
+
+                        <span>Pass Rate</span>
+
+                        <strong id="teacherPassRate">
+                            0%
+                        </strong>
+
+                        <small>
+                            Students meeting target
+                        </small>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+
+            <!-- =================================================
+                 PERFORMANCE OVERVIEW
+            ================================================== -->
+
+            <section class="content-card">
+
+                <div class="content-card-header">
+
+                    <div>
+
+                        <h2>
+                            <i class="fa-solid fa-chart-area"></i>
+                            Performance Overview
+                        </h2>
+
+                        <p>
+                            Monitor score trends across your assessments.
+                        </p>
+
+                    </div>
+
+
+                    <div class="content-card-actions">
+
+                        <select
+                            id="resultsPerformancePeriod"
+                            class="compact-select">
+
+                            <option value="7">
+                                Last 7 Days
+                            </option>
+
+                            <option value="30" selected>
+                                Last 30 Days
+                            </option>
+
+                            <option value="90">
+                                Last 3 Months
+                            </option>
+
+                            <option value="365">
+                                This Year
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="chart-container">
+
+                    <canvas
+                        id="teacherResultsChart"
+                        aria-label="Student performance chart">
+                    </canvas>
+
+                </div>
+
+
+                <div
+                    class="empty-state compact"
+                    id="teacherResultsChartEmpty"
+                    hidden>
+
+                    <div class="empty-state-icon">
+
+                        <i class="fa-solid fa-chart-line"></i>
+
+                    </div>
+
+                    <h3>No performance data</h3>
+
+                    <p>
+                        Results will appear here after students
+                        complete your quizzes.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 RESULT TABLE
+            ================================================== -->
+
+            <section class="content-card">
+
+                <div class="content-card-header">
+
+                    <div>
+
+                        <h2>
+                            <i class="fa-solid fa-table-list"></i>
+                            Student Results
+                        </h2>
+
+                        <p>
+                            View individual quiz attempts and scores.
+                        </p>
+
+                    </div>
+
+
+                    <div class="content-card-actions">
+
+                        <button
+                            type="button"
+                            class="icon-button"
+                            id="refreshResultsButton"
+                            title="Refresh results">
+
+                            <i class="fa-solid fa-rotate"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- FILTERS -->
+
+                <div class="filter-toolbar">
+
+                    <div class="search-field">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <input
+                            type="search"
+                            id="resultStudentSearch"
+                            placeholder="Search student or roll number..."
+                            autocomplete="off">
+
+                    </div>
+
+
+                    <div class="filter-field">
+
+                        <label for="resultQuizFilter">
+                            Quiz
+                        </label>
+
+                        <select id="resultQuizFilter">
+
+                            <option value="all">
+                                All Quizzes
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="filter-field">
+
+                        <label for="resultSubjectFilter">
+                            Subject
+                        </label>
+
+                        <select id="resultSubjectFilter">
+
+                            <option value="all">
+                                All Subjects
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="filter-field">
+
+                        <label for="resultDepartmentFilter">
+                            Department
+                        </label>
+
+                        <select id="resultDepartmentFilter">
+
+                            <option value="all">
+                                All Departments
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="filter-field">
+
+                        <label for="resultStatusFilter">
+                            Result
+                        </label>
+
+                        <select id="resultStatusFilter">
+
+                            <option value="all">
+                                All Results
+                            </option>
+
+                            <option value="passed">
+                                Passed
+                            </option>
+
+                            <option value="failed">
+                                Failed
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        id="clearResultFilters">
+
+                        <i class="fa-solid fa-filter-circle-xmark"></i>
+                        Clear
+
+                    </button>
+
+                </div>
+
+
+                <!-- TABLE -->
+
+                <div class="table-wrapper">
+
+                    <table
+                        class="data-table"
+                        id="teacherResultsTable">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Student</th>
+
+                                <th>Roll Number</th>
+
+                                <th>Quiz</th>
+
+                                <th>Subject</th>
+
+                                <th>Score</th>
+
+                                <th>Percentage</th>
+
+                                <th>Time Taken</th>
+
+                                <th>Status</th>
+
+                                <th>Submitted</th>
+
+                                <th>Actions</th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="teacherResultsTableBody">
+
+                            <!-- Results loaded dynamically -->
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <!-- EMPTY -->
+
+                <div
+                    class="empty-state"
+                    id="teacherResultsEmptyState"
+                    hidden>
+
+                    <div class="empty-state-icon">
+
+                        <i class="fa-solid fa-chart-column"></i>
+
+                    </div>
+
+                    <h3>No results found</h3>
+
+                    <p>
+                        No student results match your current filters.
+                    </p>
+
+                </div>
+
+
+                <!-- LOADING -->
+
+                <div
+                    class="loading-state"
+                    id="teacherResultsLoadingState"
+                    hidden>
+
+                    <div class="loading-spinner"></div>
+
+                    <p>
+                        Loading results...
+                    </p>
+
+                </div>
+
+
+                <!-- PAGINATION -->
+
+                <div class="pagination-container">
+
+                    <div class="pagination-info">
+
+                        Showing
+
+                        <strong id="resultShowingFrom">
+                            0
+                        </strong>
+
+                        –
+
+                        <strong id="resultShowingTo">
+                            0
+                        </strong>
+
+                        of
+
+                        <strong id="resultTotalCount">
+                            0
+                        </strong>
+
+                        results
+
+                    </div>
+
+
+                    <div
+                        class="pagination"
+                        id="teacherResultsPagination">
+
+                        <button
+                            type="button"
+                            id="previousResultPage"
+                            disabled>
+
+                            <i class="fa-solid fa-chevron-left"></i>
+
+                        </button>
+
+
+                        <div
+                            class="page-numbers"
+                            id="resultPageNumbers">
+                        </div>
+
+
+                        <button
+                            type="button"
+                            id="nextResultPage"
+                            disabled>
+
+                            <i class="fa-solid fa-chevron-right"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 PERFORMANCE BREAKDOWN
+            ================================================== -->
+
+            <section class="content-grid two-column">
+
+                <article class="content-card">
+
+                    <div class="content-card-header">
+
+                        <div>
+
+                            <h2>
+                                <i class="fa-solid fa-ranking-star"></i>
+                                Top Performers
+                            </h2>
+
+                            <p>
+                                Highest scoring students.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="ranking-list"
+                        id="topPerformersList">
+
+                        <!-- Dynamic -->
+
+                    </div>
+
+
+                    <div
+                        class="empty-state compact"
+                        id="topPerformersEmpty"
+                        hidden>
+
+                        <div class="empty-state-icon">
+
+                            <i class="fa-solid fa-user-graduate"></i>
+
+                        </div>
+
+                        <h3>No data yet</h3>
+
+                        <p>
+                            Student rankings will appear here.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="content-card">
+
+                    <div class="content-card-header">
+
+                        <div>
+
+                            <h2>
+                                <i class="fa-solid fa-triangle-exclamation"></i>
+                                Students Needing Attention
+                            </h2>
+
+                            <p>
+                                Students performing below the target.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="attention-list"
+                        id="studentsNeedingAttention">
+
+                        <!-- Dynamic -->
+
+                    </div>
+
+
+                    <div
+                        class="empty-state compact"
+                        id="attentionEmptyState"
+                        hidden>
+
+                        <div class="empty-state-icon">
+
+                            <i class="fa-solid fa-circle-check"></i>
+
+                        </div>
+
+                        <h3>Everything looks good</h3>
+
+                        <p>
+                            No students currently require attention.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- =========================================================
+     RESULT DETAIL MODAL
+========================================================= -->
+
+<div
+    class="modal-overlay"
+    id="resultDetailModal"
+    hidden>
+
+    <div
+        class="modal modal-large"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="resultDetailTitle">
+
+        <div class="modal-header">
+
+            <div>
+
+                <span class="modal-eyebrow">
+                    STUDENT PERFORMANCE
+                </span>
+
+                <h2 id="resultDetailTitle">
+                    Result Details
+                </h2>
+
+            </div>
+
+            <button
+                type="button"
+                class="modal-close"
+                id="closeResultDetailModal">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <div class="modal-body">
+
+            <!-- Student Header -->
+
+            <div class="result-student-header">
+
+                <div
+                    class="result-student-avatar"
+                    id="resultStudentAvatar">
+                    S
+                </div>
+
+                <div>
+
+                    <h3 id="resultStudentName">
+                        Student Name
+                    </h3>
+
+                    <p id="resultStudentInfo">
+                        Roll Number • Department • Section
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Score Overview -->
+
+            <div class="result-overview-grid">
+
+                <div class="result-overview-item">
+
+                    <span>Quiz</span>
+
+                    <strong id="detailQuizName">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="result-overview-item">
+
+                    <span>Score</span>
+
+                    <strong id="detailScore">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="result-overview-item">
+
+                    <span>Percentage</span>
+
+                    <strong id="detailPercentage">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="result-overview-item">
+
+                    <span>Status</span>
+
+                    <strong id="detailStatus">
+                        —
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- Question Statistics -->
+
+            <div class="detail-section">
+
+                <div class="detail-section-header">
+
+                    <h3>
+                        Question Performance
+                    </h3>
+
+                </div>
+
+
+                <div class="question-performance-grid">
+
+                    <div>
+
+                        <span>Total Questions</span>
+
+                        <strong id="detailTotalQuestions">
+                            0
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>Correct</span>
+
+                        <strong id="detailCorrectAnswers">
+                            0
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>Incorrect</span>
+
+                        <strong id="detailIncorrectAnswers">
+                            0
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>Skipped</span>
+
+                        <strong id="detailSkippedAnswers">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Timing -->
+
+            <div class="detail-section">
+
+                <div class="detail-section-header">
+
+                    <h3>
+                        Submission Information
+                    </h3>
+
+                </div>
+
+
+                <div class="detail-information-list">
+
+                    <div>
+
+                        <span>
+                            Started
+                        </span>
+
+                        <strong id="detailStartedAt">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Submitted
+                        </span>
+
+                        <strong id="detailSubmittedAt">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Time Taken
+                        </span>
+
+                        <strong id="detailTimeTaken">
+                            —
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="modal-footer">
+
+            <button
+                type="button"
+                class="btn btn-secondary"
+                id="closeResultDetailButton">
+
+                Close
+
+            </button>
+
+
+            <button
+                type="button"
+                class="btn btn-primary"
+                id="viewAnswerReviewButton">
+
+                <i class="fa-solid fa-list-check"></i>
+                View Answer Review
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     EXPORT MODAL
+========================================================= -->
+
+<div
+    class="modal-overlay"
+    id="exportResultsModal"
+    hidden>
+
+    <div
+        class="modal modal-medium"
+        role="dialog"
+        aria-modal="true">
+
+        <div class="modal-header">
+
+            <div>
+
+                <span class="modal-eyebrow">
+                    REPORT EXPORT
+                </span>
+
+                <h2>Export Results</h2>
+
+            </div>
+
+            <button
+                type="button"
+                class="modal-close"
+                id="closeExportResultsModal">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <div class="modal-body">
+
+            <div class="form-section">
+
+                <div class="form-section-title">
+
+                    <i class="fa-solid fa-file-export"></i>
+
+                    <div>
+
+                        <h3>Export Configuration</h3>
+
+                        <p>
+                            Choose the information you want to include.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="exportResultFormat">
+                        File Format
+                    </label>
+
+                    <select id="exportResultFormat">
+
+                        <option value="csv">
+                            CSV
+                        </option>
+
+                        <option value="xlsx">
+                            Excel Workbook
+                        </option>
+
+                        <option value="pdf">
+                            PDF Report
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="exportResultScope">
+                        Result Scope
+                    </label>
+
+                    <select id="exportResultScope">
+
+                        <option value="filtered">
+                            Current Filtered Results
+                        </option>
+
+                        <option value="all">
+                            All Results
+                        </option>
+
+                        <option value="quiz">
+                            Selected Quiz
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="checkbox-group">
+
+                    <label>
+
+                        <input
+                            type="checkbox"
+                            id="includeStudentDetails"
+                            checked>
+
+                        <span>
+                            Include student details
+                        </span>
+
+                    </label>
+
+
+                    <label>
+
+                        <input
+                            type="checkbox"
+                            id="includeQuestionStats"
+                            checked>
+
+                        <span>
+                            Include question statistics
+                        </span>
+
+                    </label>
+
+
+                    <label>
+
+                        <input
+                            type="checkbox"
+                            id="includeSubmissionTime"
+                            checked>
+
+                        <span>
+                            Include submission time
+                        </span>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="modal-footer">
+
+            <button
+                type="button"
+                class="btn btn-secondary"
+                id="cancelExportResults">
+
+                Cancel
+
+            </button>
+
+
+            <button
+                type="button"
+                class="btn btn-primary"
+                id="confirmExportResults">
+
+                <i class="fa-solid fa-download"></i>
+                Export Report
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     LOGOUT MODAL
+========================================================= -->
+
+<div
+    class="modal-overlay"
+    id="logoutModal"
+    hidden>
+
+    <div
+        class="modal modal-small"
+        role="dialog"
+        aria-modal="true">
+
+        <div class="modal-body confirmation-content">
+
+            <div class="confirmation-icon">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+            </div>
+
+            <h3>
+                Sign out of your account?
+            </h3>
+
+            <p>
+                You will need to sign in again to access
+                the Teacher Portal.
+            </p>
+
+        </div>
+
+
+        <div class="modal-footer">
+
+            <button
+                type="button"
+                class="btn btn-secondary"
+                id="cancelLogout">
+
+                Stay Signed In
+
+            </button>
+
+
+            <button
+                type="button"
+                class="btn btn-primary"
+                id="confirmLogout">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Sign Out
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- TOAST -->
+
+<div
+    class="toast-container"
+    id="toastContainer"
+    aria-live="polite"
+    aria-atomic="true">
+</div>
+
+
+<!-- JavaScript will be added later -->
+<script src="../js/app.js"></script>
+
+</body>
+</html>
