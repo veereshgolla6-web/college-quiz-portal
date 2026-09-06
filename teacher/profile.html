@@ -1,0 +1,1711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Profile | Teacher Portal</title>
+
+    <meta name="description" content="Teacher profile and account management">
+    <meta name="author" content="College Quiz Portal">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="teacher-page teacher-profile-page">
+
+<div class="app-wrapper">
+
+    <!-- =========================================================
+         SIDEBAR
+    ========================================================== -->
+
+    <aside class="sidebar" id="teacherSidebar">
+
+        <!-- Brand -->
+
+        <div class="sidebar-brand">
+
+            <div class="brand-logo">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+
+            <div class="brand-text">
+                <h2>QuizPortal</h2>
+                <span>Teacher Panel</span>
+            </div>
+
+        </div>
+
+
+        <!-- Teacher Mini Profile -->
+
+        <div class="sidebar-profile">
+
+            <div class="sidebar-avatar" id="sidebarTeacherAvatar">
+                T
+            </div>
+
+            <div class="sidebar-profile-info">
+
+                <strong id="sidebarTeacherName">
+                    Teacher
+                </strong>
+
+                <span>
+                    Teacher Account
+                </span>
+
+            </div>
+
+            <button
+                type="button"
+                class="sidebar-profile-menu"
+                id="sidebarProfileMenu"
+                aria-label="Profile menu">
+
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+
+            </button>
+
+        </div>
+
+
+        <!-- Navigation -->
+
+        <nav class="sidebar-navigation" aria-label="Teacher navigation">
+
+            <div class="nav-section">
+
+                <span class="nav-section-title">
+                    MAIN
+                </span>
+
+                <a href="dashboard.html" class="nav-item">
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </span>
+
+                    <span class="nav-label">
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+                <a href="create-quiz.html" class="nav-item">
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-circle-plus"></i>
+                    </span>
+
+                    <span class="nav-label">
+                        Create Quiz
+                    </span>
+
+                </a>
+
+
+                <a href="questions.html" class="nav-item">
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-database"></i>
+                    </span>
+
+                    <span class="nav-label">
+                        Question Bank
+                    </span>
+
+                </a>
+
+
+                <a href="quizzes.html" class="nav-item">
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-file-circle-question"></i>
+                    </span>
+
+                    <span class="nav-label">
+                        My Quizzes
+                    </span>
+
+                </a>
+
+            </div>
+
+
+            <div class="nav-section">
+
+                <span class="nav-section-title">
+                    PERFORMANCE
+                </span>
+
+                <a href="results.html" class="nav-item">
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-square-poll-vertical"></i>
+                    </span>
+
+                    <span class="nav-label">
+                        Results
+                    </span>
+
+                </a>
+
+
+                <a href="analytics.html" class="nav-item">
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-chart-pie"></i>
+                    </span>
+
+                    <span class="nav-label">
+                        Analytics
+                    </span>
+
+                </a>
+
+            </div>
+
+
+            <div class="nav-section">
+
+                <span class="nav-section-title">
+                    ACCOUNT
+                </span>
+
+                <a href="profile.html"
+                   class="nav-item active"
+                   aria-current="page">
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-user"></i>
+                    </span>
+
+                    <span class="nav-label">
+                        My Profile
+                    </span>
+
+                </a>
+
+
+                <a href="help.html" class="nav-item">
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-circle-question"></i>
+                    </span>
+
+                    <span class="nav-label">
+                        Help & Support
+                    </span>
+
+                </a>
+
+            </div>
+
+        </nav>
+
+
+        <!-- Logout -->
+
+        <div class="sidebar-bottom">
+
+            <button
+                type="button"
+                class="nav-item logout-nav-item"
+                id="sidebarLogout">
+
+                <span class="nav-icon">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                </span>
+
+                <span class="nav-label">
+                    Logout
+                </span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================================================
+         MAIN CONTENT
+    ========================================================== -->
+
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <div class="topbar-left">
+
+                <button
+                    type="button"
+                    class="mobile-menu-button"
+                    id="mobileMenuButton"
+                    aria-label="Open navigation">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+
+                <div class="breadcrumb">
+
+                    <span>
+                        Teacher Portal
+                    </span>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                    <strong>
+                        My Profile
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+                <!-- Notifications -->
+
+                <button
+                    type="button"
+                    class="topbar-icon-button"
+                    id="notificationButton"
+                    aria-label="Notifications">
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span
+                        class="notification-badge"
+                        id="notificationCount">
+                        3
+                    </span>
+
+                </button>
+
+
+                <!-- Account -->
+
+                <button
+                    type="button"
+                    class="topbar-account"
+                    id="topbarAccountButton">
+
+                    <div
+                        class="topbar-avatar"
+                        id="topbarAvatar">
+
+                        T
+
+                    </div>
+
+                    <div class="topbar-account-info">
+
+                        <strong id="topbarTeacherName">
+                            Teacher
+                        </strong>
+
+                        <span>
+                            Teacher
+                        </span>
+
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- =====================================================
+             PAGE CONTENT
+        ====================================================== -->
+
+        <div class="page-content">
+
+            <!-- PAGE HEADER -->
+
+            <section class="page-header">
+
+                <div class="page-header-content">
+
+                    <span class="page-eyebrow">
+                        ACCOUNT MANAGEMENT
+                    </span>
+
+                    <h1>
+                        My Profile
+                    </h1>
+
+                    <p>
+                        Manage your teacher information, account security,
+                        and login activity.
+                    </p>
+
+                </div>
+
+
+                <div class="page-header-actions">
+
+                    <button
+                        type="button"
+                        class="primary-button"
+                        id="editProfileButton">
+
+                        <i class="fa-solid fa-pen"></i>
+
+                        Edit Profile
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 PROFILE HERO
+            ================================================== -->
+
+            <section class="profile-hero-card">
+
+                <div class="profile-hero-left">
+
+                    <div
+                        class="profile-large-avatar"
+                        id="profileAvatar">
+
+                        T
+
+                    </div>
+
+
+                    <div class="profile-hero-info">
+
+                        <span class="profile-role-badge">
+                            <i class="fa-solid fa-chalkboard-user"></i>
+                            Teacher
+                        </span>
+
+                        <h2 id="profileTeacherName">
+                            Teacher Name
+                        </h2>
+
+                        <p id="profileTeacherUsername">
+                            @teacher
+                        </p>
+
+                        <div class="profile-status">
+
+                            <span class="status-dot"></span>
+
+                            <span>
+                                Active Account
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="profile-hero-right">
+
+                    <div class="profile-member-info">
+
+                        <span>
+                            Account Status
+                        </span>
+
+                        <strong>
+                            Active
+                        </strong>
+
+                    </div>
+
+                    <div class="profile-member-info">
+
+                        <span>
+                            Member Since
+                        </span>
+
+                        <strong id="profileMemberSince">
+                            —
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 PROFILE INFORMATION
+            ================================================== -->
+
+            <section class="profile-section-grid">
+
+                <!-- Personal Information -->
+
+                <div class="profile-card">
+
+                    <div class="profile-card-header">
+
+                        <div>
+
+                            <span class="section-eyebrow">
+                                PERSONAL INFORMATION
+                            </span>
+
+                            <h2>
+                                Basic Details
+                            </h2>
+
+                        </div>
+
+                        <i class="fa-solid fa-user"></i>
+
+                    </div>
+
+
+                    <div class="profile-details-grid">
+
+                        <div class="profile-detail">
+
+                            <span>
+                                Full Name
+                            </span>
+
+                            <strong id="profileFullName">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="profile-detail">
+
+                            <span>
+                                Username
+                            </span>
+
+                            <strong id="profileUsername">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="profile-detail">
+
+                            <span>
+                                Email Address
+                            </span>
+
+                            <strong id="profileEmail">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="profile-detail">
+
+                            <span>
+                                Teacher ID
+                            </span>
+
+                            <strong id="profileTeacherId">
+                                —
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Teaching Information -->
+
+                <div class="profile-card">
+
+                    <div class="profile-card-header">
+
+                        <div>
+
+                            <span class="section-eyebrow">
+                                TEACHING INFORMATION
+                            </span>
+
+                            <h2>
+                                Professional Details
+                            </h2>
+
+                        </div>
+
+                        <i class="fa-solid fa-chalkboard-user"></i>
+
+                    </div>
+
+
+                    <div class="profile-details-grid">
+
+                        <div class="profile-detail">
+
+                            <span>
+                                Department
+                            </span>
+
+                            <strong id="profileDepartment">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="profile-detail">
+
+                            <span>
+                                Designation
+                            </span>
+
+                            <strong id="profileDesignation">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="profile-detail">
+
+                            <span>
+                                Subjects
+                            </span>
+
+                            <strong id="profileSubjects">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="profile-detail">
+
+                            <span>
+                                Assigned Classes
+                            </span>
+
+                            <strong id="profileAssignedClasses">
+                                —
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 TEACHER STATISTICS
+            ================================================== -->
+
+            <section class="profile-section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-eyebrow">
+                            ACTIVITY OVERVIEW
+                        </span>
+
+                        <h2>
+                            Teaching Statistics
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="profile-stat-grid">
+
+                    <article class="profile-stat-card">
+
+                        <div class="profile-stat-icon">
+                            <i class="fa-solid fa-file-circle-question"></i>
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Quizzes Created
+                            </span>
+
+                            <strong id="profileTotalQuizzes">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="profile-stat-card">
+
+                        <div class="profile-stat-icon">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Published Quizzes
+                            </span>
+
+                            <strong id="profilePublishedQuizzes">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="profile-stat-card">
+
+                        <div class="profile-stat-icon">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Students Reached
+                            </span>
+
+                            <strong id="profileStudentsReached">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="profile-stat-card">
+
+                        <div class="profile-stat-icon">
+                            <i class="fa-solid fa-chart-simple"></i>
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Average Quiz Score
+                            </span>
+
+                            <strong id="profileAverageScore">
+                                0%
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 CONTACT INFORMATION
+            ================================================== -->
+
+            <section class="profile-section">
+
+                <div class="profile-card">
+
+                    <div class="profile-card-header">
+
+                        <div>
+
+                            <span class="section-eyebrow">
+                                CONTACT
+                            </span>
+
+                            <h2>
+                                Contact Information
+                            </h2>
+
+                        </div>
+
+                        <i class="fa-solid fa-address-card"></i>
+
+                    </div>
+
+
+                    <div class="profile-details-grid">
+
+                        <div class="profile-detail">
+
+                            <span>
+                                Email
+                            </span>
+
+                            <strong id="profileContactEmail">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="profile-detail">
+
+                            <span>
+                                Office
+                            </span>
+
+                            <strong id="profileOffice">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="profile-detail">
+
+                            <span>
+                                Academic Year
+                            </span>
+
+                            <strong id="profileAcademicYear">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="profile-detail">
+
+                            <span>
+                                Time Zone
+                            </span>
+
+                            <strong id="profileTimezone">
+                                Asia/Kolkata
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 SECURITY
+            ================================================== -->
+
+            <section class="profile-section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-eyebrow">
+                            SECURITY
+                        </span>
+
+                        <h2>
+                            Account Security
+                        </h2>
+
+                        <p>
+                            Protect your account and review recent access activity.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="security-card-grid">
+
+                    <!-- Change Password -->
+
+                    <article class="security-card">
+
+                        <div class="security-card-icon">
+                            <i class="fa-solid fa-key"></i>
+                        </div>
+
+                        <div class="security-card-content">
+
+                            <h3>
+                                Password
+                            </h3>
+
+                            <p>
+                                Change your account password regularly
+                                to keep your account secure.
+                            </p>
+
+                            <span
+                                class="security-status"
+                                id="passwordLastChanged">
+
+                                Last changed: —
+
+                            </span>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="secondary-button"
+                            id="changePasswordButton">
+
+                            Change Password
+
+                        </button>
+
+                    </article>
+
+
+                    <!-- Login Activity -->
+
+                    <article class="security-card">
+
+                        <div class="security-card-icon">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+
+                        <div class="security-card-content">
+
+                            <h3>
+                                Login Activity
+                            </h3>
+
+                            <p>
+                                Review recent account sign-ins and
+                                security activity.
+                            </p>
+
+                            <span
+                                class="security-status"
+                                id="lastLoginInfo">
+
+                                Last login: —
+
+                            </span>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="secondary-button"
+                            id="loginActivityButton">
+
+                            View Activity
+
+                        </button>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 ACCOUNT ACTIONS
+            ================================================== -->
+
+            <section class="profile-section">
+
+                <div class="profile-card account-actions-card">
+
+                    <div class="profile-card-header">
+
+                        <div>
+
+                            <span class="section-eyebrow">
+                                ACCOUNT
+                            </span>
+
+                            <h2>
+                                Account Actions
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="account-action-list">
+
+                        <button
+                            type="button"
+                            class="account-action"
+                            id="logoutAccountButton">
+
+                            <span class="account-action-icon danger">
+                                <i class="fa-solid fa-right-from-bracket"></i>
+                            </span>
+
+                            <span class="account-action-content">
+
+                                <strong>
+                                    Sign Out
+                                </strong>
+
+                                <small>
+                                    Sign out of your teacher account on this device.
+                                </small>
+
+                            </span>
+
+                            <i class="fa-solid fa-chevron-right"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 PROFILE SECURITY NOTICE
+            ================================================== -->
+
+            <section class="profile-security-banner">
+
+                <div class="security-banner-icon">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                </div>
+
+                <div class="security-banner-content">
+
+                    <strong>
+                        Keep your account secure
+                    </strong>
+
+                    <p>
+                        Never share your password with anyone. If you notice
+                        suspicious activity, contact the system administrator.
+                    </p>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- =============================================================
+     NOTIFICATION PANEL
+============================================================== -->
+
+<aside
+    class="notification-panel"
+    id="notificationPanel"
+    aria-label="Notifications">
+
+    <div class="notification-panel-header">
+
+        <div>
+
+            <span>
+                NOTIFICATIONS
+            </span>
+
+            <h2>
+                Notifications
+            </h2>
+
+        </div>
+
+        <button
+            type="button"
+            class="notification-close"
+            id="closeNotificationPanel"
+            aria-label="Close notifications">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+    </div>
+
+
+    <div
+        class="notification-list"
+        id="notificationList">
+
+        <div class="notification-item unread">
+
+            <div class="notification-icon">
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+            <div class="notification-content">
+
+                <strong>
+                    Welcome to your profile
+                </strong>
+
+                <p>
+                    Keep your account information up to date.
+                </p>
+
+                <small>
+                    Recently
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="notification-panel-footer">
+
+        <button
+            type="button"
+            class="text-button"
+            id="markNotificationsRead">
+
+            Mark all as read
+
+        </button>
+
+    </div>
+
+</aside>
+
+
+<!-- =============================================================
+     EDIT PROFILE MODAL
+============================================================== -->
+
+<div
+    class="modal-overlay"
+    id="editProfileModal"
+    aria-hidden="true">
+
+    <div
+        class="modal modal-large"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="editProfileModalTitle">
+
+        <div class="modal-header">
+
+            <div>
+
+                <span class="modal-eyebrow">
+                    ACCOUNT
+                </span>
+
+                <h2 id="editProfileModalTitle">
+                    Edit Profile
+                </h2>
+
+            </div>
+
+            <button
+                type="button"
+                class="modal-close"
+                id="closeEditProfileModal"
+                aria-label="Close">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <form id="editProfileForm">
+
+            <div class="modal-body">
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label for="editFullName">
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="editFullName"
+                            name="editFullName"
+                            placeholder="Enter full name"
+                            autocomplete="name">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="editEmail">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="editEmail"
+                            name="editEmail"
+                            placeholder="Enter email address"
+                            autocomplete="email">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="editDesignation">
+                            Designation
+                        </label>
+
+                        <input
+                            type="text"
+                            id="editDesignation"
+                            name="editDesignation"
+                            placeholder="Enter designation">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="editOffice">
+                            Office
+                        </label>
+
+                        <input
+                            type="text"
+                            id="editOffice"
+                            name="editOffice"
+                            placeholder="Enter office details">
+
+                    </div>
+
+                </div>
+
+                <div
+                    class="form-message"
+                    id="editProfileMessage"
+                    aria-live="polite">
+                </div>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="secondary-button"
+                    id="cancelEditProfile">
+
+                    Cancel
+
+                </button>
+
+                <button
+                    type="submit"
+                    class="primary-button"
+                    id="saveProfileButton">
+
+                    <i class="fa-solid fa-check"></i>
+
+                    Save Changes
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =============================================================
+     CHANGE PASSWORD MODAL
+============================================================== -->
+
+<div
+    class="modal-overlay"
+    id="changePasswordModal"
+    aria-hidden="true">
+
+    <div
+        class="modal modal-medium"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="changePasswordModalTitle">
+
+        <div class="modal-header">
+
+            <div>
+
+                <span class="modal-eyebrow">
+                    SECURITY
+                </span>
+
+                <h2 id="changePasswordModalTitle">
+                    Change Password
+                </h2>
+
+            </div>
+
+            <button
+                type="button"
+                class="modal-close"
+                id="closePasswordModal"
+                aria-label="Close">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <form id="changePasswordForm">
+
+            <div class="modal-body">
+
+                <div class="form-group">
+
+                    <label for="currentPassword">
+                        Current Password
+                    </label>
+
+                    <div class="password-input-wrapper">
+
+                        <input
+                            type="password"
+                            id="currentPassword"
+                            name="currentPassword"
+                            placeholder="Enter current password"
+                            autocomplete="current-password">
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            data-target="currentPassword"
+                            aria-label="Show password">
+
+                            <i class="fa-regular fa-eye"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="newPassword">
+                        New Password
+                    </label>
+
+                    <div class="password-input-wrapper">
+
+                        <input
+                            type="password"
+                            id="newPassword"
+                            name="newPassword"
+                            placeholder="Enter new password"
+                            autocomplete="new-password">
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            data-target="newPassword"
+                            aria-label="Show password">
+
+                            <i class="fa-regular fa-eye"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="confirmPassword">
+                        Confirm New Password
+                    </label>
+
+                    <div class="password-input-wrapper">
+
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            name="confirmPassword"
+                            placeholder="Confirm new password"
+                            autocomplete="new-password">
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            data-target="confirmPassword"
+                            aria-label="Show password">
+
+                            <i class="fa-regular fa-eye"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="password-requirements">
+
+                    <strong>
+                        Password requirements
+                    </strong>
+
+                    <ul>
+
+                        <li id="passwordLengthCheck">
+                            At least 8 characters
+                        </li>
+
+                        <li id="passwordUppercaseCheck">
+                            At least one uppercase letter
+                        </li>
+
+                        <li id="passwordNumberCheck">
+                            At least one number
+                        </li>
+
+                        <li id="passwordMatchCheck">
+                            Passwords must match
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div
+                    class="form-message"
+                    id="passwordMessage"
+                    aria-live="polite">
+                </div>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="secondary-button"
+                    id="cancelPasswordChange">
+
+                    Cancel
+
+                </button>
+
+                <button
+                    type="submit"
+                    class="primary-button"
+                    id="savePasswordButton">
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                    Update Password
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =============================================================
+     LOGIN ACTIVITY MODAL
+============================================================== -->
+
+<div
+    class="modal-overlay"
+    id="loginActivityModal"
+    aria-hidden="true">
+
+    <div
+        class="modal modal-large"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="loginActivityModalTitle">
+
+        <div class="modal-header">
+
+            <div>
+
+                <span class="modal-eyebrow">
+                    SECURITY
+                </span>
+
+                <h2 id="loginActivityModalTitle">
+                    Login Activity
+                </h2>
+
+            </div>
+
+            <button
+                type="button"
+                class="modal-close"
+                id="closeLoginActivityModal"
+                aria-label="Close">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <div class="modal-body">
+
+            <div
+                class="login-activity-list"
+                id="loginActivityList">
+
+                <div class="login-activity-item">
+
+                    <div class="login-activity-icon">
+
+                        <i class="fa-solid fa-desktop"></i>
+
+                    </div>
+
+                    <div class="login-activity-info">
+
+                        <strong>
+                            Current Session
+                        </strong>
+
+                        <span>
+                            This device
+                        </span>
+
+                        <small>
+                            Recently
+                        </small>
+
+                    </div>
+
+                    <span class="activity-status active">
+                        Active
+                    </span>
+
+                </div>
+
+
+                <div class="login-activity-empty"
+                     id="loginActivityEmpty">
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                    <h3>
+                        No additional activity
+                    </h3>
+
+                    <p>
+                        Recent account sign-ins will appear here.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="modal-footer">
+
+            <button
+                type="button"
+                class="secondary-button"
+                id="closeLoginActivityButton">
+
+                Close
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =============================================================
+     LOGOUT MODAL
+============================================================== -->
+
+<div
+    class="modal-overlay"
+    id="logoutModal"
+    aria-hidden="true">
+
+    <div
+        class="modal modal-small"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="logoutModalTitle">
+
+        <div class="modal-icon warning-icon">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+        </div>
+
+
+        <div class="modal-body text-center">
+
+            <h2 id="logoutModalTitle">
+                Sign Out?
+            </h2>
+
+            <p>
+                Are you sure you want to sign out of your teacher account?
+            </p>
+
+        </div>
+
+
+        <div class="modal-footer modal-footer-centered">
+
+            <button
+                type="button"
+                class="secondary-button"
+                id="cancelLogout">
+
+                Cancel
+
+            </button>
+
+
+            <button
+                type="button"
+                class="danger-button"
+                id="confirmLogout">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =============================================================
+     TOAST
+============================================================== -->
+
+<div
+    class="toast-container"
+    id="toastContainer"
+    aria-live="polite"
+    aria-atomic="true">
+
+    <div
+        class="toast"
+        id="profileToast">
+
+        <div class="toast-icon">
+
+            <i class="fa-solid fa-check"></i>
+
+        </div>
+
+
+        <div class="toast-content">
+
+            <strong id="profileToastTitle">
+                Success
+            </strong>
+
+            <p id="profileToastMessage">
+                Action completed successfully.
+            </p>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="toast-close"
+            id="closeProfileToast"
+            aria-label="Close notification">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- JAVASCRIPT — IMPLEMENT LATER -->
+
+<script src="../js/app.js"></script>
+
+</body>
+</html>
