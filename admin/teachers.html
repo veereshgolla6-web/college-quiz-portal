@@ -1,0 +1,2648 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Manage teachers and faculty accounts in the Quiz Portal Admin Dashboard"
+    >
+
+    <title>Teachers | Admin | Quiz Portal</title>
+
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- Main CSS -->
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+
+</head>
+
+
+<body class="dashboard-page admin-page">
+
+
+<div class="app-layout">
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside
+        class="sidebar"
+        id="adminSidebar"
+    >
+
+
+        <!-- Brand -->
+
+        <div class="sidebar-brand">
+
+            <div class="brand-logo">
+
+                <i class="fa-solid fa-graduation-cap"></i>
+
+            </div>
+
+
+            <div class="brand-text">
+
+                <h2>
+                    Quiz Portal
+                </h2>
+
+                <span>
+                    Administration
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Navigation -->
+
+        <nav
+            class="sidebar-navigation"
+            aria-label="Admin navigation"
+        >
+
+
+            <!-- Main -->
+
+            <div class="nav-section">
+
+                <div class="nav-section-title">
+                    Main
+                </div>
+
+
+                <a
+                    href="dashboard.html"
+                    class="nav-link"
+                >
+
+                    <i class="fa-solid fa-grid-2"></i>
+
+                    <span>
+                        Dashboard
+                    </span>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- Management -->
+
+            <div class="nav-section">
+
+                <div class="nav-section-title">
+                    Management
+                </div>
+
+
+                <a
+                    href="students.html"
+                    class="nav-link"
+                >
+
+                    <i class="fa-solid fa-user-graduate"></i>
+
+                    <span>
+                        Students
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="teachers.html"
+                    class="nav-link active"
+                    data-page="teachers"
+                >
+
+                    <i class="fa-solid fa-chalkboard-user"></i>
+
+                    <span>
+                        Teachers
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="departments.html"
+                    class="nav-link"
+                >
+
+                    <i class="fa-solid fa-building-columns"></i>
+
+                    <span>
+                        Departments
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="subjects.html"
+                    class="nav-link"
+                >
+
+                    <i class="fa-solid fa-book-open"></i>
+
+                    <span>
+                        Subjects
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="quizzes.html"
+                    class="nav-link"
+                >
+
+                    <i class="fa-solid fa-clipboard-question"></i>
+
+                    <span>
+                        Quizzes
+                    </span>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- Performance -->
+
+            <div class="nav-section">
+
+                <div class="nav-section-title">
+                    Performance
+                </div>
+
+
+                <a
+                    href="results.html"
+                    class="nav-link"
+                >
+
+                    <i class="fa-solid fa-chart-column"></i>
+
+                    <span>
+                        Results
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="leaderboard.html"
+                    class="nav-link"
+                >
+
+                    <i class="fa-solid fa-ranking-star"></i>
+
+                    <span>
+                        Leaderboard
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="reports.html"
+                    class="nav-link"
+                >
+
+                    <i class="fa-solid fa-file-lines"></i>
+
+                    <span>
+                        Reports
+                    </span>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- System -->
+
+            <div class="nav-section">
+
+                <div class="nav-section-title">
+                    System
+                </div>
+
+
+                <a
+                    href="settings.html"
+                    class="nav-link"
+                >
+
+                    <i class="fa-solid fa-gear"></i>
+
+                    <span>
+                        Settings
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="profile.html"
+                    class="nav-link"
+                >
+
+                    <i class="fa-solid fa-user-circle"></i>
+
+                    <span>
+                        My Profile
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="help.html"
+                    class="nav-link"
+                >
+
+                    <i class="fa-solid fa-circle-question"></i>
+
+                    <span>
+                        Help & Support
+                    </span>
+
+                </a>
+
+            </div>
+
+        </nav>
+
+
+
+        <!-- Logout -->
+
+        <div class="sidebar-bottom">
+
+            <button
+                type="button"
+                class="sidebar-logout"
+                id="sidebarLogout"
+            >
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                <span>
+                    Logout
+                </span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =================================================
+             TOPBAR
+        ================================================== -->
+
+        <header class="topbar">
+
+
+            <div class="topbar-left">
+
+
+                <button
+                    type="button"
+                    class="mobile-menu-button"
+                    id="mobileMenuButton"
+                    aria-label="Open navigation menu"
+                >
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+
+                <div class="breadcrumb">
+
+                    <span class="breadcrumb-muted">
+                        Administration
+                    </span>
+
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
+
+                    <span class="breadcrumb-current">
+                        Teachers
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="topbar-right">
+
+
+                <!-- Notifications -->
+
+                <button
+                    type="button"
+                    class="notification-button"
+                    id="notificationButton"
+                    aria-label="Notifications"
+                >
+
+                    <i class="fa-regular fa-bell"></i>
+
+
+                    <span
+                        class="notification-count"
+                        id="notificationCount"
+                    >
+                        4
+                    </span>
+
+                </button>
+
+
+
+                <!-- Admin -->
+
+                <button
+                    type="button"
+                    class="topbar-profile"
+                    id="topbarProfile"
+                >
+
+                    <div
+                        class="topbar-avatar"
+                        id="topbarAvatar"
+                    >
+                        A
+                    </div>
+
+
+                    <div class="topbar-profile-info">
+
+                        <strong id="topbarAdminName">
+                            Administrator
+                        </strong>
+
+                        <span>
+                            Admin
+                        </span>
+
+                    </div>
+
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </button>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             PAGE CONTENT
+        ================================================== -->
+
+        <section class="page-content">
+
+
+            <!-- =================================================
+                 PAGE HEADER
+            ================================================== -->
+
+            <div class="page-header">
+
+
+                <div class="page-header-content">
+
+
+                    <div class="page-header-icon">
+
+                        <i class="fa-solid fa-chalkboard-user"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <p class="page-eyebrow">
+                            FACULTY MANAGEMENT
+                        </p>
+
+
+                        <h1>
+                            Teachers
+                        </h1>
+
+
+                        <p class="page-description">
+                            Manage teacher accounts, departments,
+                            subjects, permissions and teaching activity.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="page-header-actions">
+
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        id="importTeachersButton"
+                    >
+
+                        <i class="fa-solid fa-file-import"></i>
+
+                        Import Teachers
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="btn btn-primary"
+                        id="addTeacherButton"
+                    >
+
+                        <i class="fa-solid fa-user-plus"></i>
+
+                        Add Teacher
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 STATISTICS
+            ================================================== -->
+
+            <section class="dashboard-section">
+
+
+                <div class="stats-grid">
+
+
+                    <!-- Total Teachers -->
+
+                    <article class="stat-card">
+
+                        <div class="stat-card-top">
+
+                            <div class="stat-icon">
+
+                                <i class="fa-solid fa-users"></i>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="stat-card-body">
+
+                            <span class="stat-label">
+                                Total Teachers
+                            </span>
+
+
+                            <strong
+                                class="stat-value"
+                                id="teachersTotal"
+                            >
+                                0
+                            </strong>
+
+
+                            <span class="stat-description">
+                                Registered faculty accounts
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- Active Teachers -->
+
+                    <article class="stat-card">
+
+                        <div class="stat-card-top">
+
+                            <div class="stat-icon">
+
+                                <i class="fa-solid fa-user-check"></i>
+
+                            </div>
+
+
+                            <span class="stat-badge">
+                                Active
+                            </span>
+
+                        </div>
+
+
+                        <div class="stat-card-body">
+
+                            <span class="stat-label">
+                                Active Teachers
+                            </span>
+
+
+                            <strong
+                                class="stat-value"
+                                id="activeTeachers"
+                            >
+                                0
+                            </strong>
+
+
+                            <span class="stat-description">
+                                Currently active accounts
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- New Teachers -->
+
+                    <article class="stat-card">
+
+                        <div class="stat-card-top">
+
+                            <div class="stat-icon">
+
+                                <i class="fa-solid fa-user-clock"></i>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="stat-card-body">
+
+                            <span class="stat-label">
+                                New Teachers
+                            </span>
+
+
+                            <strong
+                                class="stat-value"
+                                id="newTeachers"
+                            >
+                                0
+                            </strong>
+
+
+                            <span class="stat-description">
+                                Added this month
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- Quizzes Created -->
+
+                    <article class="stat-card">
+
+                        <div class="stat-card-top">
+
+                            <div class="stat-icon">
+
+                                <i class="fa-solid fa-clipboard-question"></i>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="stat-card-body">
+
+                            <span class="stat-label">
+                                Quizzes Created
+                            </span>
+
+
+                            <strong
+                                class="stat-value"
+                                id="teacherQuizCount"
+                            >
+                                0
+                            </strong>
+
+
+                            <span class="stat-description">
+                                Across all teachers
+                            </span>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 SEARCH & FILTER
+            ================================================== -->
+
+            <section class="dashboard-card filter-card">
+
+
+                <div class="filter-card-header">
+
+
+                    <div>
+
+                        <p class="card-eyebrow">
+                            FACULTY DIRECTORY
+                        </p>
+
+
+                        <h2>
+                            Search & Filter
+                        </h2>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="btn btn-text"
+                        id="clearTeacherFilters"
+                    >
+
+                        <i class="fa-solid fa-rotate-left"></i>
+
+                        Clear Filters
+
+                    </button>
+
+                </div>
+
+
+
+                <div class="filter-grid">
+
+
+                    <!-- Search -->
+
+                    <div class="form-group">
+
+                        <label for="teacherSearch">
+                            Search teachers
+                        </label>
+
+
+                        <div class="input-with-icon">
+
+                            <i class="fa-solid fa-magnifying-glass"></i>
+
+
+                            <input
+                                type="search"
+                                id="teacherSearch"
+                                name="teacherSearch"
+                                placeholder="Search by name, ID or username..."
+                                autocomplete="off"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Department -->
+
+                    <div class="form-group">
+
+                        <label for="teacherDepartmentFilter">
+                            Department
+                        </label>
+
+
+                        <select
+                            id="teacherDepartmentFilter"
+                            name="department"
+                        >
+
+                            <option value="">
+                                All Departments
+                            </option>
+
+
+                            <option value="cse">
+                                Computer Science & Engineering
+                            </option>
+
+
+                            <option value="cseai">
+                                CSE - Artificial Intelligence
+                            </option>
+
+
+                            <option value="ece">
+                                Electronics & Communication
+                            </option>
+
+
+                            <option value="eee">
+                                Electrical & Electronics
+                            </option>
+
+
+                            <option value="civil">
+                                Civil Engineering
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- Role -->
+
+                    <div class="form-group">
+
+                        <label for="teacherRoleFilter">
+                            Role
+                        </label>
+
+
+                        <select
+                            id="teacherRoleFilter"
+                            name="role"
+                        >
+
+                            <option value="">
+                                All Roles
+                            </option>
+
+
+                            <option value="teacher">
+                                Teacher
+                            </option>
+
+
+                            <option value="hod">
+                                Head of Department
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- Status -->
+
+                    <div class="form-group">
+
+                        <label for="teacherStatusFilter">
+                            Status
+                        </label>
+
+
+                        <select
+                            id="teacherStatusFilter"
+                            name="status"
+                        >
+
+                            <option value="">
+                                All Statuses
+                            </option>
+
+
+                            <option value="active">
+                                Active
+                            </option>
+
+
+                            <option value="inactive">
+                                Inactive
+                            </option>
+
+
+                            <option value="blocked">
+                                Blocked
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 BULK ACTIONS
+            ================================================== -->
+
+            <div
+                class="bulk-action-bar"
+                id="teacherBulkActionBar"
+                hidden
+            >
+
+
+                <div class="bulk-selection-info">
+
+                    <i class="fa-solid fa-check-double"></i>
+
+
+                    <strong id="selectedTeacherCount">
+                        0
+                    </strong>
+
+
+                    <span>
+                        teachers selected
+                    </span>
+
+                </div>
+
+
+
+                <div class="bulk-actions">
+
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        id="bulkActivateTeachers"
+                    >
+
+                        <i class="fa-solid fa-user-check"></i>
+
+                        Activate
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        id="bulkDeactivateTeachers"
+                    >
+
+                        <i class="fa-solid fa-user-slash"></i>
+
+                        Deactivate
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="btn btn-danger"
+                        id="bulkDeleteTeachers"
+                    >
+
+                        <i class="fa-solid fa-trash"></i>
+
+                        Delete
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 TEACHER TABLE
+            ================================================== -->
+
+            <section class="dashboard-card table-card">
+
+
+                <div class="card-header">
+
+
+                    <div>
+
+                        <p class="card-eyebrow">
+                            FACULTY
+                        </p>
+
+
+                        <h2>
+                            Teacher Directory
+                        </h2>
+
+                    </div>
+
+
+
+                    <div class="table-header-actions">
+
+
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            id="exportTeachersButton"
+                        >
+
+                            <i class="fa-solid fa-file-export"></i>
+
+                            Export
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="table-responsive">
+
+
+                    <table class="data-table teacher-table">
+
+
+                        <thead>
+
+                            <tr>
+
+
+                                <th class="checkbox-column">
+
+                                    <input
+                                        type="checkbox"
+                                        id="selectAllTeachers"
+                                        aria-label="Select all teachers"
+                                    >
+
+                                </th>
+
+
+                                <th>
+                                    Teacher
+                                </th>
+
+
+                                <th>
+                                    Faculty ID
+                                </th>
+
+
+                                <th>
+                                    Department
+                                </th>
+
+
+                                <th>
+                                    Role
+                                </th>
+
+
+                                <th>
+                                    Quizzes
+                                </th>
+
+
+                                <th>
+                                    Attempts
+                                </th>
+
+
+                                <th>
+                                    Avg. Score
+                                </th>
+
+
+                                <th>
+                                    Status
+                                </th>
+
+
+                                <th>
+                                    Actions
+                                </th>
+
+
+                            </tr>
+
+                        </thead>
+
+
+
+                        <tbody id="teachersTableBody">
+
+
+                            <tr class="table-empty-row">
+
+
+                                <td colspan="10">
+
+
+                                    <div class="table-empty-state">
+
+
+                                        <i class="fa-solid fa-chalkboard-user"></i>
+
+
+                                        <strong>
+                                            No teachers found
+                                        </strong>
+
+
+                                        <span>
+                                            Teacher records will appear here
+                                            once faculty accounts are registered.
+                                        </span>
+
+
+                                        <button
+                                            type="button"
+                                            class="btn btn-primary"
+                                            id="emptyAddTeacherButton"
+                                        >
+
+                                            <i class="fa-solid fa-user-plus"></i>
+
+                                            Add First Teacher
+
+                                        </button>
+
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+
+                <!-- Pagination -->
+
+                <div class="table-pagination">
+
+
+                    <div class="pagination-info">
+
+                        Showing
+
+                        <strong id="teacherShowingFrom">
+                            0
+                        </strong>
+
+                        -
+
+                        <strong id="teacherShowingTo">
+                            0
+                        </strong>
+
+                        of
+
+                        <strong id="teacherTotalCount">
+                            0
+                        </strong>
+
+                        teachers
+
+                    </div>
+
+
+
+                    <div class="pagination-controls">
+
+
+                        <button
+                            type="button"
+                            class="pagination-button"
+                            id="teacherPreviousPage"
+                            disabled
+                            aria-label="Previous page"
+                        >
+
+                            <i class="fa-solid fa-chevron-left"></i>
+
+                        </button>
+
+
+                        <span
+                            class="pagination-current"
+                            id="teacherCurrentPage"
+                        >
+                            1
+                        </span>
+
+
+                        <button
+                            type="button"
+                            class="pagination-button"
+                            id="teacherNextPage"
+                            disabled
+                            aria-label="Next page"
+                        >
+
+                            <i class="fa-solid fa-chevron-right"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 TEACHER MANAGEMENT INFORMATION
+            ================================================== -->
+
+            <div class="dashboard-two-column">
+
+
+                <!-- Permissions -->
+
+                <section class="dashboard-card">
+
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <p class="card-eyebrow">
+                                ACCESS CONTROL
+                            </p>
+
+
+                            <h2>
+                                Teacher permissions
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="info-list">
+
+
+                        <div class="info-list-item">
+
+
+                            <div class="info-list-icon">
+
+                                <i class="fa-solid fa-clipboard-question"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    Quiz creation
+                                </strong>
+
+
+                                <span>
+                                    Teachers can create and manage
+                                    their assigned assessments.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="info-list-item">
+
+
+                            <div class="info-list-icon">
+
+                                <i class="fa-solid fa-chart-column"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    Results access
+                                </strong>
+
+
+                                <span>
+                                    Review student submissions and
+                                    assessment performance.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="info-list-item">
+
+
+                            <div class="info-list-icon">
+
+                                <i class="fa-solid fa-chart-line"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    Analytics
+                                </strong>
+
+
+                                <span>
+                                    Access quiz and student performance
+                                    analytics.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- Faculty Activity -->
+
+                <section class="dashboard-card">
+
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <p class="card-eyebrow">
+                                FACULTY ACTIVITY
+                            </p>
+
+
+                            <h2>
+                                Teaching activity
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="info-list">
+
+
+                        <div class="info-list-item">
+
+
+                            <div class="info-list-icon">
+
+                                <i class="fa-solid fa-file-circle-plus"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    Quiz activity
+                                </strong>
+
+
+                                <span>
+                                    Track assessments created and
+                                    published by teachers.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="info-list-item">
+
+
+                            <div class="info-list-icon">
+
+                                <i class="fa-solid fa-users"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    Student participation
+                                </strong>
+
+
+                                <span>
+                                    Monitor student participation
+                                    across faculty quizzes.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="info-list-item">
+
+
+                            <div class="info-list-icon">
+
+                                <i class="fa-solid fa-ranking-star"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    Performance
+                                </strong>
+
+
+                                <span>
+                                    Review class performance and
+                                    assessment outcomes.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+
+
+            <!-- FOOTER -->
+
+            <footer class="dashboard-footer">
+
+
+                <div>
+
+                    <strong>
+                        Quiz Portal Administration
+                    </strong>
+
+
+                    <span>
+                        Faculty management and teaching administration.
+                    </span>
+
+                </div>
+
+
+                <div class="footer-meta">
+
+
+                    <span>
+
+                        <i class="fa-solid fa-shield-halved"></i>
+
+                        Admin Access
+
+                    </span>
+
+
+                    <span>
+
+                        <i class="fa-solid fa-circle-check"></i>
+
+                        System Online
+
+                    </span>
+
+                </div>
+
+            </footer>
+
+
+        </section>
+
+    </main>
+
+</div>
+
+
+
+<!-- =========================================================
+     ADD / EDIT TEACHER MODAL
+========================================================== -->
+
+<div
+    class="modal-overlay"
+    id="teacherModal"
+    aria-hidden="true"
+>
+
+
+    <div
+        class="modal large-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="teacherModalTitle"
+    >
+
+
+        <div class="modal-header">
+
+
+            <div>
+
+                <p class="modal-eyebrow">
+                    FACULTY MANAGEMENT
+                </p>
+
+
+                <h2 id="teacherModalTitle">
+                    Add Teacher
+                </h2>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="modal-close-button"
+                id="closeTeacherModal"
+                aria-label="Close modal"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+
+        <form
+            id="teacherForm"
+            class="modal-form"
+            novalidate
+        >
+
+
+            <input
+                type="hidden"
+                id="teacherRecordId"
+                name="teacherRecordId"
+            >
+
+
+
+            <!-- Personal Information -->
+
+            <div class="form-section">
+
+
+                <div class="form-section-heading">
+
+                    <h3>
+                        Personal Information
+                    </h3>
+
+
+                    <span>
+                        Basic faculty details
+                    </span>
+
+                </div>
+
+
+
+                <div class="form-grid">
+
+
+                    <div class="form-group">
+
+                        <label for="teacherFullName">
+                            Full Name
+                        </label>
+
+
+                        <input
+                            type="text"
+                            id="teacherFullName"
+                            name="fullName"
+                            placeholder="Enter full name"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label for="teacherUsername">
+                            Username
+                        </label>
+
+
+                        <input
+                            type="text"
+                            id="teacherUsername"
+                            name="username"
+                            placeholder="Enter username"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label for="teacherEmail">
+                            Email Address
+                        </label>
+
+
+                        <input
+                            type="email"
+                            id="teacherEmail"
+                            name="email"
+                            placeholder="teacher@example.com"
+                        >
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label for="teacherFacultyId">
+                            Faculty ID
+                        </label>
+
+
+                        <input
+                            type="text"
+                            id="teacherFacultyId"
+                            name="facultyId"
+                            placeholder="Enter faculty ID"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Academic Information -->
+
+            <div class="form-section">
+
+
+                <div class="form-section-heading">
+
+                    <h3>
+                        Academic Information
+                    </h3>
+
+
+                    <span>
+                        Faculty department and role
+                    </span>
+
+                </div>
+
+
+
+                <div class="form-grid">
+
+
+                    <div class="form-group">
+
+                        <label for="teacherDepartment">
+                            Department
+                        </label>
+
+
+                        <select
+                            id="teacherDepartment"
+                            name="department"
+                            required
+                        >
+
+                            <option value="">
+                                Select Department
+                            </option>
+
+
+                            <option value="cse">
+                                Computer Science & Engineering
+                            </option>
+
+
+                            <option value="cseai">
+                                CSE - Artificial Intelligence
+                            </option>
+
+
+                            <option value="ece">
+                                Electronics & Communication
+                            </option>
+
+
+                            <option value="eee">
+                                Electrical & Electronics
+                            </option>
+
+
+                            <option value="civil">
+                                Civil Engineering
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label for="teacherRole">
+                            Role
+                        </label>
+
+
+                        <select
+                            id="teacherRole"
+                            name="role"
+                            required
+                        >
+
+                            <option value="teacher">
+                                Teacher
+                            </option>
+
+
+                            <option value="hod">
+                                Head of Department
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label for="teacherDesignation">
+                            Designation
+                        </label>
+
+
+                        <input
+                            type="text"
+                            id="teacherDesignation"
+                            name="designation"
+                            placeholder="e.g. Assistant Professor"
+                        >
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label for="teacherStatus">
+                            Account Status
+                        </label>
+
+
+                        <select
+                            id="teacherStatus"
+                            name="status"
+                        >
+
+                            <option value="active">
+                                Active
+                            </option>
+
+
+                            <option value="inactive">
+                                Inactive
+                            </option>
+
+
+                            <option value="blocked">
+                                Blocked
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Subject Assignment -->
+
+            <div class="form-section">
+
+
+                <div class="form-section-heading">
+
+                    <h3>
+                        Teaching Assignment
+                    </h3>
+
+
+                    <span>
+                        Subjects assigned to this teacher
+                    </span>
+
+                </div>
+
+
+
+                <div class="form-group">
+
+
+                    <label for="teacherSubjects">
+                        Assigned Subjects
+                    </label>
+
+
+                    <select
+                        id="teacherSubjects"
+                        name="subjects"
+                        multiple
+                    >
+
+                        <option value="mathematics">
+                            Mathematics
+                        </option>
+
+
+                        <option value="programming">
+                            Programming
+                        </option>
+
+
+                        <option value="ai">
+                            Artificial Intelligence
+                        </option>
+
+
+                        <option value="datastructures">
+                            Data Structures
+                        </option>
+
+
+                        <option value="database">
+                            Database Management Systems
+                        </option>
+
+
+                        <option value="communication">
+                            Communication Systems
+                        </option>
+
+                    </select>
+
+
+                    <small class="form-help">
+                        Multiple subjects can be assigned to a teacher.
+                    </small>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Account Security -->
+
+            <div class="form-section">
+
+
+                <div class="form-section-heading">
+
+                    <h3>
+                        Account Security
+                    </h3>
+
+
+                    <span>
+                        Login credentials
+                    </span>
+
+                </div>
+
+
+
+                <div class="form-grid">
+
+
+                    <div class="form-group">
+
+                        <label for="teacherPassword">
+                            Password
+                        </label>
+
+
+                        <input
+                            type="password"
+                            id="teacherPassword"
+                            name="password"
+                            placeholder="Create password"
+                            autocomplete="new-password"
+                        >
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label for="teacherConfirmPassword">
+                            Confirm Password
+                        </label>
+
+
+                        <input
+                            type="password"
+                            id="teacherConfirmPassword"
+                            name="confirmPassword"
+                            placeholder="Confirm password"
+                            autocomplete="new-password"
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Actions -->
+
+            <div class="modal-actions">
+
+
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    id="cancelTeacherModal"
+                >
+
+                    Cancel
+
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="btn btn-primary"
+                    id="saveTeacherButton"
+                >
+
+                    <i class="fa-solid fa-user-plus"></i>
+
+                    Save Teacher
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     IMPORT TEACHERS MODAL
+========================================================== -->
+
+<div
+    class="modal-overlay"
+    id="importTeachersModal"
+    aria-hidden="true"
+>
+
+
+    <div
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="importTeachersTitle"
+    >
+
+
+        <div class="modal-header">
+
+
+            <div>
+
+                <p class="modal-eyebrow">
+                    BULK IMPORT
+                </p>
+
+
+                <h2 id="importTeachersTitle">
+                    Import Teachers
+                </h2>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="modal-close-button"
+                id="closeImportTeachersModal"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+
+        <div class="import-content">
+
+
+            <div class="import-info">
+
+
+                <div class="import-icon">
+
+                    <i class="fa-solid fa-file-csv"></i>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Import faculty records
+                    </strong>
+
+
+                    <p>
+                        Upload a CSV file containing teacher
+                        and faculty information.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div
+                class="upload-area"
+                id="teacherUploadArea"
+            >
+
+
+                <i class="fa-solid fa-cloud-arrow-up"></i>
+
+
+                <strong>
+                    Choose a file
+                </strong>
+
+
+                <span>
+                    CSV files supported
+                </span>
+
+
+                <input
+                    type="file"
+                    id="teacherImportFile"
+                    accept=".csv"
+                >
+
+            </div>
+
+
+
+            <div class="import-template">
+
+
+                <i class="fa-solid fa-circle-info"></i>
+
+
+                <span>
+                    Use the official teacher import template
+                    to avoid formatting errors.
+                </span>
+
+
+                <button
+                    type="button"
+                    class="btn btn-text"
+                    id="downloadTeacherTemplate"
+                >
+
+                    Download Template
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="modal-actions">
+
+
+            <button
+                type="button"
+                class="btn btn-secondary"
+                id="cancelImportTeachers"
+            >
+
+                Cancel
+
+            </button>
+
+
+            <button
+                type="button"
+                class="btn btn-primary"
+                id="processTeacherImport"
+            >
+
+                <i class="fa-solid fa-upload"></i>
+
+                Import Teachers
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     DELETE TEACHER MODAL
+========================================================== -->
+
+<div
+    class="modal-overlay"
+    id="deleteTeacherModal"
+    aria-hidden="true"
+>
+
+
+    <div
+        class="modal confirmation-modal"
+        role="dialog"
+        aria-modal="true"
+    >
+
+
+        <div class="modal-icon danger">
+
+            <i class="fa-solid fa-trash"></i>
+
+        </div>
+
+
+        <div class="modal-content">
+
+
+            <h2>
+                Delete Teacher?
+            </h2>
+
+
+            <p>
+                This action will permanently remove the selected
+                teacher account and associated information.
+            </p>
+
+
+            <div class="warning-message">
+
+                <i class="fa-solid fa-triangle-exclamation"></i>
+
+
+                <span>
+                    This action cannot be undone.
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="modal-actions">
+
+
+            <button
+                type="button"
+                class="btn btn-secondary"
+                id="cancelDeleteTeacher"
+            >
+
+                Cancel
+
+            </button>
+
+
+            <button
+                type="button"
+                class="btn btn-danger"
+                id="confirmDeleteTeacher"
+            >
+
+                <i class="fa-solid fa-trash"></i>
+
+                Delete Teacher
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     NOTIFICATION PANEL
+========================================================== -->
+
+<aside
+    class="notification-panel"
+    id="notificationPanel"
+    aria-hidden="true"
+>
+
+
+    <div class="notification-panel-header">
+
+
+        <div>
+
+            <span class="panel-eyebrow">
+                ADMIN CENTER
+            </span>
+
+
+            <h2>
+                Notifications
+            </h2>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="panel-close-button"
+            id="notificationPanelClose"
+            aria-label="Close notifications"
+        >
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+    </div>
+
+
+
+    <div
+        class="notification-list"
+        id="notificationList"
+    >
+
+
+        <div class="notification-item unread">
+
+
+            <div class="notification-icon">
+
+                <i class="fa-solid fa-chalkboard-user"></i>
+
+            </div>
+
+
+            <div class="notification-content">
+
+
+                <strong>
+                    Faculty management
+                </strong>
+
+
+                <span>
+                    Review recently registered teachers.
+                </span>
+
+
+                <small>
+                    Recently
+                </small>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="notification-item">
+
+
+            <div class="notification-icon">
+
+                <i class="fa-solid fa-clipboard-question"></i>
+
+            </div>
+
+
+            <div class="notification-content">
+
+
+                <strong>
+                    Quiz activity
+                </strong>
+
+
+                <span>
+                    New teacher quiz activity is available.
+                </span>
+
+
+                <small>
+                    Recently
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="notification-panel-footer">
+
+
+        <button
+            type="button"
+            class="btn btn-secondary"
+            id="markNotificationsRead"
+        >
+
+            Mark all as read
+
+        </button>
+
+    </div>
+
+</aside>
+
+
+
+<!-- =========================================================
+     PROFILE MENU
+========================================================== -->
+
+<div
+    class="profile-menu"
+    id="adminProfileMenu"
+    hidden
+>
+
+
+    <div class="profile-menu-header">
+
+
+        <div class="profile-menu-avatar">
+            A
+        </div>
+
+
+        <div>
+
+            <strong>
+                Administrator
+            </strong>
+
+
+            <span>
+                Administrator Account
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="profile-menu-divider"></div>
+
+
+
+    <a
+        href="profile.html"
+        class="profile-menu-item"
+    >
+
+        <i class="fa-solid fa-user"></i>
+
+        <span>
+            My Profile
+        </span>
+
+    </a>
+
+
+
+    <a
+        href="settings.html"
+        class="profile-menu-item"
+    >
+
+        <i class="fa-solid fa-gear"></i>
+
+        <span>
+            Settings
+        </span>
+
+    </a>
+
+
+
+    <div class="profile-menu-divider"></div>
+
+
+
+    <button
+        type="button"
+        class="profile-menu-item danger"
+        id="profileMenuLogout"
+    >
+
+        <i class="fa-solid fa-right-from-bracket"></i>
+
+        <span>
+            Logout
+        </span>
+
+    </button>
+
+</div>
+
+
+
+<!-- =========================================================
+     LOGOUT MODAL
+========================================================== -->
+
+<div
+    class="modal-overlay"
+    id="logoutModal"
+    aria-hidden="true"
+>
+
+
+    <div
+        class="modal logout-modal"
+        role="dialog"
+        aria-modal="true"
+    >
+
+
+        <div class="modal-icon warning">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+        </div>
+
+
+        <div class="modal-content">
+
+
+            <h2>
+                Sign out?
+            </h2>
+
+
+            <p>
+                Are you sure you want to sign out of the
+                administrator account?
+            </p>
+
+        </div>
+
+
+
+        <div class="modal-actions">
+
+
+            <button
+                type="button"
+                class="btn btn-secondary"
+                id="cancelLogout"
+            >
+
+                Cancel
+
+            </button>
+
+
+            <button
+                type="button"
+                class="btn btn-danger"
+                id="confirmLogout"
+            >
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                Sign Out
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     TOAST
+========================================================== -->
+
+<div
+    class="toast-container"
+    id="toastContainer"
+    aria-live="polite"
+    aria-atomic="true"
+>
+
+
+    <div
+        class="toast"
+        id="adminToast"
+        hidden
+    >
+
+
+        <div class="toast-icon">
+
+            <i class="fa-solid fa-circle-check"></i>
+
+        </div>
+
+
+        <div class="toast-content">
+
+
+            <strong id="toastTitle">
+                Success
+            </strong>
+
+
+            <span id="toastMessage">
+                Action completed successfully.
+            </span>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="toast-close"
+            id="toastClose"
+        >
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+     Functionality will be implemented later.
+========================================================== -->
+
+<script src="../js/app.js"></script>
+
+
+</body>
+
+</html>
