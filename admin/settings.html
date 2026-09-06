@@ -1,0 +1,2498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Settings | Quiz Portal</title>
+
+    <meta name="description"
+          content="Manage Quiz Portal administration, academic, quiz, security and notification settings.">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+<div class="app-layout">
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="sidebar" id="adminSidebar">
+
+        <div class="sidebar-header">
+
+            <a href="dashboard.html" class="brand">
+
+                <div class="brand-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+
+                <div class="brand-text">
+
+                    <span class="brand-title">
+                        Quiz Portal
+                    </span>
+
+                    <span class="brand-subtitle">
+                        Administration
+                    </span>
+
+                </div>
+
+            </a>
+
+            <button class="sidebar-close"
+                    id="sidebarClose"
+                    type="button"
+                    aria-label="Close navigation">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <nav class="sidebar-navigation"
+             aria-label="Admin navigation">
+
+            <!-- MAIN -->
+
+            <div class="nav-section">
+
+                <p class="nav-section-title">
+                    Main
+                </p>
+
+                <a href="dashboard.html"
+                   class="nav-link">
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-chart-pie"></i>
+                    </span>
+
+                    <span>Dashboard</span>
+
+                </a>
+
+            </div>
+
+
+            <!-- MANAGEMENT -->
+
+            <div class="nav-section">
+
+                <p class="nav-section-title">
+                    Management
+                </p>
+
+                <a href="students.html"
+                   class="nav-link">
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-user-graduate"></i>
+                    </span>
+
+                    <span>Students</span>
+
+                </a>
+
+
+                <a href="teachers.html"
+                   class="nav-link">
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-chalkboard-user"></i>
+                    </span>
+
+                    <span>Teachers</span>
+
+                </a>
+
+
+                <a href="departments.html"
+                   class="nav-link">
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-building-columns"></i>
+                    </span>
+
+                    <span>Departments</span>
+
+                </a>
+
+
+                <a href="subjects.html"
+                   class="nav-link">
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-book-open"></i>
+                    </span>
+
+                    <span>Subjects</span>
+
+                </a>
+
+
+                <a href="quizzes.html"
+                   class="nav-link">
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-circle-question"></i>
+                    </span>
+
+                    <span>Quizzes</span>
+
+                </a>
+
+            </div>
+
+
+            <!-- PERFORMANCE -->
+
+            <div class="nav-section">
+
+                <p class="nav-section-title">
+                    Performance
+                </p>
+
+                <a href="results.html"
+                   class="nav-link">
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-square-poll-vertical"></i>
+                    </span>
+
+                    <span>Results</span>
+
+                </a>
+
+
+                <a href="leaderboard.html"
+                   class="nav-link">
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-ranking-star"></i>
+                    </span>
+
+                    <span>Leaderboard</span>
+
+                </a>
+
+
+                <a href="reports.html"
+                   class="nav-link">
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-file-lines"></i>
+                    </span>
+
+                    <span>Reports</span>
+
+                </a>
+
+            </div>
+
+
+            <!-- SYSTEM -->
+
+            <div class="nav-section">
+
+                <p class="nav-section-title">
+                    System
+                </p>
+
+
+                <a href="settings.html"
+                   class="nav-link active"
+                   aria-current="page">
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-gear"></i>
+                    </span>
+
+                    <span>Settings</span>
+
+                </a>
+
+
+                <a href="profile.html"
+                   class="nav-link">
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-user-circle"></i>
+                    </span>
+
+                    <span>My Profile</span>
+
+                </a>
+
+
+                <a href="help.html"
+                   class="nav-link">
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-circle-question"></i>
+                    </span>
+
+                    <span>Help &amp; Support</span>
+
+                </a>
+
+            </div>
+
+        </nav>
+
+
+        <div class="sidebar-footer">
+
+            <button class="sidebar-logout"
+                    id="sidebarLogout"
+                    type="button">
+
+                <span class="nav-icon">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                </span>
+
+                <span>Logout</span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <div class="topbar-left">
+
+                <button class="mobile-menu-button"
+                        id="mobileMenuButton"
+                        type="button"
+                        aria-label="Open navigation">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+
+                <div class="breadcrumb">
+
+                    <a href="dashboard.html">
+                        Dashboard
+                    </a>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                    <span>
+                        Settings
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+                <!-- Notifications -->
+
+                <button class="topbar-icon-button"
+                        id="notificationButton"
+                        type="button"
+                        aria-label="Notifications">
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span class="notification-badge"
+                          id="notificationCount">
+                        0
+                    </span>
+
+                </button>
+
+
+                <!-- Profile -->
+
+                <div class="topbar-profile-wrapper">
+
+                    <button class="topbar-profile"
+                            id="topbarProfile"
+                            type="button">
+
+                        <div class="profile-avatar">
+                            <i class="fa-solid fa-user-shield"></i>
+                        </div>
+
+                        <div class="profile-info">
+
+                            <span class="profile-name">
+                                Administrator
+                            </span>
+
+                            <span class="profile-role">
+                                Admin
+                            </span>
+
+                        </div>
+
+                        <i class="fa-solid fa-chevron-down profile-arrow"></i>
+
+                    </button>
+
+
+                    <div class="profile-menu"
+                         id="adminProfileMenu">
+
+                        <a href="profile.html">
+
+                            <i class="fa-solid fa-user"></i>
+
+                            My Profile
+
+                        </a>
+
+
+                        <a href="settings.html">
+
+                            <i class="fa-solid fa-gear"></i>
+
+                            Settings
+
+                        </a>
+
+
+                        <button type="button"
+                                id="profileMenuLogout">
+
+                            <i class="fa-solid fa-right-from-bracket"></i>
+
+                            Logout
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             PAGE CONTENT
+        ================================================== -->
+
+        <section class="page-content">
+
+            <!-- PAGE HEADER -->
+
+            <div class="page-header">
+
+                <div class="page-header-content">
+
+                    <div class="page-header-icon">
+
+                        <i class="fa-solid fa-gear"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h1>
+                            Settings
+                        </h1>
+
+                        <p>
+                            Configure your Quiz Portal platform settings.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="page-header-actions">
+
+                    <button class="button button-secondary"
+                            id="resetSettingsButton"
+                            type="button">
+
+                        <i class="fa-solid fa-rotate-left"></i>
+
+                        Reset Changes
+
+                    </button>
+
+
+                    <button class="button button-primary"
+                            id="saveAllSettingsButton"
+                            type="button">
+
+                        <i class="fa-solid fa-floppy-disk"></i>
+
+                        Save Changes
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 SETTINGS NAVIGATION
+            ================================================== -->
+
+            <section class="settings-layout">
+
+                <aside class="settings-navigation"
+                       aria-label="Settings sections">
+
+                    <button class="settings-nav-link active"
+                            id="settingsNavGeneral"
+                            type="button"
+                            data-settings-section="general">
+
+                        <i class="fa-solid fa-sliders"></i>
+
+                        <span>
+                            General
+                        </span>
+
+                    </button>
+
+
+                    <button class="settings-nav-link"
+                            id="settingsNavAcademic"
+                            type="button"
+                            data-settings-section="academic">
+
+                        <i class="fa-solid fa-graduation-cap"></i>
+
+                        <span>
+                            Academic
+                        </span>
+
+                    </button>
+
+
+                    <button class="settings-nav-link"
+                            id="settingsNavQuiz"
+                            type="button"
+                            data-settings-section="quiz">
+
+                        <i class="fa-solid fa-circle-question"></i>
+
+                        <span>
+                            Quiz
+                        </span>
+
+                    </button>
+
+
+                    <button class="settings-nav-link"
+                            id="settingsNavResults"
+                            type="button"
+                            data-settings-section="results">
+
+                        <i class="fa-solid fa-square-poll-vertical"></i>
+
+                        <span>
+                            Results
+                        </span>
+
+                    </button>
+
+
+                    <button class="settings-nav-link"
+                            id="settingsNavLeaderboard"
+                            type="button"
+                            data-settings-section="leaderboard">
+
+                        <i class="fa-solid fa-ranking-star"></i>
+
+                        <span>
+                            Leaderboard
+                        </span>
+
+                    </button>
+
+
+                    <button class="settings-nav-link"
+                            id="settingsNavNotifications"
+                            type="button"
+                            data-settings-section="notifications">
+
+                        <i class="fa-regular fa-bell"></i>
+
+                        <span>
+                            Notifications
+                        </span>
+
+                    </button>
+
+
+                    <button class="settings-nav-link"
+                            id="settingsNavSecurity"
+                            type="button"
+                            data-settings-section="security">
+
+                        <i class="fa-solid fa-shield-halved"></i>
+
+                        <span>
+                            Security
+                        </span>
+
+                    </button>
+
+
+                    <button class="settings-nav-link"
+                            id="settingsNavData"
+                            type="button"
+                            data-settings-section="data">
+
+                        <i class="fa-solid fa-database"></i>
+
+                        <span>
+                            Data &amp; Backup
+                        </span>
+
+                    </button>
+
+                </aside>
+
+
+                <div class="settings-content">
+
+                    <!-- =================================================
+                         GENERAL SETTINGS
+                    ================================================== -->
+
+                    <section class="settings-section active"
+                             id="settingsSectionGeneral">
+
+                        <div class="content-card">
+
+                            <div class="content-card-header">
+
+                                <div>
+
+                                    <h2>
+                                        <i class="fa-solid fa-sliders"></i>
+                                        General Settings
+                                    </h2>
+
+                                    <p>
+                                        Configure basic platform information.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-grid">
+
+                                <div class="form-group">
+
+                                    <label for="platformName">
+                                        Platform Name
+                                    </label>
+
+                                    <input type="text"
+                                           id="platformName"
+                                           name="platformName"
+                                           value="Quiz Portal"
+                                           placeholder="Enter platform name">
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="platformShortName">
+                                        Short Name
+                                    </label>
+
+                                    <input type="text"
+                                           id="platformShortName"
+                                           name="platformShortName"
+                                           value="QP"
+                                           placeholder="Short name">
+
+                                </div>
+
+
+                                <div class="form-group form-group-full">
+
+                                    <label for="platformDescription">
+                                        Platform Description
+                                    </label>
+
+                                    <textarea id="platformDescription"
+                                              name="platformDescription"
+                                              rows="4"
+                                              placeholder="Enter platform description">Online Quiz and Assessment Portal</textarea>
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="academicYear">
+                                        Current Academic Year
+                                    </label>
+
+                                    <input type="text"
+                                           id="academicYear"
+                                           name="academicYear"
+                                           placeholder="2026-2027"
+                                           value="2026-2027">
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="defaultLanguage">
+                                        Default Language
+                                    </label>
+
+                                    <select id="defaultLanguage"
+                                            name="defaultLanguage">
+
+                                        <option value="en">
+                                            English
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="timezone">
+                                        Time Zone
+                                    </label>
+
+                                    <select id="timezone"
+                                            name="timezone">
+
+                                        <option value="Asia/Kolkata">
+                                            India Standard Time (IST)
+                                        </option>
+
+                                        <option value="UTC">
+                                            Coordinated Universal Time (UTC)
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- MAINTENANCE -->
+
+                        <div class="content-card">
+
+                            <div class="content-card-header">
+
+                                <div>
+
+                                    <h2>
+                                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                                        Platform Availability
+                                    </h2>
+
+                                    <p>
+                                        Control general platform availability.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="settings-option-list">
+
+                                <div class="settings-option">
+
+                                    <div class="settings-option-content">
+
+                                        <strong>
+                                            Enable Quiz Portal
+                                        </strong>
+
+                                        <span>
+                                            Allow users to access the platform.
+                                        </span>
+
+                                    </div>
+
+                                    <label class="toggle-switch">
+
+                                        <input type="checkbox"
+                                               id="platformEnabled"
+                                               checked>
+
+                                        <span class="toggle-slider"></span>
+
+                                    </label>
+
+                                </div>
+
+
+                                <div class="settings-option">
+
+                                    <div class="settings-option-content">
+
+                                        <strong>
+                                            Maintenance Mode
+                                        </strong>
+
+                                        <span>
+                                            Temporarily restrict normal user access.
+                                        </span>
+
+                                    </div>
+
+                                    <label class="toggle-switch">
+
+                                        <input type="checkbox"
+                                               id="maintenanceMode">
+
+                                        <span class="toggle-slider"></span>
+
+                                    </label>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- =================================================
+                         ACADEMIC SETTINGS
+                    ================================================== -->
+
+                    <section class="settings-section"
+                             id="settingsSectionAcademic"
+                             hidden>
+
+                        <div class="content-card">
+
+                            <div class="content-card-header">
+
+                                <div>
+
+                                    <h2>
+                                        <i class="fa-solid fa-graduation-cap"></i>
+                                        Academic Settings
+                                    </h2>
+
+                                    <p>
+                                        Configure academic structure and defaults.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-grid">
+
+                                <div class="form-group">
+
+                                    <label for="academicSemester">
+                                        Current Semester
+                                    </label>
+
+                                    <select id="academicSemester">
+
+                                        <option value="1">
+                                            Semester 1
+                                        </option>
+
+                                        <option value="2"
+                                                selected>
+                                            Semester 2
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="academicTerm">
+                                        Academic Term
+                                    </label>
+
+                                    <select id="academicTerm">
+
+                                        <option value="odd">
+                                            Odd Semester
+                                        </option>
+
+                                        <option value="even"
+                                                selected>
+                                            Even Semester
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="defaultYear">
+                                        Default Student Year
+                                    </label>
+
+                                    <select id="defaultYear">
+
+                                        <option value="1">
+                                            1st Year
+                                        </option>
+
+                                        <option value="2">
+                                            2nd Year
+                                        </option>
+
+                                        <option value="3">
+                                            3rd Year
+                                        </option>
+
+                                        <option value="4">
+                                            4th Year
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="defaultSection">
+                                        Default Section
+                                    </label>
+
+                                    <select id="defaultSection">
+
+                                        <option value="">
+                                            None
+                                        </option>
+
+                                        <option value="A">
+                                            Section A
+                                        </option>
+
+                                        <option value="B">
+                                            Section B
+                                        </option>
+
+                                        <option value="C">
+                                            Section C
+                                        </option>
+
+                                        <option value="D">
+                                            Section D
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="content-card">
+
+                            <div class="content-card-header">
+
+                                <div>
+
+                                    <h2>
+                                        <i class="fa-solid fa-building-columns"></i>
+                                        Academic Structure
+                                    </h2>
+
+                                    <p>
+                                        Define the academic units available on the platform.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="settings-option-list">
+
+                                <div class="settings-option">
+
+                                    <div class="settings-option-content">
+
+                                        <strong>
+                                            Enable Department Filtering
+                                        </strong>
+
+                                        <span>
+                                            Allow quizzes and reports to be filtered by department.
+                                        </span>
+
+                                    </div>
+
+                                    <label class="toggle-switch">
+
+                                        <input type="checkbox"
+                                               id="enableDepartmentFiltering"
+                                               checked>
+
+                                        <span class="toggle-slider"></span>
+
+                                    </label>
+
+                                </div>
+
+
+                                <div class="settings-option">
+
+                                    <div class="settings-option-content">
+
+                                        <strong>
+                                            Enable Semester Filtering
+                                        </strong>
+
+                                        <span>
+                                            Use semester information throughout quiz management.
+                                        </span>
+
+                                    </div>
+
+                                    <label class="toggle-switch">
+
+                                        <input type="checkbox"
+                                               id="enableSemesterFiltering"
+                                               checked>
+
+                                        <span class="toggle-slider"></span>
+
+                                    </label>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- =================================================
+                         QUIZ SETTINGS
+                    ================================================== -->
+
+                    <section class="settings-section"
+                             id="settingsSectionQuiz"
+                             hidden>
+
+                        <div class="content-card">
+
+                            <div class="content-card-header">
+
+                                <div>
+
+                                    <h2>
+                                        <i class="fa-solid fa-circle-question"></i>
+                                        Quiz Configuration
+                                    </h2>
+
+                                    <p>
+                                        Set default rules for quizzes.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-grid">
+
+                                <div class="form-group">
+
+                                    <label for="defaultQuizDuration">
+                                        Default Duration (Minutes)
+                                    </label>
+
+                                    <input type="number"
+                                           id="defaultQuizDuration"
+                                           min="1"
+                                           value="30">
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="defaultQuizMarks">
+                                        Default Maximum Marks
+                                    </label>
+
+                                    <input type="number"
+                                           id="defaultQuizMarks"
+                                           min="1"
+                                           value="100">
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="defaultQuestionMarks">
+                                        Default Question Marks
+                                    </label>
+
+                                    <input type="number"
+                                           id="defaultQuestionMarks"
+                                           min="1"
+                                           value="1">
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="defaultAttempts">
+                                        Default Maximum Attempts
+                                    </label>
+
+                                    <input type="number"
+                                           id="defaultAttempts"
+                                           min="1"
+                                           value="1">
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="content-card">
+
+                            <div class="content-card-header">
+
+                                <div>
+
+                                    <h2>
+                                        <i class="fa-solid fa-sliders"></i>
+                                        Quiz Behavior
+                                    </h2>
+
+                                    <p>
+                                        Control how quizzes behave during an attempt.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="settings-option-list">
+
+                                <div class="settings-option">
+
+                                    <div class="settings-option-content">
+
+                                        <strong>
+                                            Enable Quiz Timer
+                                        </strong>
+
+                                        <span>
+                                            Automatically enforce the configured quiz duration.
+                                        </span>
+
+                                    </div>
+
+                                    <label class="toggle-switch">
+
+                                        <input type="checkbox"
+                                               id="enableQuizTimer"
+                                               checked>
+
+                                        <span class="toggle-slider"></span>
+
+                                    </label>
+
+                                </div>
+
+
+                                <div class="settings-option">
+
+                                    <div class="settings-option-content">
+
+                                        <strong>
+                                            Auto Submit When Time Ends
+                                        </strong>
+
+                                        <span>
+                                            Automatically submit an active attempt when time expires.
+                                        </span>
+
+                                    </div>
+
+                                    <label class="toggle-switch">
+
+                                        <input type="checkbox"
+                                               id="autoSubmitQuiz"
+                                               checked>
+
+                                        <span class="toggle-slider"></span>
+
+                                    </label>
+
+                                </div>
+
+
+                                <div class="settings-option">
+
+                                    <div class="settings-option-content">
+
+                                        <strong>
+                                            Randomize Questions
+                                        </strong>
+
+                                        <span>
+                                            Randomize question order for eligible quizzes.
+                                        </span>
+
+                                    </div>
+
+                                    <label class="toggle-switch">
+
+                                        <input type="checkbox"
+                                               id="randomizeQuestions"
+                                               checked>
+
+                                        <span class="toggle-slider"></span>
+
+                                    </label>
+
+                                </div>
+
+
+                                <div class="settings-option">
+
+                                    <div class="settings-option-content">
+
+                                        <strong>
+                                            Randomize Answer Options
+                                        </strong>
+
+                                        <span>
+                                            Shuffle multiple-choice answer options.
+                                        </span>
+
+                                    </div>
+
+                                    <label class="toggle-switch">
+
+                                        <input type="checkbox"
+                                               id="randomizeOptions"
+                                               checked>
+
+                                        <span class="toggle-slider"></span>
+
+                                    </label>
+
+                                </div>
+
+
+                                <div class="settings-option">
+
+                                    <div class="settings-option-content">
+
+                                        <strong>
+                                            Allow Negative Marking
+                                        </strong>
+
+                                        <span>
+                                            Allow teachers to configure negative marks.
+                                        </span>
+
+                                    </div>
+
+                                    <label class="toggle-switch">
+
+                                        <input type="checkbox"
+                                               id="allowNegativeMarking">
+
+                                        <span class="toggle-slider"></span>
+
+                                    </label>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- =================================================
+                         RESULT SETTINGS
+                    ================================================== -->
+
+                    <section class="settings-section"
+                             id="settingsSectionResults"
+                             hidden>
+
+                        <div class="content-card">
+
+                            <div class="content-card-header">
+
+                                <div>
+
+                                    <h2>
+                                        <i class="fa-solid fa-square-poll-vertical"></i>
+                                        Result Settings
+                                    </h2>
+
+                                    <p>
+                                        Control result calculation and visibility.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-grid">
+
+                                <div class="form-group">
+
+                                    <label for="passingPercentage">
+                                        Passing Percentage
+                                    </label>
+
+                                    <input type="number"
+                                           id="passingPercentage"
+                                           min="0"
+                                           max="100"
+                                           value="40">
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="resultDecimalPlaces">
+                                        Decimal Places
+                                    </label>
+
+                                    <select id="resultDecimalPlaces">
+
+                                        <option value="0">
+                                            0
+                                        </option>
+
+                                        <option value="1">
+                                            1
+                                        </option>
+
+                                        <option value="2"
+                                                selected>
+                                            2
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="content-card">
+
+                            <div class="content-card-header">
+
+                                <div>
+
+                                    <h2>
+                                        <i class="fa-solid fa-eye"></i>
+                                        Result Visibility
+                                    </h2>
+
+                                    <p>
+                                        Decide what students can see after submission.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="settings-option-list">
+
+                                <div class="settings-option">
+
+                                    <div class="settings-option-content">
+
+                                        <strong>
+                                            Show Score Immediately
+                                        </strong>
+
+                                        <span>
+                                            Display the score immediately after submission.
+                                        </span>
+
+                                    </div>
+
+                                    <label class="toggle-switch">
+
+                                        <input type="checkbox"
+                                               id="showScoreImmediately"
+                                               checked>
+
+                                        <span class="toggle-slider"></span>
+
+                                    </label>
+
+                                </div>
+
+
+                                <div class="settings-option">
+
+                                    <div class="settings-option-content">
+
+                                        <strong>
+                                            Show Correct Answers
+                                        </strong>
+
+                                        <span>
+                                            Allow students to view correct answers after submission.
+                                        </span>
+
+                                    </div>
+
+                                    <label class="toggle-switch">
+
+                                        <input type="checkbox"
+                                               id="showCorrectAnswers"
+                                               checked>
+
+                                        <span class="toggle-slider"></span>
+
+                                    </label>
+
+                                </div>
+
+
+                                <div class="settings-option">
+
+                                    <div class="settings-option-content">
+
+                                        <strong>
+                                            Show Question Review
+                                        </strong>
+
+                                        <span>
+                                            Allow students to review their submitted answers.
+                                        </span>
+
+                                    </div>
+
+                                    <label class="toggle-switch">
+
+                                        <input type="checkbox"
+                                               id="showQuestionReview"
+                                               checked>
+
+                                        <span class="toggle-slider"></span>
+
+                                    </label>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- =================================================
+                         LEADERBOARD SETTINGS
+                    ================================================== -->
+
+                    <section class="settings-section"
+                             id="settingsSectionLeaderboard"
+                             hidden>
+
+                        <div class="content-card">
+
+                            <div class="content-card-header">
+
+                                <div>
+
+                                    <h2>
+                                        <i class="fa-solid fa-ranking-star"></i>
+                                        Leaderboard Settings
+                                    </h2>
+
+                                    <p>
+                                        Configure rankings and leaderboard visibility.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="settings-option-list">
+
+                                <div class="settings-option">
+
+                                    <div class="settings-option-content">
+
+                                        <strong>
+                                            Enable Leaderboard
+                                        </strong>
+
+                                        <span>
+                                            Allow leaderboard rankings to be displayed.
+                                        </span>
+
+                                    </div>
+
+                                    <label class="toggle-switch">
+
+                                        <input type="checkbox"
+                                               id="enableLeaderboard"
+                                               checked>
+
+                                        <span class="toggle-slider"></span>
+
+                                    </label>
+
+                                </div>
+
+
+                                <div class="settings-option">
+
+                                    <div class="settings-option-content">
+
+                                        <strong>
+                                            Show Student Names
+                                        </strong>
+
+                                        <span>
+                                            Display student names on public rankings.
+                                        </span>
+
+                                    </div>
+
+                                    <label class="toggle-switch">
+
+                                        <input type="checkbox"
+                                               id="showLeaderboardNames"
+                                               checked>
+
+                                        <span class="toggle-slider"></span>
+
+                                    </label>
+
+                                </div>
+
+
+                                <div class="settings-option">
+
+                                    <div class="settings-option-content">
+
+                                        <strong>
+                                            Show Student IDs
+                                        </strong>
+
+                                        <span>
+                                            Display student IDs in leaderboard records.
+                                        </span>
+
+                                    </div>
+
+                                    <label class="toggle-switch">
+
+                                        <input type="checkbox"
+                                               id="showLeaderboardIds">
+
+                                        <span class="toggle-slider"></span>
+
+                                    </label>
+
+                                </div>
+
+
+                                <div class="settings-option">
+
+                                    <div class="settings-option-content">
+
+                                        <strong>
+                                            Rank By Average Percentage
+                                        </strong>
+
+                                        <span>
+                                            Use average percentage as the primary ranking metric.
+                                        </span>
+
+                                    </div>
+
+                                    <label class="toggle-switch">
+
+                                        <input type="checkbox"
+                                               id="rankByAverage"
+                                               checked>
+
+                                        <span class="toggle-slider"></span>
+
+                                    </label>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- =================================================
+                         NOTIFICATION SETTINGS
+                    ================================================== -->
+
+                    <section class="settings-section"
+                             id="settingsSectionNotifications"
+                             hidden>
+
+                        <div class="content-card">
+
+                            <div class="content-card-header">
+
+                                <div>
+
+                                    <h2>
+                                        <i class="fa-regular fa-bell"></i>
+                                        Notification Settings
+                                    </h2>
+
+                                    <p>
+                                        Control platform notifications and alerts.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="settings-option-list">
+
+                                <div class="settings-option">
+
+                                    <div class="settings-option-content">
+
+                                        <strong>
+                                            Quiz Published Notifications
+                                        </strong>
+
+                                        <span>
+                                            Notify students when a new quiz is published.
+                                        </span>
+
+                                    </div>
+
+                                    <label class="toggle-switch">
+
+                                        <input type="checkbox"
+                                               id="notifyQuizPublished"
+                                               checked>
+
+                                        <span class="toggle-slider"></span>
+
+                                    </label>
+
+                                </div>
+
+
+                                <div class="settings-option">
+
+                                    <div class="settings-option-content">
+
+                                        <strong>
+                                            Quiz Reminder Notifications
+                                        </strong>
+
+                                        <span>
+                                            Notify students about upcoming quizzes.
+                                        </span>
+
+                                    </div>
+
+                                    <label class="toggle-switch">
+
+                                        <input type="checkbox"
+                                               id="notifyQuizReminder"
+                                               checked>
+
+                                        <span class="toggle-slider"></span>
+
+                                    </label>
+
+                                </div>
+
+
+                                <div class="settings-option">
+
+                                    <div class="settings-option-content">
+
+                                        <strong>
+                                            Result Notifications
+                                        </strong>
+
+                                        <span>
+                                            Notify students when results become available.
+                                        </span>
+
+                                    </div>
+
+                                    <label class="toggle-switch">
+
+                                        <input type="checkbox"
+                                               id="notifyResults"
+                                               checked>
+
+                                        <span class="toggle-slider"></span>
+
+                                    </label>
+
+                                </div>
+
+
+                                <div class="settings-option">
+
+                                    <div class="settings-option-content">
+
+                                        <strong>
+                                            Administrative Alerts
+                                        </strong>
+
+                                        <span>
+                                            Show important system and administration alerts.
+                                        </span>
+
+                                    </div>
+
+                                    <label class="toggle-switch">
+
+                                        <input type="checkbox"
+                                               id="notifyAdminAlerts"
+                                               checked>
+
+                                        <span class="toggle-slider"></span>
+
+                                    </label>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- =================================================
+                         SECURITY SETTINGS
+                    ================================================== -->
+
+                    <section class="settings-section"
+                             id="settingsSectionSecurity"
+                             hidden>
+
+                        <div class="content-card">
+
+                            <div class="content-card-header">
+
+                                <div>
+
+                                    <h2>
+                                        <i class="fa-solid fa-shield-halved"></i>
+                                        Security Settings
+                                    </h2>
+
+                                    <p>
+                                        Configure authentication and session security.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-grid">
+
+                                <div class="form-group">
+
+                                    <label for="sessionTimeout">
+                                        Session Timeout (Minutes)
+                                    </label>
+
+                                    <input type="number"
+                                           id="sessionTimeout"
+                                           min="5"
+                                           value="60">
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="maxLoginAttempts">
+                                        Maximum Login Attempts
+                                    </label>
+
+                                    <input type="number"
+                                           id="maxLoginAttempts"
+                                           min="1"
+                                           value="5">
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="settings-option-list">
+
+                                <div class="settings-option">
+
+                                    <div class="settings-option-content">
+
+                                        <strong>
+                                            Require Secure Login
+                                        </strong>
+
+                                        <span>
+                                            Enforce secure authentication wherever supported.
+                                        </span>
+
+                                    </div>
+
+                                    <label class="toggle-switch">
+
+                                        <input type="checkbox"
+                                               id="requireSecureLogin"
+                                               checked>
+
+                                        <span class="toggle-slider"></span>
+
+                                    </label>
+
+                                </div>
+
+
+                                <div class="settings-option">
+
+                                    <div class="settings-option-content">
+
+                                        <strong>
+                                            Automatic Session Logout
+                                        </strong>
+
+                                        <span>
+                                            Automatically end inactive user sessions.
+                                        </span>
+
+                                    </div>
+
+                                    <label class="toggle-switch">
+
+                                        <input type="checkbox"
+                                               id="automaticSessionLogout"
+                                               checked>
+
+                                        <span class="toggle-slider"></span>
+
+                                    </label>
+
+                                </div>
+
+
+                                <div class="settings-option">
+
+                                    <div class="settings-option-content">
+
+                                        <strong>
+                                            Login Activity Tracking
+                                        </strong>
+
+                                        <span>
+                                            Record login and logout activity for administrators.
+                                        </span>
+
+                                    </div>
+
+                                    <label class="toggle-switch">
+
+                                        <input type="checkbox"
+                                               id="loginActivityTracking"
+                                               checked>
+
+                                        <span class="toggle-slider"></span>
+
+                                    </label>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- =================================================
+                         DATA & BACKUP
+                    ================================================== -->
+
+                    <section class="settings-section"
+                             id="settingsSectionData"
+                             hidden>
+
+                        <div class="content-card">
+
+                            <div class="content-card-header">
+
+                                <div>
+
+                                    <h2>
+                                        <i class="fa-solid fa-database"></i>
+                                        Data &amp; Backup
+                                    </h2>
+
+                                    <p>
+                                        Manage platform data and backup preferences.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="settings-action-grid">
+
+                                <button class="settings-action"
+                                        id="backupDataButton"
+                                        type="button">
+
+                                    <span class="settings-action-icon">
+                                        <i class="fa-solid fa-database"></i>
+                                    </span>
+
+                                    <span class="settings-action-content">
+
+                                        <strong>
+                                            Backup Data
+                                        </strong>
+
+                                        <small>
+                                            Create a platform data backup.
+                                        </small>
+
+                                    </span>
+
+                                    <i class="fa-solid fa-chevron-right"></i>
+
+                                </button>
+
+
+                                <button class="settings-action"
+                                        id="exportAllDataButton"
+                                        type="button">
+
+                                    <span class="settings-action-icon">
+                                        <i class="fa-solid fa-file-export"></i>
+                                    </span>
+
+                                    <span class="settings-action-content">
+
+                                        <strong>
+                                            Export All Data
+                                        </strong>
+
+                                        <small>
+                                            Export platform records for analysis.
+                                        </small>
+
+                                    </span>
+
+                                    <i class="fa-solid fa-chevron-right"></i>
+
+                                </button>
+
+
+                                <button class="settings-action"
+                                        id="importDataButton"
+                                        type="button">
+
+                                    <span class="settings-action-icon">
+                                        <i class="fa-solid fa-file-import"></i>
+                                    </span>
+
+                                    <span class="settings-action-content">
+
+                                        <strong>
+                                            Import Data
+                                        </strong>
+
+                                        <small>
+                                            Import supported platform records.
+                                        </small>
+
+                                    </span>
+
+                                    <i class="fa-solid fa-chevron-right"></i>
+
+                                </button>
+
+
+                                <button class="settings-action danger"
+                                        id="clearDemoDataButton"
+                                        type="button">
+
+                                    <span class="settings-action-icon">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </span>
+
+                                    <span class="settings-action-content">
+
+                                        <strong>
+                                            Clear Demo Data
+                                        </strong>
+
+                                        <small>
+                                            Remove temporary demonstration records.
+                                        </small>
+
+                                    </span>
+
+                                    <i class="fa-solid fa-chevron-right"></i>
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="content-card">
+
+                            <div class="content-card-header">
+
+                                <div>
+
+                                    <h2>
+                                        <i class="fa-solid fa-clock-rotate-left"></i>
+                                        Backup Information
+                                    </h2>
+
+                                    <p>
+                                        Current backup status.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="detail-grid">
+
+                                <div class="detail-item">
+
+                                    <span class="detail-label">
+                                        Last Backup
+                                    </span>
+
+                                    <strong id="lastBackupDate">
+                                        No backup available
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="detail-item">
+
+                                    <span class="detail-label">
+                                        Backup Status
+                                    </span>
+
+                                    <strong id="backupStatus">
+                                        Not configured
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="detail-item">
+
+                                    <span class="detail-label">
+                                        Data Records
+                                    </span>
+
+                                    <strong id="backupRecordCount">
+                                        0
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="detail-item">
+
+                                    <span class="detail-label">
+                                        Storage Status
+                                    </span>
+
+                                    <strong id="storageStatus">
+                                        Ready
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+                </div>
+
+            </section>
+
+        </section>
+
+
+        <!-- =================================================
+             FOOTER
+        ================================================== -->
+
+        <footer class="app-footer">
+
+            <span>
+                &copy; 2026 Quiz Portal. All rights reserved.
+            </span>
+
+            <span>
+                Administration Panel
+            </span>
+
+        </footer>
+
+    </main>
+
+</div>
+
+
+<!-- =====================================================
+     NOTIFICATION PANEL
+====================================================== -->
+
+<div class="notification-panel"
+     id="notificationPanel"
+     aria-hidden="true">
+
+    <div class="notification-panel-header">
+
+        <div>
+
+            <h3>
+                Notifications
+            </h3>
+
+            <span id="notificationSummary">
+                No new notifications
+            </span>
+
+        </div>
+
+
+        <button type="button"
+                id="notificationPanelClose"
+                aria-label="Close notifications">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+    </div>
+
+
+    <div class="notification-list"
+         id="notificationList">
+
+        <div class="notification-empty">
+
+            <i class="fa-regular fa-bell-slash"></i>
+
+            <p>
+                No notifications available.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="notification-panel-footer">
+
+        <button type="button"
+                id="markNotificationsRead">
+
+            Mark all as read
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     RESET SETTINGS MODAL
+====================================================== -->
+
+<div class="modal-overlay"
+     id="resetSettingsModal"
+     aria-hidden="true">
+
+    <div class="modal modal-small">
+
+        <div class="modal-header">
+
+            <div>
+
+                <h2>
+                    Reset Changes
+                </h2>
+
+                <p>
+                    Restore the current settings to their saved values.
+                </p>
+
+            </div>
+
+
+            <button type="button"
+                    class="modal-close"
+                    id="closeResetSettingsModal"
+                    aria-label="Close dialog">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <div class="modal-body">
+
+            <div class="confirmation-content">
+
+                <div class="confirmation-icon">
+
+                    <i class="fa-solid fa-rotate-left"></i>
+
+                </div>
+
+                <p>
+                    Unsaved changes will be discarded.
+                    Do you want to continue?
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="modal-footer">
+
+            <button class="button button-secondary"
+                    id="cancelResetSettings"
+                    type="button">
+
+                Cancel
+
+            </button>
+
+
+            <button class="button button-primary"
+                    id="confirmResetSettings"
+                    type="button">
+
+                Reset Changes
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     DATA ACTION MODAL
+====================================================== -->
+
+<div class="modal-overlay"
+     id="dataActionModal"
+     aria-hidden="true">
+
+    <div class="modal modal-small">
+
+        <div class="modal-header">
+
+            <div>
+
+                <h2 id="dataActionModalTitle">
+                    Data Action
+                </h2>
+
+                <p id="dataActionModalDescription">
+                    Confirm this data operation.
+                </p>
+
+            </div>
+
+
+            <button type="button"
+                    class="modal-close"
+                    id="closeDataActionModal"
+                    aria-label="Close dialog">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <div class="modal-body">
+
+            <div class="confirmation-content">
+
+                <div class="confirmation-icon">
+
+                    <i class="fa-solid fa-database"></i>
+
+                </div>
+
+                <p id="dataActionModalMessage">
+                    Please confirm this operation.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="modal-footer">
+
+            <button class="button button-secondary"
+                    id="cancelDataAction"
+                    type="button">
+
+                Cancel
+
+            </button>
+
+
+            <button class="button button-primary"
+                    id="confirmDataAction"
+                    type="button">
+
+                Continue
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     LOGOUT MODAL
+====================================================== -->
+
+<div class="modal-overlay"
+     id="logoutModal"
+     aria-hidden="true">
+
+    <div class="modal modal-small">
+
+        <div class="modal-header">
+
+            <div>
+
+                <h2>
+                    Confirm Logout
+                </h2>
+
+                <p>
+                    Are you sure you want to sign out?
+                </p>
+
+            </div>
+
+
+            <button type="button"
+                    class="modal-close"
+                    id="closeLogoutModal"
+                    aria-label="Close logout dialog">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <div class="modal-body">
+
+            <div class="confirmation-content">
+
+                <div class="confirmation-icon">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                </div>
+
+                <p>
+                    Your current admin session will be ended.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="modal-footer">
+
+            <button class="button button-secondary"
+                    id="cancelLogout"
+                    type="button">
+
+                Cancel
+
+            </button>
+
+
+            <button class="button button-danger"
+                    id="confirmLogout"
+                    type="button">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     TOAST
+====================================================== -->
+
+<div class="toast-container"
+     id="toastContainer"
+     aria-live="polite">
+
+    <div class="toast"
+         id="adminToast"
+         hidden>
+
+        <div class="toast-icon">
+
+            <i class="fa-solid fa-circle-check"></i>
+
+        </div>
+
+
+        <div class="toast-content">
+
+            <strong id="toastTitle">
+                Success
+            </strong>
+
+            <p id="toastMessage">
+                Operation completed successfully.
+            </p>
+
+        </div>
+
+
+        <button type="button"
+                id="toastClose"
+                aria-label="Close notification">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- JavaScript will be implemented later -->
+
+<script src="../js/app.js"></script>
+
+</body>
+</html>
