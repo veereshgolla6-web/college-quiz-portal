@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Profile | Quiz Portal</title>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+<!-- ================= SIDEBAR ================= -->
+
+<aside class="sidebar" id="sidebar">
+
+    <div class="sidebar-brand">
+        <div class="brand-icon">
+            <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+
+        <div class="brand-text">
+            <strong>QuizPortal</strong>
+            <span>Student Panel</span>
+        </div>
+    </div>
+
+
+    <nav class="sidebar-nav">
+
+        <a href="dashboard.html">
+            <i class="fa-solid fa-house"></i>
+            <span>Dashboard</span>
+        </a>
+
+        <a href="quizzes.html">
+            <i class="fa-solid fa-clipboard-question"></i>
+            <span>My Quizzes</span>
+        </a>
+
+        <a href="result.html">
+            <i class="fa-solid fa-chart-column"></i>
+            <span>My Results</span>
+        </a>
+
+        <a href="leaderboard.html">
+            <i class="fa-solid fa-ranking-star"></i>
+            <span>Leaderboard</span>
+        </a>
+
+        <a href="profile.html" class="active">
+            <i class="fa-solid fa-user"></i>
+            <span>My Profile</span>
+        </a>
+
+        <a href="#">
+            <i class="fa-solid fa-circle-question"></i>
+            <span>Help & Support</span>
+        </a>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+        <button type="button" id="sidebarLogout">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span>Logout</span>
+        </button>
+
+    </div>
+
+</aside>
+
+
+<!-- ================= MAIN CONTENT ================= -->
+
+<main class="main-content">
+
+    <!-- TOPBAR -->
+
+    <header class="topbar">
+
+        <button class="mobile-menu-btn" id="mobileMenuButton">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+
+        <div class="topbar-title">
+            <h1>My Profile</h1>
+            <p>Manage your personal information and account details.</p>
+        </div>
+
+
+        <div class="topbar-actions">
+
+            <button class="notification-button" id="notificationButton">
+                <i class="fa-regular fa-bell"></i>
+                <span class="notification-badge" id="notificationCount">3</span>
+            </button>
+
+
+            <div class="topbar-profile">
+
+                <div class="profile-avatar" id="topbarAvatar">
+                    S
+                </div>
+
+                <div class="profile-info">
+                    <strong id="topbarStudentName">Student</strong>
+                    <span>Student</span>
+                </div>
+
+                <i class="fa-solid fa-chevron-down"></i>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= PAGE CONTENT ================= -->
+
+    <section class="page-content">
+
+
+        <!-- PROFILE HEADER -->
+
+        <div class="profile-header-card">
+
+            <div class="profile-header-left">
+
+                <div class="large-profile-avatar" id="profileAvatar">
+                    S
+                </div>
+
+                <div>
+
+                    <h2 id="profileStudentName">
+                        Student Name
+                    </h2>
+
+                    <p id="profileStudentUsername">
+                        @student
+                    </p>
+
+                    <span class="profile-role-badge">
+                        <i class="fa-solid fa-user-graduate"></i>
+                        Student
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <button class="primary-button" id="editProfileButton">
+
+                <i class="fa-solid fa-pen"></i>
+
+                Edit Profile
+
+            </button>
+
+        </div>
+
+
+        <!-- ================= PROFILE GRID ================= -->
+
+        <div class="profile-grid">
+
+
+            <!-- PERSONAL INFORMATION -->
+
+            <div class="dashboard-card profile-information-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h3>
+                            <i class="fa-solid fa-user"></i>
+                            Personal Information
+                        </h3>
+
+                        <p>Your basic account information.</p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="profile-details">
+
+
+                    <div class="profile-detail-item">
+
+                        <span class="detail-label">
+                            Full Name
+                        </span>
+
+                        <strong id="profileFullName">
+                            Student Name
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-detail-item">
+
+                        <span class="detail-label">
+                            Username
+                        </span>
+
+                        <strong id="profileUsername">
+                            student
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-detail-item">
+
+                        <span class="detail-label">
+                            Email Address
+                        </span>
+
+                        <strong id="profileEmail">
+                            student@example.com
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-detail-item">
+
+                        <span class="detail-label">
+                            Student ID
+                        </span>
+
+                        <strong id="profileStudentId">
+                            STU001
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ACADEMIC INFORMATION -->
+
+            <div class="dashboard-card profile-information-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h3>
+                            <i class="fa-solid fa-book-open"></i>
+                            Academic Information
+                        </h3>
+
+                        <p>Your academic details.</p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="profile-details">
+
+
+                    <div class="profile-detail-item">
+
+                        <span class="detail-label">
+                            Department
+                        </span>
+
+                        <strong id="profileDepartment">
+                            Computer Science
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-detail-item">
+
+                        <span class="detail-label">
+                            Year
+                        </span>
+
+                        <strong id="profileYear">
+                            II Year
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-detail-item">
+
+                        <span class="detail-label">
+                            Section
+                        </span>
+
+                        <strong id="profileSection">
+                            A
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-detail-item">
+
+                        <span class="detail-label">
+                            Roll Number
+                        </span>
+
+                        <strong id="profileRollNumber">
+                            23A01A0001
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PERFORMANCE SUMMARY -->
+
+            <div class="dashboard-card profile-performance-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h3>
+                            <i class="fa-solid fa-chart-line"></i>
+                            Performance Summary
+                        </h3>
+
+                        <p>Your quiz performance at a glance.</p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="profile-stat-grid">
+
+
+                    <div class="profile-stat">
+
+                        <div class="profile-stat-icon">
+                            <i class="fa-solid fa-clipboard-check"></i>
+                        </div>
+
+                        <div>
+
+                            <strong id="profileTotalQuizzes">
+                                0
+                            </strong>
+
+                            <span>
+                                Quizzes Attempted
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="profile-stat">
+
+                        <div class="profile-stat-icon">
+                            <i class="fa-solid fa-bullseye"></i>
+                        </div>
+
+                        <div>
+
+                            <strong id="profileAverageScore">
+                                0%
+                            </strong>
+
+                            <span>
+                                Average Score
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="profile-stat">
+
+                        <div class="profile-stat-icon">
+                            <i class="fa-solid fa-trophy"></i>
+                        </div>
+
+                        <div>
+
+                            <strong id="profileBestScore">
+                                0%
+                            </strong>
+
+                            <span>
+                                Best Score
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="profile-stat">
+
+                        <div class="profile-stat-icon">
+                            <i class="fa-solid fa-ranking-star"></i>
+                        </div>
+
+                        <div>
+
+                            <strong id="profileRank">
+                                —
+                            </strong>
+
+                            <span>
+                                Current Rank
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ACCOUNT SETTINGS -->
+
+            <div class="dashboard-card profile-settings-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h3>
+                            <i class="fa-solid fa-shield-halved"></i>
+                            Account & Security
+                        </h3>
+
+                        <p>Manage your account security.</p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="settings-list">
+
+
+                    <button type="button" id="changePasswordButton">
+
+                        <div class="settings-icon">
+                            <i class="fa-solid fa-key"></i>
+                        </div>
+
+                        <div class="settings-text">
+
+                            <strong>
+                                Change Password
+                            </strong>
+
+                            <span>
+                                Update your account password
+                            </span>
+
+                        </div>
+
+                        <i class="fa-solid fa-chevron-right"></i>
+
+                    </button>
+
+
+                    <button type="button" id="loginActivityButton">
+
+                        <div class="settings-icon">
+                            <i class="fa-solid fa-clock-rotate-left"></i>
+                        </div>
+
+                        <div class="settings-text">
+
+                            <strong>
+                                Login Activity
+                            </strong>
+
+                            <span>
+                                Review your recent account activity
+                            </span>
+
+                        </div>
+
+                        <i class="fa-solid fa-chevron-right"></i>
+
+                    </button>
+
+
+                    <button type="button" id="logoutAccountButton">
+
+                        <div class="settings-icon">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                        </div>
+
+                        <div class="settings-text">
+
+                            <strong>
+                                Sign Out
+                            </strong>
+
+                            <span>
+                                Sign out from this account
+                            </span>
+
+                        </div>
+
+                        <i class="fa-solid fa-chevron-right"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- ================= EDIT PROFILE MODAL ================= -->
+
+<div class="modal-overlay" id="editProfileModal">
+
+    <div class="modal">
+
+        <div class="modal-header">
+
+            <div>
+
+                <h2>Edit Profile</h2>
+
+                <p>
+                    Update your personal information.
+                </p>
+
+            </div>
+
+            <button type="button" class="modal-close" id="closeEditProfileModal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+
+        <form id="editProfileForm">
+
+            <div class="form-group">
+
+                <label for="editFullName">
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    id="editFullName"
+                    name="fullName"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="editEmail">
+                    Email Address
+                </label>
+
+                <input
+                    type="email"
+                    id="editEmail"
+                    name="email"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-actions">
+
+                <button
+                    type="button"
+                    class="secondary-button"
+                    id="cancelEditProfile"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    class="primary-button"
+                >
+                    <i class="fa-solid fa-check"></i>
+                    Save Changes
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- ================= CHANGE PASSWORD MODAL ================= -->
+
+<div class="modal-overlay" id="changePasswordModal">
+
+    <div class="modal">
+
+        <div class="modal-header">
+
+            <div>
+
+                <h2>Change Password</h2>
+
+                <p>
+                    Create a new password for your account.
+                </p>
+
+            </div>
+
+            <button type="button" class="modal-close" id="closePasswordModal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+
+        <form id="changePasswordForm">
+
+            <div class="form-group">
+
+                <label for="currentPassword">
+                    Current Password
+                </label>
+
+                <input
+                    type="password"
+                    id="currentPassword"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="newPassword">
+                    New Password
+                </label>
+
+                <input
+                    type="password"
+                    id="newPassword"
+                    minlength="6"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="confirmPassword">
+                    Confirm New Password
+                </label>
+
+                <input
+                    type="password"
+                    id="confirmPassword"
+                    minlength="6"
+                    required
+                >
+
+            </div>
+
+
+            <div id="passwordMessage"></div>
+
+
+            <div class="form-actions">
+
+                <button
+                    type="button"
+                    class="secondary-button"
+                    id="cancelPasswordChange"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    class="primary-button"
+                >
+                    <i class="fa-solid fa-lock"></i>
+                    Update Password
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- ================= LOGIN ACTIVITY MODAL ================= -->
+
+<div class="modal-overlay" id="loginActivityModal">
+
+    <div class="modal">
+
+        <div class="modal-header">
+
+            <div>
+
+                <h2>Login Activity</h2>
+
+                <p>
+                    Recent account activity.
+                </p>
+
+            </div>
+
+            <button type="button" class="modal-close" id="closeLoginActivityModal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+
+        <div class="activity-list" id="loginActivityList">
+
+            <div class="activity-item">
+
+                <div class="activity-icon">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                </div>
+
+                <div>
+
+                    <strong>
+                        Current Session
+                    </strong>
+
+                    <span>
+                        Active now
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="activity-item">
+
+                <div class="activity-icon">
+                    <i class="fa-solid fa-laptop"></i>
+                </div>
+
+                <div>
+
+                    <strong>
+                        Web Browser
+                    </strong>
+
+                    <span>
+                        Recent login
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= NOTIFICATION PANEL ================= -->
+
+<div class="notification-panel" id="notificationPanel">
+
+    <div class="notification-panel-header">
+
+        <strong>Notifications</strong>
+
+        <button type="button" id="markNotificationsRead">
+            Mark all as read
+        </button>
+
+    </div>
+
+
+    <div class="notification-list">
+
+        <div class="notification-item unread">
+
+            <div class="notification-icon">
+                <i class="fa-solid fa-clipboard-question"></i>
+            </div>
+
+            <div>
+
+                <strong>
+                    New quiz available
+                </strong>
+
+                <span>
+                    A new quiz has been published.
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="notification-item unread">
+
+            <div class="notification-icon">
+                <i class="fa-solid fa-trophy"></i>
+            </div>
+
+            <div>
+
+                <strong>
+                    Leaderboard updated
+                </strong>
+
+                <span>
+                    Your ranking has been updated.
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="notification-item">
+
+            <div class="notification-icon">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+
+            <div>
+
+                <strong>
+                    Profile ready
+                </strong>
+
+                <span>
+                    Your profile information is up to date.
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= LOGOUT MODAL ================= -->
+
+<div class="modal-overlay" id="logoutModal">
+
+    <div class="modal small-modal">
+
+        <div class="logout-icon">
+            <i class="fa-solid fa-right-from-bracket"></i>
+        </div>
+
+        <h2>Sign out?</h2>
+
+        <p>
+            Are you sure you want to sign out of your student account?
+        </p>
+
+
+        <div class="form-actions">
+
+            <button
+                type="button"
+                class="secondary-button"
+                id="cancelLogout"
+            >
+                Cancel
+            </button>
+
+            <button
+                type="button"
+                class="danger-button"
+                id="confirmLogout"
+            >
+                Sign Out
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script src="../js/app.js"></script>
+
+</body>
+</html>
