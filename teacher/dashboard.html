@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Teacher Dashboard | QuizPortal</title>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+<!-- =========================================================
+     SIDEBAR
+========================================================= -->
+
+<aside class="sidebar" id="sidebar">
+
+    <div class="sidebar-brand">
+
+        <div class="brand-icon">
+            <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+
+        <div class="brand-text">
+            <strong>QuizPortal</strong>
+            <span>Teacher Panel</span>
+        </div>
+
+    </div>
+
+
+    <nav class="sidebar-nav">
+
+        <a href="dashboard.html" class="active">
+            <i class="fa-solid fa-house"></i>
+            <span>Dashboard</span>
+        </a>
+
+        <a href="create-quiz.html">
+            <i class="fa-solid fa-circle-plus"></i>
+            <span>Create Quiz</span>
+        </a>
+
+        <a href="questions.html">
+            <i class="fa-solid fa-list-check"></i>
+            <span>Question Bank</span>
+        </a>
+
+        <a href="quizzes.html">
+            <i class="fa-solid fa-clipboard-question"></i>
+            <span>My Quizzes</span>
+        </a>
+
+        <a href="results.html">
+            <i class="fa-solid fa-chart-column"></i>
+            <span>Results & Analytics</span>
+        </a>
+
+        <a href="profile.html">
+            <i class="fa-solid fa-user"></i>
+            <span>My Profile</span>
+        </a>
+
+        <a href="#">
+            <i class="fa-solid fa-circle-question"></i>
+            <span>Help & Support</span>
+        </a>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+        <button type="button" id="sidebarLogout">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            <span>Logout</span>
+
+        </button>
+
+    </div>
+
+</aside>
+
+
+<!-- =========================================================
+     MAIN CONTENT
+========================================================= -->
+
+<main class="main-content">
+
+
+    <!-- =====================================================
+         TOPBAR
+    ====================================================== -->
+
+    <header class="topbar">
+
+        <button
+            type="button"
+            class="mobile-menu-btn"
+            id="mobileMenuButton"
+            aria-label="Open menu">
+
+            <i class="fa-solid fa-bars"></i>
+
+        </button>
+
+
+        <div class="topbar-title">
+
+            <h1>Teacher Dashboard</h1>
+
+            <p>
+                Manage your quizzes, questions and student performance.
+            </p>
+
+        </div>
+
+
+        <div class="topbar-actions">
+
+
+            <!-- Notifications -->
+
+            <button
+                type="button"
+                class="notification-button"
+                id="notificationButton"
+                aria-label="Notifications">
+
+                <i class="fa-regular fa-bell"></i>
+
+                <span
+                    class="notification-badge"
+                    id="notificationCount">
+                    3
+                </span>
+
+            </button>
+
+
+            <!-- Teacher Profile -->
+
+            <div class="topbar-profile">
+
+                <div
+                    class="profile-avatar"
+                    id="topbarAvatar">
+                    T
+                </div>
+
+                <div class="profile-info">
+
+                    <strong id="topbarTeacherName">
+                        Teacher
+                    </strong>
+
+                    <span>
+                        Teacher
+                    </span>
+
+                </div>
+
+                <i class="fa-solid fa-chevron-down"></i>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         PAGE CONTENT
+    ====================================================== -->
+
+    <section class="page-content">
+
+
+        <!-- =================================================
+             WELCOME BANNER
+        ================================================== -->
+
+        <div class="welcome-banner">
+
+            <div class="welcome-content">
+
+                <span class="welcome-label">
+                    TEACHER PORTAL
+                </span>
+
+                <h2>
+                    Welcome back,
+                    <span id="welcomeTeacherName">
+                        Teacher
+                    </span>
+                    👋
+                </h2>
+
+                <p>
+                    Create engaging quizzes, manage your questions,
+                    and track your students' performance.
+                </p>
+
+            </div>
+
+
+            <div class="welcome-actions">
+
+                <a
+                    href="create-quiz.html"
+                    class="primary-button">
+
+                    <i class="fa-solid fa-plus"></i>
+
+                    Create New Quiz
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             DASHBOARD STATISTICS
+        ================================================== -->
+
+        <div class="stats-grid">
+
+
+            <!-- Total Quizzes -->
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+
+                    <i class="fa-solid fa-clipboard-question"></i>
+
+                </div>
+
+                <div class="stat-content">
+
+                    <span>
+                        Total Quizzes
+                    </span>
+
+                    <strong id="totalTeacherQuizzes">
+                        0
+                    </strong>
+
+                    <small id="quizGrowth">
+                        —
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- Published -->
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                </div>
+
+                <div class="stat-content">
+
+                    <span>
+                        Published Quizzes
+                    </span>
+
+                    <strong id="publishedQuizzes">
+                        0
+                    </strong>
+
+                    <small>
+                        Currently active
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- Students -->
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+
+                    <i class="fa-solid fa-users"></i>
+
+                </div>
+
+                <div class="stat-content">
+
+                    <span>
+                        Students Reached
+                    </span>
+
+                    <strong id="studentsReached">
+                        0
+                    </strong>
+
+                    <small>
+                        Total participants
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- Average Score -->
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                </div>
+
+                <div class="stat-content">
+
+                    <span>
+                        Average Score
+                    </span>
+
+                    <strong id="teacherAverageScore">
+                        0%
+                    </strong>
+
+                    <small>
+                        Across all quizzes
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             MAIN DASHBOARD GRID
+        ================================================== -->
+
+        <div class="dashboard-grid">
+
+
+            <!-- =============================================
+                 RECENT QUIZZES
+            ============================================== -->
+
+            <div class="dashboard-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h3>
+                            Recent Quizzes
+                        </h3>
+
+                        <p>
+                            Your latest quiz activity.
+                        </p>
+
+                    </div>
+
+
+                    <a
+                        href="quizzes.html"
+                        class="card-action">
+
+                        View All
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+
+                <div
+                    class="quiz-list"
+                    id="teacherRecentQuizzes">
+
+
+                    <!-- JavaScript will populate this -->
+
+                    <div class="empty-state">
+
+                        <div class="empty-state-icon">
+
+                            <i class="fa-solid fa-clipboard-question"></i>
+
+                        </div>
+
+                        <h4>
+                            No quizzes yet
+                        </h4>
+
+                        <p>
+                            Create your first quiz to get started.
+                        </p>
+
+                        <a
+                            href="create-quiz.html"
+                            class="primary-button">
+
+                            <i class="fa-solid fa-plus"></i>
+
+                            Create Quiz
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =============================================
+                 QUICK ACTIONS
+            ============================================== -->
+
+            <div class="dashboard-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h3>
+                            Quick Actions
+                        </h3>
+
+                        <p>
+                            Frequently used tools.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="quick-actions-grid">
+
+
+                    <a
+                        href="create-quiz.html"
+                        class="quick-action">
+
+                        <div class="quick-action-icon">
+
+                            <i class="fa-solid fa-plus"></i>
+
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Create Quiz
+                            </strong>
+
+                            <span>
+                                Build a new assessment
+                            </span>
+
+                        </div>
+
+                    </a>
+
+
+                    <a
+                        href="questions.html"
+                        class="quick-action">
+
+                        <div class="quick-action-icon">
+
+                            <i class="fa-solid fa-list-check"></i>
+
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Question Bank
+                            </strong>
+
+                            <span>
+                                Manage your questions
+                            </span>
+
+                        </div>
+
+                    </a>
+
+
+                    <a
+                        href="results.html"
+                        class="quick-action">
+
+                        <div class="quick-action-icon">
+
+                            <i class="fa-solid fa-chart-column"></i>
+
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                View Results
+                            </strong>
+
+                            <span>
+                                Analyze student performance
+                            </span>
+
+                        </div>
+
+                    </a>
+
+
+                    <a
+                        href="quizzes.html"
+                        class="quick-action">
+
+                        <div class="quick-action-icon">
+
+                            <i class="fa-solid fa-clipboard-list"></i>
+
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Manage Quizzes
+                            </strong>
+
+                            <span>
+                                Edit and publish quizzes
+                            </span>
+
+                        </div>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             PERFORMANCE + ACTIVITY
+        ================================================== -->
+
+        <div class="dashboard-grid">
+
+
+            <!-- =============================================
+                 PERFORMANCE OVERVIEW
+            ============================================== -->
+
+            <div class="dashboard-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h3>
+                            Performance Overview
+                        </h3>
+
+                        <p>
+                            Student performance across your quizzes.
+                        </p>
+
+                    </div>
+
+
+                    <select
+                        id="performancePeriod"
+                        class="dashboard-select">
+
+                        <option value="7">
+                            Last 7 Days
+                        </option>
+
+                        <option value="30" selected>
+                            Last 30 Days
+                        </option>
+
+                        <option value="90">
+                            Last 3 Months
+                        </option>
+
+                        <option value="365">
+                            This Year
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="chart-container">
+
+                    <canvas
+                        id="teacherPerformanceChart">
+                    </canvas>
+
+                    <div
+                        class="chart-empty-state"
+                        id="performanceChartEmpty">
+
+                        <i class="fa-solid fa-chart-line"></i>
+
+                        <p>
+                            Performance data will appear here.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =============================================
+                 RECENT ACTIVITY
+            ============================================== -->
+
+            <div class="dashboard-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h3>
+                            Recent Activity
+                        </h3>
+
+                        <p>
+                            Latest actions in your account.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="activity-list"
+                    id="teacherActivityList">
+
+
+                    <div class="activity-item">
+
+                        <div class="activity-icon">
+
+                            <i class="fa-solid fa-right-to-bracket"></i>
+
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Welcome to QuizPortal
+                            </strong>
+
+                            <span>
+                                Your teacher dashboard is ready.
+                            </span>
+
+                            <small>
+                                Just now
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="activity-item">
+
+                        <div class="activity-icon">
+
+                            <i class="fa-solid fa-circle-info"></i>
+
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                No recent activity
+                            </strong>
+
+                            <span>
+                                Your quiz activity will appear here.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             UPCOMING QUIZZES
+        ================================================== -->
+
+        <div class="dashboard-card">
+
+            <div class="card-header">
+
+                <div>
+
+                    <h3>
+                        Upcoming Quizzes
+                    </h3>
+
+                    <p>
+                        Scheduled assessments coming soon.
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="quizzes.html"
+                    class="card-action">
+
+                    Manage Quizzes
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+
+            <div
+                class="upcoming-quiz-list"
+                id="upcomingTeacherQuizzes">
+
+
+                <div class="empty-state compact">
+
+                    <div class="empty-state-icon">
+
+                        <i class="fa-solid fa-calendar-days"></i>
+
+                    </div>
+
+                    <h4>
+                        No upcoming quizzes
+                    </h4>
+
+                    <p>
+                        Scheduled quizzes will appear here.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+</main>
+
+
+<!-- =========================================================
+     NOTIFICATION PANEL
+========================================================= -->
+
+<div
+    class="notification-panel"
+    id="notificationPanel">
+
+    <div class="notification-panel-header">
+
+        <strong>
+            Notifications
+        </strong>
+
+        <button
+            type="button"
+            id="markNotificationsRead">
+
+            Mark all as read
+
+        </button>
+
+    </div>
+
+
+    <div class="notification-list">
+
+
+        <div class="notification-item unread">
+
+            <div class="notification-icon">
+
+                <i class="fa-solid fa-circle-info"></i>
+
+            </div>
+
+            <div>
+
+                <strong>
+                    Welcome Teacher
+                </strong>
+
+                <span>
+                    Your teacher dashboard is ready.
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="notification-item">
+
+            <div class="notification-icon">
+
+                <i class="fa-solid fa-clipboard-question"></i>
+
+            </div>
+
+            <div>
+
+                <strong>
+                    Create your first quiz
+                </strong>
+
+                <span>
+                    Start building an assessment for your students.
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="notification-item">
+
+            <div class="notification-icon">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+            </div>
+
+            <div>
+
+                <strong>
+                    Track performance
+                </strong>
+
+                <span>
+                    Student analytics will appear after submissions.
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     LOGOUT MODAL
+========================================================= -->
+
+<div
+    class="modal-overlay"
+    id="logoutModal">
+
+    <div class="modal small-modal">
+
+
+        <div class="logout-icon">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+        </div>
+
+
+        <h2>
+            Sign out?
+        </h2>
+
+
+        <p>
+            Are you sure you want to sign out of your teacher account?
+        </p>
+
+
+        <div class="form-actions">
+
+            <button
+                type="button"
+                class="secondary-button"
+                id="cancelLogout">
+
+                Cancel
+
+            </button>
+
+
+            <button
+                type="button"
+                class="danger-button"
+                id="confirmLogout">
+
+                Sign Out
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script src="../js/app.js"></script>
+
+</body>
+</html>S
