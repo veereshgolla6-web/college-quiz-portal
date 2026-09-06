@@ -1,0 +1,476 @@
+"use strict";
+
+/* =========================================
+   QUIZ PORTAL
+   LOGIN & AUTHENTICATION
+   ========================================= */
+
+const QuizPortal = {
+
+    storageKey: "quizPortal_session",
+    usersKey: "quizPortal_users",
+
+    /* =====================================
+       START
+       ===================================== */
+
+    init() {
+        this.createDemoUsers();
+        this.setupLogin();
+        this.setupLogout();
+        this.protectPages();
+    },
+
+
+    /* =====================================
+       DEMO USERS
+       ===================================== */
+
+    createDemoUsers() {
+
+        if (localStorage.getItem(this.usersKey)) {
+            return;
+        }
+
+        const users = [
+
+            {
+                id: "ADM001",
+                name: "Administrator",
+                username: "admin",
+                password: "admin123",
+                role: "admin",
+                status: "active"
+            },
+
+            {
+                id: "TCH001",
+                name: "Demo Teacher",
+                username: "teacher",
+                password: "teacher123",
+                role: "teacher",
+                status: "active"
+            },
+
+            {
+                id: "STU001",
+                name: "Demo Student",
+                username: "student",
+                password: "student123",
+                role: "student",
+                status: "active"
+            }
+
+        ];
+
+        localStorage.setItem(
+            this.usersKey,
+            JSON.stringify(users)
+        );
+    },
+
+
+    /* =====================================
+       LOGIN
+       ===================================== */
+
+    setupLogin() {
+
+        const loginForm =
+            document.getElementById("loginForm");
+
+        if (!loginForm) {
+            return;
+        }
+
+        loginForm.addEventListener(
+            "submit",
+            event => {
+
+                event.preventDefault();
+
+                this.login();
+
+            }
+        );
+    },
+
+
+    login() {
+
+        const usernameInput =
+            document.getElementById("username") ||
+            document.getElementById("txtUsername");
+
+        const passwordInput =
+            document.getElementById("password") ||
+            document.getElementById("txtPassword");
+
+
+        if (!usernameInput || !passwordInput) {
+
+            alert(
+                "Login form fields were not found."
+            );
+
+            return;
+        }
+
+
+        const username =
+            usernameInput.value
+                .trim()
+                .toLowerCase();
+
+        const password =
+            passwordInput.value;
+
+
+        if (!username || !password) {
+
+            alert(
+                "Please enter username and password."
+            );
+
+            return;
+        }
+
+
+        const users =
+            JSON.parse(
+                localStorage.getItem(
+                    this.usersKey
+                )
+            ) || [];
+
+
+        const user =
+            users.find(item =>
+
+                item.username
+                    .toLowerCase() === username &&
+
+                item.password === password
+
+            );
+
+
+        if (!user) {
+
+            alert(
+                "Invalid username or password."
+            );
+
+            return;
+        }
+
+
+        if (user.status !== "active") {
+
+            alert(
+                "This account is currently inactive."
+            );
+
+            return;
+        }
+
+
+        /* Create session */
+
+        const session = {
+
+            id: user.id,
+
+            name: user.name,
+
+            username: user.username,
+
+            role: user.role,
+
+            loginTime:
+                new Date().toISOString()
+
+        };
+
+
+        localStorage.setItem(
+            this.storageKey,
+            JSON.stringify(session)
+        );
+
+
+        /* Redirect according to role */
+
+        this.redirectByRole(
+            user.role
+        );
+
+    },
+
+
+    /* =====================================
+       ROLE REDIRECTION
+       ===================================== */
+
+    redirectByRole(role) {
+
+        const currentPath =
+            window.location.pathname;
+
+
+        let rootPath = "";
+
+
+        if (
+            currentPath.includes("/student/") ||
+            currentPath.includes("/teacher/") ||
+            currentPath.includes("/admin/")
+        ) {
+
+            rootPath = "../";
+
+        }
+
+
+        switch (role) {
+
+            case "admin":
+
+                window.location.href =
+                    rootPath +
+                    "admin/dashboard.html";
+
+                break;
+
+
+            case "teacher":
+
+                window.location.href =
+                    rootPath +
+                    "teacher/dashboard.html";
+
+                break;
+
+
+            case "student":
+
+                window.location.href =
+                    rootPath +
+                    "student/dashboard.html";
+
+                break;
+
+
+            default:
+
+                window.location.href =
+                    rootPath +
+                    "login.html";
+        }
+    },
+
+
+    /* =====================================
+       GET CURRENT USER
+       ===================================== */
+
+    getCurrentUser() {
+
+        const session =
+            localStorage.getItem(
+                this.storageKey
+            );
+
+
+        if (!session) {
+            return null;
+        }
+
+
+        try {
+
+            return JSON.parse(session);
+
+        } catch (error) {
+
+            localStorage.removeItem(
+                this.storageKey
+            );
+
+            return null;
+        }
+    },
+
+
+    /* =====================================
+       LOGOUT
+       ===================================== */
+
+    setupLogout() {
+
+        const logoutButtons =
+            document.querySelectorAll(
+                "#sidebarLogout, #profileMenuLogout, #confirmLogout"
+            );
+
+
+        logoutButtons.forEach(button => {
+
+            button.addEventListener(
+                "click",
+                event => {
+
+                    event.preventDefault();
+
+                    this.logout();
+
+                }
+            );
+
+        });
+    },
+
+
+    logout() {
+
+        localStorage.removeItem(
+            this.storageKey
+        );
+
+
+        const currentPath =
+            window.location.pathname;
+
+
+        if (
+            currentPath.includes("/admin/") ||
+            currentPath.includes("/teacher/") ||
+            currentPath.includes("/student/")
+        ) {
+
+            window.location.href =
+                "../login.html";
+
+        } else {
+
+            window.location.href =
+                "login.html";
+        }
+    },
+
+
+    /* =====================================
+       PAGE PROTECTION
+       ===================================== */
+
+    protectPages() {
+
+        const path =
+            window.location.pathname
+                .toLowerCase();
+
+
+        const user =
+            this.getCurrentUser();
+
+
+        const isAdmin =
+            path.includes("/admin/");
+
+        const isTeacher =
+            path.includes("/teacher/");
+
+        const isStudent =
+            path.includes("/student/");
+
+
+        /* Protected page without login */
+
+        if (
+            (isAdmin ||
+             isTeacher ||
+             isStudent) &&
+            !user
+        ) {
+
+            window.location.href =
+                "../login.html";
+
+            return;
+        }
+
+
+        if (!user) {
+            return;
+        }
+
+
+        /* Role protection */
+
+        if (
+            isAdmin &&
+            user.role !== "admin"
+        ) {
+
+            this.redirectByRole(
+                user.role
+            );
+
+            return;
+        }
+
+
+        if (
+            isTeacher &&
+            user.role !== "teacher"
+        ) {
+
+            this.redirectByRole(
+                user.role
+            );
+
+            return;
+        }
+
+
+        if (
+            isStudent &&
+            user.role !== "student"
+        ) {
+
+            this.redirectByRole(
+                user.role
+            );
+
+            return;
+        }
+
+
+        /* Logged-in user opening login page */
+
+        if (
+            path.endsWith("/login.html") ||
+            path.endsWith("login.html")
+        ) {
+
+            this.redirectByRole(
+                user.role
+            );
+        }
+    }
+
+};
+
+
+/* =========================================
+   START APPLICATION
+   ========================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
+
+        QuizPortal.init();
+
+    }
+);
