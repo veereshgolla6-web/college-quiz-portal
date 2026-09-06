@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Teacher Quiz Management - College Quiz & Assessment Portal">
+    <title>My Quizzes | College Quiz & Assessment Portal</title>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+<div class="app-layout">
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="sidebar" id="teacherSidebar">
+
+        <div class="sidebar-header">
+
+            <a href="dashboard.html" class="brand">
+
+                <div class="brand-logo">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+
+                <div class="brand-text">
+                    <strong>College Quiz</strong>
+                    <span>Assessment Portal</span>
+                </div>
+
+            </a>
+
+            <button
+                type="button"
+                class="sidebar-close"
+                id="sidebarCloseButton"
+                aria-label="Close sidebar">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <nav class="sidebar-nav" aria-label="Teacher navigation">
+
+            <div class="nav-section">
+
+                <span class="nav-section-title">MAIN</span>
+
+                <a href="dashboard.html" class="nav-link">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="create-quiz.html" class="nav-link">
+                    <i class="fa-solid fa-circle-plus"></i>
+                    <span>Create Quiz</span>
+                </a>
+
+                <a href="questions.html" class="nav-link">
+                    <i class="fa-solid fa-database"></i>
+                    <span>Question Bank</span>
+                </a>
+
+                <a href="quizzes.html"
+                   class="nav-link active"
+                   aria-current="page">
+
+                    <i class="fa-solid fa-file-circle-check"></i>
+                    <span>My Quizzes</span>
+
+                </a>
+
+            </div>
+
+
+            <div class="nav-section">
+
+                <span class="nav-section-title">ANALYTICS</span>
+
+                <a href="results.html" class="nav-link">
+                    <i class="fa-solid fa-square-poll-vertical"></i>
+                    <span>Results</span>
+                </a>
+
+                <a href="analytics.html" class="nav-link">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    <span>Analytics</span>
+                </a>
+
+            </div>
+
+
+            <div class="nav-section">
+
+                <span class="nav-section-title">ACCOUNT</span>
+
+                <a href="profile.html" class="nav-link">
+                    <i class="fa-solid fa-user-circle"></i>
+                    <span>My Profile</span>
+                </a>
+
+                <a href="help.html" class="nav-link">
+                    <i class="fa-solid fa-circle-question"></i>
+                    <span>Help & Support</span>
+                </a>
+
+            </div>
+
+        </nav>
+
+
+        <div class="sidebar-footer">
+
+            <button
+                type="button"
+                class="sidebar-logout"
+                id="sidebarLogout">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <div class="topbar-left">
+
+                <button
+                    type="button"
+                    class="mobile-menu-button"
+                    id="mobileMenuButton"
+                    aria-label="Open menu">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+
+                <div class="breadcrumb">
+
+                    <a href="dashboard.html">
+                        Teacher Portal
+                    </a>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                    <span>My Quizzes</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+                <button
+                    type="button"
+                    class="topbar-icon-button"
+                    id="globalSearchButton"
+                    aria-label="Search">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                </button>
+
+
+                <!-- Notifications -->
+
+                <div class="notification-wrapper">
+
+                    <button
+                        type="button"
+                        class="topbar-icon-button"
+                        id="notificationButton"
+                        aria-label="Notifications">
+
+                        <i class="fa-regular fa-bell"></i>
+
+                        <span
+                            class="notification-count"
+                            id="notificationCount">
+                            3
+                        </span>
+
+                    </button>
+
+
+                    <div
+                        class="notification-panel"
+                        id="notificationPanel">
+
+                        <div class="notification-panel-header">
+
+                            <div>
+
+                                <strong>Notifications</strong>
+                                <span>Recent updates</span>
+
+                            </div>
+
+                            <button
+                                type="button"
+                                id="markNotificationsRead">
+
+                                Mark all read
+
+                            </button>
+
+                        </div>
+
+
+                        <div
+                            class="notification-list"
+                            id="teacherNotificationList">
+
+                            <div class="notification-item unread">
+
+                                <div class="notification-icon">
+                                    <i class="fa-solid fa-users"></i>
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        New quiz activity
+                                    </strong>
+
+                                    <p>
+                                        Students have started your assessment.
+                                    </p>
+
+                                    <small>
+                                        Just now
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="notification-item">
+
+                                <div class="notification-icon">
+                                    <i class="fa-solid fa-chart-line"></i>
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Results updated
+                                    </strong>
+
+                                    <p>
+                                        New student results are available.
+                                    </p>
+
+                                    <small>
+                                        1 hour ago
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <a href="#" class="view-all-notifications">
+                            View all notifications
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Profile -->
+
+                <div class="topbar-profile">
+
+                    <div class="topbar-avatar" id="topbarAvatar">
+                        T
+                    </div>
+
+                    <div class="topbar-profile-info">
+
+                        <strong id="topbarTeacherName">
+                            Teacher
+                        </strong>
+
+                        <span>Teacher</span>
+
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- PAGE -->
+
+        <div class="page-content">
+
+            <!-- PAGE HEADER -->
+
+            <section class="page-header">
+
+                <div class="page-header-content">
+
+                    <div class="page-title-area">
+
+                        <div class="page-title-icon">
+                            <i class="fa-solid fa-file-circle-check"></i>
+                        </div>
+
+                        <div>
+
+                            <span class="page-eyebrow">
+                                QUIZ MANAGEMENT
+                            </span>
+
+                            <h1>My Quizzes</h1>
+
+                            <p>
+                                Create, manage, publish and monitor all
+                                your assessments from one place.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="page-header-actions">
+
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            id="exportQuizzesButton">
+
+                            <i class="fa-solid fa-file-export"></i>
+                            Export
+
+                        </button>
+
+
+                        <a
+                            href="create-quiz.html"
+                            class="btn btn-primary">
+
+                            <i class="fa-solid fa-plus"></i>
+                            Create Quiz
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 QUIZ STATISTICS
+            ================================================== -->
+
+            <section class="stats-grid quiz-management-stats">
+
+                <article class="stat-card">
+
+                    <div class="stat-card-icon">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+
+                    <div class="stat-card-content">
+
+                        <span>Total Quizzes</span>
+
+                        <strong id="teacherQuizTotal">
+                            0
+                        </strong>
+
+                        <small>
+                            All assessments
+                        </small>
+
+                    </div>
+
+                </article>
+
+
+                <article class="stat-card">
+
+                    <div class="stat-card-icon">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+
+                    <div class="stat-card-content">
+
+                        <span>Published</span>
+
+                        <strong id="teacherQuizPublished">
+                            0
+                        </strong>
+
+                        <small>
+                            Currently active
+                        </small>
+
+                    </div>
+
+                </article>
+
+
+                <article class="stat-card">
+
+                    <div class="stat-card-icon">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+
+                    <div class="stat-card-content">
+
+                        <span>Scheduled</span>
+
+                        <strong id="teacherQuizScheduled">
+                            0
+                        </strong>
+
+                        <small>
+                            Upcoming assessments
+                        </small>
+
+                    </div>
+
+                </article>
+
+
+                <article class="stat-card">
+
+                    <div class="stat-card-icon">
+                        <i class="fa-solid fa-file-pen"></i>
+                    </div>
+
+                    <div class="stat-card-content">
+
+                        <span>Drafts</span>
+
+                        <strong id="teacherQuizDrafts">
+                            0
+                        </strong>
+
+                        <small>
+                            In preparation
+                        </small>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+
+            <!-- =================================================
+                 QUIZ MANAGEMENT CARD
+            ================================================== -->
+
+            <section class="content-card">
+
+                <div class="content-card-header">
+
+                    <div>
+
+                        <h2>
+                            <i class="fa-solid fa-list-check"></i>
+                            Assessment Library
+                        </h2>
+
+                        <p>
+                            Manage your quizzes and assessment lifecycle.
+                        </p>
+
+                    </div>
+
+
+                    <div class="content-card-actions">
+
+                        <button
+                            type="button"
+                            class="icon-button"
+                            id="refreshQuizzesButton"
+                            title="Refresh">
+
+                            <i class="fa-solid fa-rotate"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     TABS
+                ================================================== -->
+
+                <div class="tabs" id="quizManagementTabs">
+
+                    <button
+                        type="button"
+                        class="tab-button active"
+                        data-quiz-tab="all">
+
+                        All Quizzes
+
+                        <span id="allQuizTabCount">
+                            0
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="tab-button"
+                        data-quiz-tab="published">
+
+                        Published
+
+                        <span id="publishedQuizTabCount">
+                            0
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="tab-button"
+                        data-quiz-tab="scheduled">
+
+                        Scheduled
+
+                        <span id="scheduledQuizTabCount">
+                            0
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="tab-button"
+                        data-quiz-tab="draft">
+
+                        Drafts
+
+                        <span id="draftQuizTabCount">
+                            0
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="tab-button"
+                        data-quiz-tab="archived">
+
+                        Archived
+
+                        <span id="archivedQuizTabCount">
+                            0
+                        </span>
+
+                    </button>
+
+                </div>
+
+
+                <!-- =================================================
+                     FILTER BAR
+                ================================================== -->
+
+                <div class="filter-toolbar">
+
+                    <div class="search-field">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <input
+                            type="search"
+                            id="teacherQuizSearch"
+                            placeholder="Search quizzes..."
+                            autocomplete="off">
+
+                    </div>
+
+
+                    <div class="filter-field">
+
+                        <label for="teacherQuizSubject">
+                            Subject
+                        </label>
+
+                        <select id="teacherQuizSubject">
+
+                            <option value="all">
+                                All Subjects
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="filter-field">
+
+                        <label for="teacherQuizDepartment">
+                            Department
+                        </label>
+
+                        <select id="teacherQuizDepartment">
+
+                            <option value="all">
+                                All Departments
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="filter-field">
+
+                        <label for="teacherQuizSort">
+                            Sort By
+                        </label>
+
+                        <select id="teacherQuizSort">
+
+                            <option value="recent">
+                                Recently Updated
+                            </option>
+
+                            <option value="oldest">
+                                Oldest
+                            </option>
+
+                            <option value="title">
+                                Quiz Name
+                            </option>
+
+                            <option value="participants">
+                                Participants
+                            </option>
+
+                            <option value="score">
+                                Average Score
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        id="clearQuizFilters">
+
+                        <i class="fa-solid fa-filter-circle-xmark"></i>
+                        Clear
+
+                    </button>
+
+                </div>
+
+
+                <!-- =================================================
+                     BULK ACTIONS
+                ================================================== -->
+
+                <div
+                    class="bulk-action-bar"
+                    id="quizBulkActionBar"
+                    hidden>
+
+                    <div>
+
+                        <i class="fa-solid fa-check-double"></i>
+
+                        <strong id="selectedQuizCount">
+                            0
+                        </strong>
+
+                        quizzes selected
+
+                    </div>
+
+
+                    <div class="bulk-actions">
+
+                        <button
+                            type="button"
+                            id="bulkPublishQuizzes">
+
+                            <i class="fa-solid fa-globe"></i>
+                            Publish
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            id="bulkArchiveQuizzes">
+
+                            <i class="fa-solid fa-box-archive"></i>
+                            Archive
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            id="bulkDeleteQuizzes">
+
+                            <i class="fa-solid fa-trash"></i>
+                            Delete
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     TABLE
+                ================================================== -->
+
+                <div class="table-wrapper">
+
+                    <table
+                        class="data-table"
+                        id="teacherQuizTable">
+
+                        <thead>
+
+                            <tr>
+
+                                <th class="checkbox-column">
+
+                                    <input
+                                        type="checkbox"
+                                        id="selectAllQuizzes"
+                                        aria-label="Select all quizzes">
+
+                                </th>
+
+                                <th>Quiz</th>
+
+                                <th>Subject</th>
+
+                                <th>Target Class</th>
+
+                                <th>Questions</th>
+
+                                <th>Duration</th>
+
+                                <th>Participants</th>
+
+                                <th>Average</th>
+
+                                <th>Status</th>
+
+                                <th>Updated</th>
+
+                                <th>Actions</th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="teacherQuizTableBody">
+
+                            <!-- Dynamic quiz records -->
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <!-- EMPTY -->
+
+                <div
+                    class="empty-state"
+                    id="teacherQuizEmptyState"
+                    hidden>
+
+                    <div class="empty-state-icon">
+
+                        <i class="fa-solid fa-file-circle-plus"></i>
+
+                    </div>
+
+                    <h3>No quizzes found</h3>
+
+                    <p>
+                        You haven't created any quizzes yet, or your
+                        current filters don't match any assessments.
+                    </p>
+
+                    <a
+                        href="create-quiz.html"
+                        class="btn btn-primary">
+
+                        <i class="fa-solid fa-plus"></i>
+                        Create Your First Quiz
+
+                    </a>
+
+                </div>
+
+
+                <!-- LOADING -->
+
+                <div
+                    class="loading-state"
+                    id="teacherQuizLoadingState"
+                    hidden>
+
+                    <div class="loading-spinner"></div>
+
+                    <p>
+                        Loading your quizzes...
+                    </p>
+
+                </div>
+
+
+                <!-- PAGINATION -->
+
+                <div class="pagination-container">
+
+                    <div class="pagination-info">
+
+                        Showing
+
+                        <strong id="quizShowingFrom">
+                            0
+                        </strong>
+
+                        –
+
+                        <strong id="quizShowingTo">
+                            0
+                        </strong>
+
+                        of
+
+                        <strong id="quizTotalCount">
+                            0
+                        </strong>
+
+                        quizzes
+
+                    </div>
+
+
+                    <div
+                        class="pagination"
+                        id="teacherQuizPagination">
+
+                        <button
+                            type="button"
+                            id="previousTeacherQuizPage"
+                            disabled>
+
+                            <i class="fa-solid fa-chevron-left"></i>
+
+                        </button>
+
+
+                        <div
+                            class="page-numbers"
+                            id="teacherQuizPageNumbers">
+                        </div>
+
+
+                        <button
+                            type="button"
+                            id="nextTeacherQuizPage"
+                            disabled>
+
+                            <i class="fa-solid fa-chevron-right"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 QUIZ ACTIVITY
+            ================================================== -->
+
+            <section class="content-card">
+
+                <div class="content-card-header">
+
+                    <div>
+
+                        <h2>
+                            <i class="fa-solid fa-clock-rotate-left"></i>
+                            Recent Quiz Activity
+                        </h2>
+
+                        <p>
+                            Latest changes and assessment activity.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="activity-list"
+                    id="teacherQuizActivityList">
+
+                    <!-- Dynamic activity -->
+
+                </div>
+
+
+                <div
+                    class="empty-state compact"
+                    id="quizActivityEmptyState"
+                    hidden>
+
+                    <div class="empty-state-icon">
+
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+
+                    </div>
+
+                    <h3>No recent activity</h3>
+
+                    <p>
+                        Quiz activity will appear here.
+                    </p>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- =========================================================
+     QUIZ ACTION MODAL
+========================================================= -->
+
+<div
+    class="modal-overlay"
+    id="quizActionModal"
+    hidden>
+
+    <div
+        class="modal modal-medium"
+        role="dialog"
+        aria-modal="true">
+
+        <div class="modal-header">
+
+            <div>
+
+                <span class="modal-eyebrow">
+                    QUIZ MANAGEMENT
+                </span>
+
+                <h2 id="quizActionTitle">
+                    Quiz Actions
+                </h2>
+
+            </div>
+
+            <button
+                type="button"
+                class="modal-close"
+                id="closeQuizActionModal">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <div class="modal-body">
+
+            <div
+                class="quiz-action-list"
+                id="quizActionList">
+
+                <button
+                    type="button"
+                    class="quiz-action-item"
+                    id="editQuizAction">
+
+                    <span class="action-icon">
+                        <i class="fa-solid fa-pen"></i>
+                    </span>
+
+                    <span>
+                        <strong>Edit Quiz</strong>
+                        <small>
+                            Modify quiz settings and questions
+                        </small>
+                    </span>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="quiz-action-item"
+                    id="viewQuizAction">
+
+                    <span class="action-icon">
+                        <i class="fa-solid fa-eye"></i>
+                    </span>
+
+                    <span>
+                        <strong>Preview Quiz</strong>
+                        <small>
+                            View the quiz as a student
+                        </small>
+                    </span>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="quiz-action-item"
+                    id="quizResultsAction">
+
+                    <span class="action-icon">
+                        <i class="fa-solid fa-chart-column"></i>
+                    </span>
+
+                    <span>
+                        <strong>View Results</strong>
+                        <small>
+                            Review student performance
+                        </small>
+                    </span>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="quiz-action-item"
+                    id="duplicateQuizAction">
+
+                    <span class="action-icon">
+                        <i class="fa-solid fa-copy"></i>
+                    </span>
+
+                    <span>
+                        <strong>Duplicate Quiz</strong>
+                        <small>
+                            Create a copy for another assessment
+                        </small>
+                    </span>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="quiz-action-item"
+                    id="archiveQuizAction">
+
+                    <span class="action-icon">
+                        <i class="fa-solid fa-box-archive"></i>
+                    </span>
+
+                    <span>
+                        <strong>Archive Quiz</strong>
+                        <small>
+                            Remove it from active quizzes
+                        </small>
+                    </span>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="quiz-action-item danger"
+                    id="deleteQuizAction">
+
+                    <span class="action-icon">
+                        <i class="fa-solid fa-trash"></i>
+                    </span>
+
+                    <span>
+                        <strong>Delete Quiz</strong>
+                        <small>
+                            Permanently remove this assessment
+                        </small>
+                    </span>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     DELETE CONFIRMATION
+========================================================= -->
+
+<div
+    class="modal-overlay"
+    id="deleteQuizModal"
+    hidden>
+
+    <div
+        class="modal modal-small"
+        role="dialog"
+        aria-modal="true">
+
+        <div class="modal-body confirmation-content">
+
+            <div class="confirmation-icon danger">
+
+                <i class="fa-solid fa-trash"></i>
+
+            </div>
+
+            <h3>
+                Delete this quiz?
+            </h3>
+
+            <p>
+                This assessment and its associated configuration
+                will be permanently removed. This action cannot
+                be undone.
+            </p>
+
+        </div>
+
+
+        <div class="modal-footer">
+
+            <button
+                type="button"
+                class="btn btn-secondary"
+                id="cancelDeleteQuiz">
+
+                Cancel
+
+            </button>
+
+            <button
+                type="button"
+                class="btn btn-danger"
+                id="confirmDeleteQuiz">
+
+                <i class="fa-solid fa-trash"></i>
+                Delete Quiz
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     LOGOUT MODAL
+========================================================= -->
+
+<div
+    class="modal-overlay"
+    id="logoutModal"
+    hidden>
+
+    <div
+        class="modal modal-small"
+        role="dialog"
+        aria-modal="true">
+
+        <div class="modal-body confirmation-content">
+
+            <div class="confirmation-icon">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+            </div>
+
+            <h3>
+                Sign out of your account?
+            </h3>
+
+            <p>
+                You will need to sign in again to access
+                the Teacher Portal.
+            </p>
+
+        </div>
+
+
+        <div class="modal-footer">
+
+            <button
+                type="button"
+                class="btn btn-secondary"
+                id="cancelLogout">
+
+                Stay Signed In
+
+            </button>
+
+            <button
+                type="button"
+                class="btn btn-primary"
+                id="confirmLogout">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Sign Out
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     TOAST
+========================================================= -->
+
+<div
+    class="toast-container"
+    id="toastContainer"
+    aria-live="polite"
+    aria-atomic="true">
+</div>
+
+
+<!-- JavaScript will be added later -->
+<script src="../js/app.js"></script>
+
+</body>
+</html>
