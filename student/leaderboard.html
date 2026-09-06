@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Leaderboard | College Quiz</title>
+
+    <meta
+        name="description"
+        content="View student rankings and quiz performance."
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+<div class="dashboard-layout">
+
+    <!-- =========================================
+         SIDEBAR
+    ========================================== -->
+
+    <aside class="dashboard-sidebar" id="studentSidebar">
+
+        <div class="sidebar-logo">
+
+            <div class="logo-icon">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+
+            <div>
+                <strong>College Quiz</strong>
+                <span>Assessment Portal</span>
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-navigation">
+
+            <div class="sidebar-section-title">
+                MAIN
+            </div>
+
+            <a href="dashboard.html" class="sidebar-link">
+                <i class="fa-solid fa-grid-2"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="quizzes.html" class="sidebar-link">
+                <i class="fa-solid fa-file-circle-check"></i>
+                <span>My Quizzes</span>
+                <span class="nav-badge" id="availableQuizCount">0</span>
+            </a>
+
+            <a href="result.html" class="sidebar-link">
+                <i class="fa-solid fa-chart-column"></i>
+                <span>My Results</span>
+            </a>
+
+            <a href="leaderboard.html" class="sidebar-link active">
+                <i class="fa-solid fa-ranking-star"></i>
+                <span>Leaderboard</span>
+            </a>
+
+
+            <div class="sidebar-section-title">
+                ACCOUNT
+            </div>
+
+            <a href="profile.html" class="sidebar-link">
+                <i class="fa-regular fa-user"></i>
+                <span>My Profile</span>
+            </a>
+
+            <a href="#" class="sidebar-link" id="studentHelpLink">
+                <i class="fa-regular fa-circle-question"></i>
+                <span>Help & Support</span>
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="sidebar-user">
+
+                <div class="user-avatar" id="sidebarUserAvatar">
+                    S
+                </div>
+
+                <div class="sidebar-user-info">
+
+                    <strong id="sidebarStudentName">
+                        Student
+                    </strong>
+
+                    <span>
+                        Student
+                    </span>
+
+                </div>
+
+                <button
+                    type="button"
+                    id="sidebarLogout"
+                    class="sidebar-logout"
+                    title="Logout"
+                >
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================================
+         MAIN CONTENT
+    ========================================== -->
+
+    <main class="dashboard-main">
+
+        <!-- TOPBAR -->
+
+        <header class="dashboard-topbar">
+
+            <button
+                type="button"
+                id="sidebarToggle"
+                class="mobile-sidebar-toggle"
+                aria-label="Open navigation"
+            >
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+
+            <div class="topbar-page-title">
+
+                <span>Student Portal</span>
+
+                <h1>Leaderboard</h1>
+
+            </div>
+
+
+            <div class="topbar-actions">
+
+                <button
+                    type="button"
+                    class="topbar-icon-button"
+                    id="notificationButton"
+                    aria-label="Notifications"
+                >
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span
+                        class="notification-dot"
+                        id="notificationDot"
+                        hidden
+                    ></span>
+
+                </button>
+
+
+                <a
+                    href="profile.html"
+                    class="topbar-profile"
+                >
+
+                    <div
+                        class="topbar-avatar"
+                        id="topbarStudentAvatar"
+                    >
+                        S
+                    </div>
+
+                    <div class="topbar-profile-info">
+
+                        <strong id="topbarStudentName">
+                            Student
+                        </strong>
+
+                        <span id="topbarStudentClass">
+                            Student
+                        </span>
+
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </a>
+
+            </div>
+
+        </header>
+
+
+        <!-- =========================================
+             CONTENT
+        ========================================== -->
+
+        <section class="dashboard-content">
+
+
+            <!-- PAGE HEADER -->
+
+            <div class="page-header">
+
+                <div>
+
+                    <span class="dashboard-eyebrow">
+                        <i class="fa-solid fa-trophy"></i>
+                        Rankings
+                    </span>
+
+                    <h2>
+                        Leaderboard
+                    </h2>
+
+                    <p>
+                        See how you compare with other students
+                        across your assessments.
+                    </p>
+
+                </div>
+
+
+                <div class="page-header-stat">
+
+                    <span>
+                        Your Rank
+                    </span>
+
+                    <strong id="myRank">
+                        —
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================================
+                 LEADERBOARD FILTERS
+            ========================================== -->
+
+            <div class="leaderboard-toolbar">
+
+                <div class="leaderboard-search">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="search"
+                        id="leaderboardSearch"
+                        placeholder="Search student..."
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+                <div class="leaderboard-filter">
+
+                    <label for="leaderboardScope">
+                        Ranking
+                    </label>
+
+                    <select id="leaderboardScope">
+
+                        <option value="overall">
+                            Overall
+                        </option>
+
+                        <option value="quiz">
+                            Quiz
+                        </option>
+
+                        <option value="subject">
+                            Subject
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div
+                    class="leaderboard-quiz-filter"
+                    id="leaderboardQuizFilter"
+                    hidden
+                >
+
+                    <label for="leaderboardQuiz">
+                        Quiz
+                    </label>
+
+                    <select id="leaderboardQuiz">
+
+                        <option value="all">
+                            Select Quiz
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div
+                    class="leaderboard-subject-filter"
+                    id="leaderboardSubjectFilter"
+                    hidden
+                >
+
+                    <label for="leaderboardSubject">
+                        Subject
+                    </label>
+
+                    <select id="leaderboardSubject">
+
+                        <option value="all">
+                            Select Subject
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================================
+                 TOP 3 PODIUM
+            ========================================== -->
+
+            <section class="leaderboard-podium">
+
+                <!-- SECOND -->
+
+                <div class="podium-card second">
+
+                    <div class="podium-position">
+                        2
+                    </div>
+
+                    <div
+                        class="podium-avatar"
+                        id="secondPlaceAvatar"
+                    >
+                        —
+                    </div>
+
+                    <h3 id="secondPlaceName">
+                        —
+                    </h3>
+
+                    <span>
+                        2nd Place
+                    </span>
+
+                    <strong id="secondPlaceScore">
+                        0%
+                    </strong>
+
+                </div>
+
+
+                <!-- FIRST -->
+
+                <div class="podium-card first">
+
+                    <div class="podium-crown">
+                        <i class="fa-solid fa-crown"></i>
+                    </div>
+
+                    <div class="podium-position">
+                        1
+                    </div>
+
+                    <div
+                        class="podium-avatar"
+                        id="firstPlaceAvatar"
+                    >
+                        —
+                    </div>
+
+                    <h3 id="firstPlaceName">
+                        —
+                    </h3>
+
+                    <span>
+                        1st Place
+                    </span>
+
+                    <strong id="firstPlaceScore">
+                        0%
+                    </strong>
+
+                </div>
+
+
+                <!-- THIRD -->
+
+                <div class="podium-card third">
+
+                    <div class="podium-position">
+                        3
+                    </div>
+
+                    <div
+                        class="podium-avatar"
+                        id="thirdPlaceAvatar"
+                    >
+                        —
+                    </div>
+
+                    <h3 id="thirdPlaceName">
+                        —
+                    </h3>
+
+                    <span>
+                        3rd Place
+                    </span>
+
+                    <strong id="thirdPlaceScore">
+                        0%
+                    </strong>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================================
+                 MY RANK CARD
+            ========================================== -->
+
+            <section class="my-ranking-card">
+
+                <div class="my-ranking-position">
+
+                    <span>
+                        Your Position
+                    </span>
+
+                    <strong id="myRankingPosition">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="my-ranking-user">
+
+                    <div
+                        class="my-ranking-avatar"
+                        id="myRankingAvatar"
+                    >
+                        S
+                    </div>
+
+                    <div>
+
+                        <strong id="myRankingName">
+                            Student
+                        </strong>
+
+                        <span id="myRankingClass">
+                            Student
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="my-ranking-stat">
+
+                    <span>
+                        Average Score
+                    </span>
+
+                    <strong id="myRankingScore">
+                        0%
+                    </strong>
+
+                </div>
+
+
+                <div class="my-ranking-stat">
+
+                    <span>
+                        Quizzes
+                    </span>
+
+                    <strong id="myRankingQuizzes">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="my-ranking-stat">
+
+                    <span>
+                        Points
+                    </span>
+
+                    <strong id="myRankingPoints">
+                        0
+                    </strong>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================================
+                 RANKING TABLE
+            ========================================== -->
+
+            <section class="dashboard-panel leaderboard-table-panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <span class="panel-eyebrow">
+                            Student Rankings
+                        </span>
+
+                        <h3>
+                            Overall Ranking
+                        </h3>
+
+                    </div>
+
+                    <span
+                        class="ranking-count"
+                        id="rankingCount"
+                    >
+                        0 Students
+                    </span>
+
+                </div>
+
+
+                <div class="table-container">
+
+                    <table class="leaderboard-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Rank
+                                </th>
+
+                                <th>
+                                    Student
+                                </th>
+
+                                <th>
+                                    Department
+                                </th>
+
+                                <th>
+                                    Quizzes
+                                </th>
+
+                                <th>
+                                    Average
+                                </th>
+
+                                <th>
+                                    Points
+                                </th>
+
+                                <th>
+                                    Trend
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="leaderboardTableBody">
+
+                            <!-- JavaScript will populate -->
+
+                        </tbody>
+
+                    </table>
+
+
+                    <!-- Empty State -->
+
+                    <div
+                        class="table-empty-state"
+                        id="leaderboardEmptyState"
+                    >
+
+                        <div class="empty-state-icon">
+
+                            <i class="fa-solid fa-ranking-star"></i>
+
+                        </div>
+
+                        <h3>
+                            No ranking data
+                        </h3>
+
+                        <p>
+                            Rankings will appear once students
+                            complete assessments.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================================
+                 PAGINATION
+            ========================================== -->
+
+            <div
+                class="pagination"
+                id="leaderboardPagination"
+            >
+
+                <button
+                    type="button"
+                    id="previousLeaderboardPage"
+                    disabled
+                    aria-label="Previous page"
+                >
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+
+                <div id="leaderboardPageNumbers"></div>
+
+                <button
+                    type="button"
+                    id="nextLeaderboardPage"
+                    disabled
+                    aria-label="Next page"
+                >
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- =========================================
+     NOTIFICATION PANEL
+========================================== -->
+
+<div
+    class="notification-panel"
+    id="notificationPanel"
+    aria-hidden="true"
+>
+
+    <div class="notification-header">
+
+        <div>
+
+            <strong>
+                Notifications
+            </strong>
+
+            <span id="notificationCount">
+                0
+            </span>
+
+        </div>
+
+        <button
+            type="button"
+            id="closeNotifications"
+            aria-label="Close notifications"
+        >
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+    </div>
+
+
+    <div
+        class="notification-list"
+        id="notificationList"
+    >
+
+        <div class="empty-state">
+
+            <i class="fa-regular fa-bell-slash"></i>
+
+            <p>
+                No new notifications
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================
+     LOGOUT MODAL
+========================================== -->
+
+<div
+    class="modal"
+    id="logoutModal"
+    aria-hidden="true"
+>
+
+    <div class="modal-overlay"></div>
+
+    <div class="modal-content">
+
+        <div class="modal-icon">
+            <i class="fa-solid fa-right-from-bracket"></i>
+        </div>
+
+        <h3>
+            Sign out?
+        </h3>
+
+        <p>
+            Are you sure you want to sign out of your account?
+        </p>
+
+        <div class="modal-actions">
+
+            <button
+                type="button"
+                id="cancelLogout"
+            >
+                Cancel
+            </button>
+
+            <button
+                type="button"
+                id="confirmLogout"
+            >
+                Sign Out
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="../js/app.js"></script>
+
+</body>
+</html>
