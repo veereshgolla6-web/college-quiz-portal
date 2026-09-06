@@ -1,0 +1,1785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Help & Support | Quiz Portal</title>
+
+    <meta
+        name="description"
+        content="Quiz Portal Admin Help and Support Center"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="admin-page">
+
+<div class="app-shell">
+
+    <!-- ==========================================
+         SIDEBAR
+    =========================================== -->
+
+    <aside class="sidebar" id="adminSidebar">
+
+        <div class="sidebar-header">
+
+            <a href="dashboard.html" class="brand">
+
+                <div class="brand-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+
+                <div class="brand-text">
+                    <span class="brand-title">Quiz Portal</span>
+                    <span class="brand-subtitle">Administration</span>
+                </div>
+
+            </a>
+
+            <button
+                type="button"
+                class="sidebar-close"
+                id="sidebarClose"
+                aria-label="Close sidebar"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+
+        <!-- Sidebar Navigation -->
+
+        <nav class="sidebar-nav">
+
+            <!-- Main -->
+
+            <div class="nav-section">
+
+                <div class="nav-section-title">
+                    Main
+                </div>
+
+                <a href="dashboard.html" class="nav-link">
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-gauge-high"></i>
+                    </span>
+
+                    <span class="nav-text">
+                        Dashboard
+                    </span>
+
+                </a>
+
+            </div>
+
+
+            <!-- Management -->
+
+            <div class="nav-section">
+
+                <div class="nav-section-title">
+                    Management
+                </div>
+
+                <a href="students.html" class="nav-link">
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-user-graduate"></i>
+                    </span>
+
+                    <span class="nav-text">
+                        Students
+                    </span>
+
+                </a>
+
+
+                <a href="teachers.html" class="nav-link">
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-chalkboard-user"></i>
+                    </span>
+
+                    <span class="nav-text">
+                        Teachers
+                    </span>
+
+                </a>
+
+
+                <a href="departments.html" class="nav-link">
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-building-columns"></i>
+                    </span>
+
+                    <span class="nav-text">
+                        Departments
+                    </span>
+
+                </a>
+
+
+                <a href="subjects.html" class="nav-link">
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-book-open"></i>
+                    </span>
+
+                    <span class="nav-text">
+                        Subjects
+                    </span>
+
+                </a>
+
+
+                <a href="quizzes.html" class="nav-link">
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-file-circle-question"></i>
+                    </span>
+
+                    <span class="nav-text">
+                        Quizzes
+                    </span>
+
+                </a>
+
+            </div>
+
+
+            <!-- Performance -->
+
+            <div class="nav-section">
+
+                <div class="nav-section-title">
+                    Performance
+                </div>
+
+
+                <a href="results.html" class="nav-link">
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-square-poll-vertical"></i>
+                    </span>
+
+                    <span class="nav-text">
+                        Results
+                    </span>
+
+                </a>
+
+
+                <a href="leaderboard.html" class="nav-link">
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-ranking-star"></i>
+                    </span>
+
+                    <span class="nav-text">
+                        Leaderboard
+                    </span>
+
+                </a>
+
+
+                <a href="reports.html" class="nav-link">
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </span>
+
+                    <span class="nav-text">
+                        Reports
+                    </span>
+
+                </a>
+
+            </div>
+
+
+            <!-- System -->
+
+            <div class="nav-section">
+
+                <div class="nav-section-title">
+                    System
+                </div>
+
+
+                <a href="settings.html" class="nav-link">
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-sliders"></i>
+                    </span>
+
+                    <span class="nav-text">
+                        Settings
+                    </span>
+
+                </a>
+
+
+                <a href="profile.html" class="nav-link">
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </span>
+
+                    <span class="nav-text">
+                        My Profile
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="help.html"
+                    class="nav-link active"
+                    aria-current="page"
+                >
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-circle-question"></i>
+                    </span>
+
+                    <span class="nav-text">
+                        Help & Support
+                    </span>
+
+                </a>
+
+            </div>
+
+        </nav>
+
+
+        <!-- Sidebar Footer -->
+
+        <div class="sidebar-footer">
+
+            <button
+                type="button"
+                class="nav-link logout-link"
+                id="sidebarLogout"
+            >
+
+                <span class="nav-icon">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                </span>
+
+                <span class="nav-text">
+                    Logout
+                </span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ==========================================
+         MAIN CONTENT
+    =========================================== -->
+
+    <main class="main-content">
+
+        <!-- ======================================
+             TOPBAR
+        ======================================= -->
+
+        <header class="topbar">
+
+            <div class="topbar-left">
+
+                <button
+                    type="button"
+                    class="mobile-menu-button"
+                    id="mobileMenuButton"
+                    aria-label="Open menu"
+                >
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+
+                <div class="breadcrumb">
+
+                    <a href="dashboard.html">
+                        Admin
+                    </a>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                    <span>
+                        Help & Support
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+                <!-- Notifications -->
+
+                <div class="notification-wrapper">
+
+                    <button
+                        type="button"
+                        class="topbar-icon-button"
+                        id="notificationButton"
+                        aria-label="Notifications"
+                    >
+
+                        <i class="fa-regular fa-bell"></i>
+
+                        <span
+                            class="notification-count"
+                            id="notificationCount"
+                        >
+                            0
+                        </span>
+
+                    </button>
+
+
+                    <div
+                        class="notification-panel"
+                        id="notificationPanel"
+                        hidden
+                    >
+
+                        <div class="notification-panel-header">
+
+                            <div>
+                                <h3>Notifications</h3>
+                                <span>No new notifications</span>
+                            </div>
+
+                            <button
+                                type="button"
+                                id="notificationPanelClose"
+                                aria-label="Close notifications"
+                            >
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+
+                        </div>
+
+
+                        <div
+                            class="notification-list"
+                            id="notificationList"
+                        >
+
+                            <div class="notification-empty">
+
+                                <div class="notification-empty-icon">
+                                    <i class="fa-regular fa-bell-slash"></i>
+                                </div>
+
+                                <p>
+                                    You're all caught up.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="notification-panel-footer">
+
+                            <button
+                                type="button"
+                                id="markNotificationsRead"
+                            >
+                                Mark all as read
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Profile -->
+
+                <div class="topbar-profile-wrapper">
+
+                    <button
+                        type="button"
+                        class="topbar-profile"
+                        id="topbarProfile"
+                        aria-expanded="false"
+                    >
+
+                        <div class="profile-avatar">
+                            A
+                        </div>
+
+                        <div class="profile-summary">
+
+                            <strong>
+                                Administrator
+                            </strong>
+
+                            <span>
+                                Super Admin
+                            </span>
+
+                        </div>
+
+                        <i class="fa-solid fa-chevron-down"></i>
+
+                    </button>
+
+
+                    <div
+                        class="profile-menu"
+                        id="adminProfileMenu"
+                        hidden
+                    >
+
+                        <a href="profile.html">
+
+                            <i class="fa-regular fa-user"></i>
+
+                            <span>
+                                My Profile
+                            </span>
+
+                        </a>
+
+
+                        <a href="settings.html">
+
+                            <i class="fa-solid fa-sliders"></i>
+
+                            <span>
+                                Settings
+                            </span>
+
+                        </a>
+
+
+                        <div class="profile-menu-divider"></div>
+
+
+                        <button
+                            type="button"
+                            id="profileMenuLogout"
+                        >
+
+                            <i class="fa-solid fa-right-from-bracket"></i>
+
+                            <span>
+                                Logout
+                            </span>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ======================================
+             PAGE BODY
+        ======================================= -->
+
+        <section class="page-content help-page">
+
+            <!-- Page Header -->
+
+            <div class="page-header">
+
+                <div>
+
+                    <span class="page-eyebrow">
+                        SUPPORT CENTER
+                    </span>
+
+                    <h1>
+                        Help & Support
+                    </h1>
+
+                    <p>
+                        Find answers, learn how the platform works,
+                        and get assistance when you need it.
+                    </p>
+
+                </div>
+
+
+                <div class="page-header-actions">
+
+                    <button
+                        type="button"
+                        class="btn btn-primary"
+                        id="contactSupportButton"
+                    >
+
+                        <i class="fa-solid fa-headset"></i>
+
+                        Contact Support
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==================================
+                 SUPPORT SEARCH
+            =================================== -->
+
+            <section class="help-search-section">
+
+                <div class="help-search-content">
+
+                    <div class="help-search-icon">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            How can we help?
+                        </h2>
+
+                        <p>
+                            Search our help center for answers and guides.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="help-search-box">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="search"
+                        id="helpSearch"
+                        placeholder="Search for help, guides, or questions..."
+                        autocomplete="off"
+                    >
+
+                    <button
+                        type="button"
+                        id="clearHelpSearch"
+                        aria-label="Clear search"
+                    >
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- ==================================
+                 QUICK HELP CATEGORIES
+            =================================== -->
+
+            <section class="help-category-grid">
+
+                <button
+                    type="button"
+                    class="help-category-card"
+                    data-category="getting-started"
+                >
+
+                    <span class="help-category-icon">
+
+                        <i class="fa-solid fa-rocket"></i>
+
+                    </span>
+
+                    <span class="help-category-content">
+
+                        <strong>
+                            Getting Started
+                        </strong>
+
+                        <small>
+                            Learn the basics of Quiz Portal
+                        </small>
+
+                    </span>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="help-category-card"
+                    data-category="quiz-management"
+                >
+
+                    <span class="help-category-icon">
+
+                        <i class="fa-solid fa-file-circle-question"></i>
+
+                    </span>
+
+                    <span class="help-category-content">
+
+                        <strong>
+                            Quiz Management
+                        </strong>
+
+                        <small>
+                            Create, publish, and manage quizzes
+                        </small>
+
+                    </span>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="help-category-card"
+                    data-category="users"
+                >
+
+                    <span class="help-category-icon">
+
+                        <i class="fa-solid fa-users"></i>
+
+                    </span>
+
+                    <span class="help-category-content">
+
+                        <strong>
+                            User Management
+                        </strong>
+
+                        <small>
+                            Manage students and teachers
+                        </small>
+
+                    </span>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="help-category-card"
+                    data-category="reports"
+                >
+
+                    <span class="help-category-icon">
+
+                        <i class="fa-solid fa-chart-column"></i>
+
+                    </span>
+
+                    <span class="help-category-content">
+
+                        <strong>
+                            Reports & Analytics
+                        </strong>
+
+                        <small>
+                            Understand results and performance
+                        </small>
+
+                    </span>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </section>
+
+
+            <!-- ==================================
+                 GETTING STARTED
+            =================================== -->
+
+            <section class="help-section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-eyebrow">
+                            QUICK GUIDE
+                        </span>
+
+                        <h2>
+                            Getting Started
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="getting-started-grid">
+
+                    <article class="getting-started-card">
+
+                        <span class="step-number">
+                            01
+                        </span>
+
+                        <div class="step-icon">
+                            <i class="fa-solid fa-users-gear"></i>
+                        </div>
+
+                        <h3>
+                            Set Up Users
+                        </h3>
+
+                        <p>
+                            Add students and teachers and assign
+                            departments, subjects, and roles.
+                        </p>
+
+                        <a href="students.html">
+                            Manage Students
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </article>
+
+
+                    <article class="getting-started-card">
+
+                        <span class="step-number">
+                            02
+                        </span>
+
+                        <div class="step-icon">
+                            <i class="fa-solid fa-book-open"></i>
+                        </div>
+
+                        <h3>
+                            Configure Subjects
+                        </h3>
+
+                        <p>
+                            Create subjects and organize them
+                            by department and semester.
+                        </p>
+
+                        <a href="subjects.html">
+                            Manage Subjects
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </article>
+
+
+                    <article class="getting-started-card">
+
+                        <span class="step-number">
+                            03
+                        </span>
+
+                        <div class="step-icon">
+                            <i class="fa-solid fa-file-circle-plus"></i>
+                        </div>
+
+                        <h3>
+                            Create Quizzes
+                        </h3>
+
+                        <p>
+                            Configure quiz questions, marks,
+                            duration, attempts, and publishing.
+                        </p>
+
+                        <a href="quizzes.html">
+                            Manage Quizzes
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </article>
+
+
+                    <article class="getting-started-card">
+
+                        <span class="step-number">
+                            04
+                        </span>
+
+                        <div class="step-icon">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+
+                        <h3>
+                            Review Performance
+                        </h3>
+
+                        <p>
+                            Monitor submissions, results,
+                            rankings, and overall performance.
+                        </p>
+
+                        <a href="reports.html">
+                            View Reports
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- ==================================
+                 FAQ + GUIDES
+            =================================== -->
+
+            <div class="help-main-grid">
+
+                <!-- FAQ -->
+
+                <section class="help-panel">
+
+                    <div class="help-panel-header">
+
+                        <div>
+
+                            <span class="section-eyebrow">
+                                FAQ
+                            </span>
+
+                            <h2>
+                                Frequently Asked Questions
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="faq-list"
+                        id="faqList"
+                    >
+
+                        <details class="faq-item">
+
+                            <summary>
+
+                                <span>
+                                    How do I create a new quiz?
+                                </span>
+
+                                <i class="fa-solid fa-chevron-down"></i>
+
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Open the Quizzes section and select
+                                    the create quiz option. Enter the quiz
+                                    details, configure timing and marks,
+                                    add questions, then publish the quiz
+                                    when it is ready.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+
+                        <details class="faq-item">
+
+                            <summary>
+
+                                <span>
+                                    Can teachers create their own quizzes?
+                                </span>
+
+                                <i class="fa-solid fa-chevron-down"></i>
+
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Yes. Teachers can create quizzes,
+                                    manage questions, configure quiz
+                                    settings, publish quizzes, and
+                                    review student performance according
+                                    to their permissions.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+
+                        <details class="faq-item">
+
+                            <summary>
+
+                                <span>
+                                    Can I edit a published quiz?
+                                </span>
+
+                                <i class="fa-solid fa-chevron-down"></i>
+
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Quiz editing depends on the current
+                                    quiz status and whether students have
+                                    already started attempting it.
+                                    Review the quiz settings before making
+                                    changes to an active assessment.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+
+                        <details class="faq-item">
+
+                            <summary>
+
+                                <span>
+                                    How are quiz results calculated?
+                                </span>
+
+                                <i class="fa-solid fa-chevron-down"></i>
+
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Results are calculated automatically
+                                    using the marks assigned to questions,
+                                    correct answers, unanswered questions,
+                                    and any configured negative marking.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+
+                        <details class="faq-item">
+
+                            <summary>
+
+                                <span>
+                                    How can I export results?
+                                </span>
+
+                                <i class="fa-solid fa-chevron-down"></i>
+
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Open the Results or Reports section
+                                    and use the available export controls.
+                                    Filters can be applied before exporting
+                                    the required dataset.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+
+                        <details class="faq-item">
+
+                            <summary>
+
+                                <span>
+                                    What happens if a student runs out of time?
+                                </span>
+
+                                <i class="fa-solid fa-chevron-down"></i>
+
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    A timed quiz can automatically submit
+                                    the student's current answers when the
+                                    configured duration expires.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+
+                        <details class="faq-item">
+
+                            <summary>
+
+                                <span>
+                                    Can an administrator deactivate a user?
+                                </span>
+
+                                <i class="fa-solid fa-chevron-down"></i>
+
+                            </summary>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Yes. Administrators can manage user
+                                    account status from the Students and
+                                    Teachers sections.
+                                </p>
+
+                            </div>
+
+                        </details>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ADMIN GUIDES -->
+
+                <section class="help-panel">
+
+                    <div class="help-panel-header">
+
+                        <div>
+
+                            <span class="section-eyebrow">
+                                ADMIN GUIDES
+                            </span>
+
+                            <h2>
+                                Useful Resources
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="resource-list">
+
+                        <a
+                            href="students.html"
+                            class="resource-item"
+                        >
+
+                            <span class="resource-icon">
+                                <i class="fa-solid fa-user-graduate"></i>
+                            </span>
+
+                            <span class="resource-content">
+
+                                <strong>
+                                    Managing Students
+                                </strong>
+
+                                <small>
+                                    Add, edit, activate, deactivate,
+                                    and organize student accounts.
+                                </small>
+
+                            </span>
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+
+                        <a
+                            href="teachers.html"
+                            class="resource-item"
+                        >
+
+                            <span class="resource-icon">
+                                <i class="fa-solid fa-chalkboard-user"></i>
+                            </span>
+
+                            <span class="resource-content">
+
+                                <strong>
+                                    Managing Teachers
+                                </strong>
+
+                                <small>
+                                    Configure teacher accounts,
+                                    roles, subjects, and departments.
+                                </small>
+
+                            </span>
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+
+                        <a
+                            href="quizzes.html"
+                            class="resource-item"
+                        >
+
+                            <span class="resource-icon">
+                                <i class="fa-solid fa-file-circle-question"></i>
+                            </span>
+
+                            <span class="resource-content">
+
+                                <strong>
+                                    Quiz Administration
+                                </strong>
+
+                                <small>
+                                    Review quiz status, attempts,
+                                    publishing, and configuration.
+                                </small>
+
+                            </span>
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+
+                        <a
+                            href="results.html"
+                            class="resource-item"
+                        >
+
+                            <span class="resource-icon">
+                                <i class="fa-solid fa-square-poll-vertical"></i>
+                            </span>
+
+                            <span class="resource-content">
+
+                                <strong>
+                                    Understanding Results
+                                </strong>
+
+                                <small>
+                                    Review student submissions,
+                                    scores, and performance.
+                                </small>
+
+                            </span>
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+
+                        <a
+                            href="reports.html"
+                            class="resource-item"
+                        >
+
+                            <span class="resource-icon">
+                                <i class="fa-solid fa-chart-pie"></i>
+                            </span>
+
+                            <span class="resource-content">
+
+                                <strong>
+                                    Reports & Analytics
+                                </strong>
+
+                                <small>
+                                    Generate useful performance
+                                    reports and summaries.
+                                </small>
+
+                            </span>
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+
+                        <a
+                            href="settings.html"
+                            class="resource-item"
+                        >
+
+                            <span class="resource-icon">
+                                <i class="fa-solid fa-sliders"></i>
+                            </span>
+
+                            <span class="resource-content">
+
+                                <strong>
+                                    Platform Settings
+                                </strong>
+
+                                <small>
+                                    Configure platform-wide preferences
+                                    and administrative options.
+                                </small>
+
+                            </span>
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+
+            <!-- ==================================
+                 SUPPORT CONTACT
+            =================================== -->
+
+            <section class="support-contact-card">
+
+                <div class="support-contact-icon">
+
+                    <i class="fa-solid fa-headset"></i>
+
+                </div>
+
+
+                <div class="support-contact-content">
+
+                    <span class="section-eyebrow">
+                        NEED MORE HELP?
+                    </span>
+
+                    <h2>
+                        Our support team is here for you.
+                    </h2>
+
+                    <p>
+                        If you cannot find the answer you need,
+                        submit a support request and provide as much
+                        information as possible.
+                    </p>
+
+                </div>
+
+
+                <div class="support-contact-action">
+
+                    <button
+                        type="button"
+                        class="btn btn-primary"
+                        id="openSupportTicketButton"
+                    >
+
+                        <i class="fa-solid fa-paper-plane"></i>
+
+                        Submit a Support Request
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- ==================================
+                 SYSTEM INFORMATION
+            =================================== -->
+
+            <section class="system-info-panel">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-eyebrow">
+                            SYSTEM
+                        </span>
+
+                        <h2>
+                            System Information
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="system-info-grid">
+
+                    <div class="system-info-item">
+
+                        <span>
+                            Platform
+                        </span>
+
+                        <strong>
+                            Quiz Portal
+                        </strong>
+
+                    </div>
+
+
+                    <div class="system-info-item">
+
+                        <span>
+                            Application Version
+                        </span>
+
+                        <strong id="applicationVersion">
+                            1.0.0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="system-info-item">
+
+                        <span>
+                            Account Role
+                        </span>
+
+                        <strong>
+                            Super Administrator
+                        </strong>
+
+                    </div>
+
+
+                    <div class="system-info-item">
+
+                        <span>
+                            Environment
+                        </span>
+
+                        <strong>
+                            Production
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- ==========================================
+     SUPPORT TICKET MODAL
+=========================================== -->
+
+<div
+    class="modal-overlay"
+    id="supportTicketModal"
+    hidden
+>
+
+    <div
+        class="modal modal-lg"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="supportTicketModalTitle"
+    >
+
+        <div class="modal-header">
+
+            <div>
+
+                <span class="modal-eyebrow">
+                    SUPPORT
+                </span>
+
+                <h2 id="supportTicketModalTitle">
+                    Submit a Support Request
+                </h2>
+
+                <p>
+                    Tell us what you need help with.
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="modal-close"
+                id="closeSupportTicketModal"
+                aria-label="Close"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <form id="supportTicketForm">
+
+            <div class="modal-body">
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label for="supportCategory">
+                            Category
+                            <span>*</span>
+                        </label>
+
+                        <select id="supportCategory" required>
+
+                            <option value="">
+                                Select category
+                            </option>
+
+                            <option value="account">
+                                Account & Access
+                            </option>
+
+                            <option value="quiz">
+                                Quiz Management
+                            </option>
+
+                            <option value="results">
+                                Results & Reports
+                            </option>
+
+                            <option value="technical">
+                                Technical Issue
+                            </option>
+
+                            <option value="other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="supportPriority">
+                            Priority
+                            <span>*</span>
+                        </label>
+
+                        <select id="supportPriority" required>
+
+                            <option value="">
+                                Select priority
+                            </option>
+
+                            <option value="low">
+                                Low
+                            </option>
+
+                            <option value="medium">
+                                Medium
+                            </option>
+
+                            <option value="high">
+                                High
+                            </option>
+
+                            <option value="critical">
+                                Critical
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group full-width">
+
+                        <label for="supportSubject">
+                            Subject
+                            <span>*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="supportSubject"
+                            placeholder="Briefly describe the issue"
+                            maxlength="150"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group full-width">
+
+                        <label for="supportDescription">
+                            Description
+                            <span>*</span>
+                        </label>
+
+                        <textarea
+                            id="supportDescription"
+                            rows="6"
+                            placeholder="Describe the issue in detail..."
+                            maxlength="2000"
+                            required
+                        ></textarea>
+
+                        <div class="field-helper">
+
+                            <span>
+                                Include relevant details such as
+                                the page, quiz, or account involved.
+                            </span>
+
+                            <span id="supportDescriptionCount">
+                                0 / 2000
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group full-width">
+
+                        <label for="supportAttachment">
+                            Attachment
+                        </label>
+
+                        <div class="file-upload-box">
+
+                            <input
+                                type="file"
+                                id="supportAttachment"
+                                accept=".png,.jpg,.jpeg,.pdf,.txt"
+                            >
+
+                            <label for="supportAttachment">
+
+                                <i class="fa-solid fa-cloud-arrow-up"></i>
+
+                                <strong>
+                                    Attach a file
+                                </strong>
+
+                                <small>
+                                    PNG, JPG, PDF or TXT
+                                </small>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    id="cancelSupportTicket"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    class="btn btn-primary"
+                    id="submitSupportTicket"
+                >
+
+                    <i class="fa-solid fa-paper-plane"></i>
+
+                    Submit Request
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- ==========================================
+     LOGOUT MODAL
+=========================================== -->
+
+<div
+    class="modal-overlay"
+    id="logoutModal"
+    hidden
+>
+
+    <div
+        class="modal modal-sm"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="logoutModalTitle"
+    >
+
+        <div class="modal-icon warning">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+        </div>
+
+
+        <div class="modal-content-centered">
+
+            <h2 id="logoutModalTitle">
+                Sign out?
+            </h2>
+
+            <p>
+                Are you sure you want to sign out of
+                the administrator account?
+            </p>
+
+        </div>
+
+
+        <div class="modal-footer centered">
+
+            <button
+                type="button"
+                class="btn btn-secondary"
+                id="cancelLogout"
+            >
+                Cancel
+            </button>
+
+            <button
+                type="button"
+                class="btn btn-danger"
+                id="confirmLogout"
+            >
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ==========================================
+     TOAST
+=========================================== -->
+
+<div
+    class="toast-container"
+    id="toastContainer"
+    aria-live="polite"
+    aria-atomic="true"
+>
+
+    <div
+        class="toast"
+        id="adminToast"
+        hidden
+    >
+
+        <div class="toast-icon">
+
+            <i class="fa-solid fa-circle-check"></i>
+
+        </div>
+
+
+        <div class="toast-content">
+
+            <strong id="toastTitle">
+                Success
+            </strong>
+
+            <p id="toastMessage">
+                Operation completed successfully.
+            </p>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="toast-close"
+            id="toastClose"
+            aria-label="Close notification"
+        >
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- ==========================================
+     JAVASCRIPT
+     FUNCTIONALITY WILL BE IMPLEMENTED LATER
+=========================================== -->
+
+<script src="../js/app.js"></script>
+
+</body>
+</html>
