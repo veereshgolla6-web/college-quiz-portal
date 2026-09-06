@@ -1,0 +1,1453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Admin Department Management - Quiz & Assessment Portal">
+    <meta name="author" content="Quiz & Assessment Portal">
+
+    <title>Departments | Admin | Quiz & Assessment Portal</title>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <!-- =========================================================
+         ADMIN APPLICATION
+    ========================================================== -->
+    <div class="app-shell" id="adminApp">
+
+        <!-- =====================================================
+             SIDEBAR
+        ====================================================== -->
+        <aside class="sidebar" id="adminSidebar">
+
+            <div class="sidebar-header">
+                <a href="dashboard.html" class="brand">
+                    <span class="brand-icon">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </span>
+
+                    <span class="brand-content">
+                        <strong>Quiz Portal</strong>
+                        <small>Administration</small>
+                    </span>
+                </a>
+
+                <button type="button"
+                        class="sidebar-close"
+                        id="sidebarClose"
+                        aria-label="Close navigation">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+
+            <!-- Main Navigation -->
+            <nav class="sidebar-navigation" aria-label="Admin navigation">
+
+                <div class="nav-section">
+                    <span class="nav-section-title">Main</span>
+
+                    <a href="dashboard.html" class="nav-link">
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-grid-2"></i>
+                        </span>
+                        <span>Dashboard</span>
+                    </a>
+                </div>
+
+
+                <div class="nav-section">
+                    <span class="nav-section-title">Management</span>
+
+                    <a href="students.html" class="nav-link">
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-user-graduate"></i>
+                        </span>
+                        <span>Students</span>
+                    </a>
+
+                    <a href="teachers.html" class="nav-link">
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-chalkboard-user"></i>
+                        </span>
+                        <span>Teachers</span>
+                    </a>
+
+                    <a href="departments.html"
+                       class="nav-link active"
+                       aria-current="page">
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-building-columns"></i>
+                        </span>
+                        <span>Departments</span>
+                    </a>
+
+                    <a href="subjects.html" class="nav-link">
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-book-open"></i>
+                        </span>
+                        <span>Subjects</span>
+                    </a>
+
+                    <a href="quizzes.html" class="nav-link">
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-circle-question"></i>
+                        </span>
+                        <span>Quizzes</span>
+                    </a>
+                </div>
+
+
+                <div class="nav-section">
+                    <span class="nav-section-title">Performance</span>
+
+                    <a href="results.html" class="nav-link">
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-square-poll-vertical"></i>
+                        </span>
+                        <span>Results</span>
+                    </a>
+
+                    <a href="leaderboard.html" class="nav-link">
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-ranking-star"></i>
+                        </span>
+                        <span>Leaderboard</span>
+                    </a>
+
+                    <a href="reports.html" class="nav-link">
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </span>
+                        <span>Reports</span>
+                    </a>
+                </div>
+
+
+                <div class="nav-section">
+                    <span class="nav-section-title">System</span>
+
+                    <a href="settings.html" class="nav-link">
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-gear"></i>
+                        </span>
+                        <span>Settings</span>
+                    </a>
+
+                    <a href="profile.html" class="nav-link">
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-user-circle"></i>
+                        </span>
+                        <span>My Profile</span>
+                    </a>
+
+                    <a href="help.html" class="nav-link">
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-circle-question"></i>
+                        </span>
+                        <span>Help &amp; Support</span>
+                    </a>
+                </div>
+
+            </nav>
+
+
+            <!-- Sidebar Footer -->
+            <div class="sidebar-footer">
+
+                <button type="button"
+                        class="sidebar-logout"
+                        id="sidebarLogout">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                    </span>
+
+                    <span>Logout</span>
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- Mobile Overlay -->
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+        <!-- =====================================================
+             MAIN AREA
+        ====================================================== -->
+        <main class="main-content">
+
+            <!-- =================================================
+                 TOPBAR
+            ================================================== -->
+            <header class="topbar">
+
+                <div class="topbar-left">
+
+                    <button type="button"
+                            class="mobile-menu-button"
+                            id="mobileMenuButton"
+                            aria-label="Open navigation">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+
+
+                    <div class="breadcrumb">
+
+                        <a href="dashboard.html">
+                            Admin
+                        </a>
+
+                        <span class="breadcrumb-separator">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </span>
+
+                        <span>Departments</span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="topbar-right">
+
+                    <!-- Notifications -->
+                    <div class="topbar-notifications">
+
+                        <button type="button"
+                                class="topbar-icon-button"
+                                id="notificationButton"
+                                aria-label="Notifications"
+                                aria-expanded="false">
+
+                            <i class="fa-regular fa-bell"></i>
+
+                            <span class="notification-count"
+                                  id="notificationCount">
+                                0
+                            </span>
+
+                        </button>
+
+
+                        <div class="notification-panel"
+                             id="notificationPanel"
+                             hidden>
+
+                            <div class="notification-panel-header">
+
+                                <div>
+                                    <strong>Notifications</strong>
+                                    <small id="notificationSummary">
+                                        No new notifications
+                                    </small>
+                                </div>
+
+                                <button type="button"
+                                        id="notificationPanelClose"
+                                        aria-label="Close notifications">
+                                    <i class="fa-solid fa-xmark"></i>
+                                </button>
+
+                            </div>
+
+
+                            <div class="notification-list"
+                                 id="notificationList">
+
+                                <div class="notification-empty">
+                                    <i class="fa-regular fa-bell-slash"></i>
+                                    <p>No new notifications</p>
+                                </div>
+
+                            </div>
+
+
+                            <div class="notification-panel-footer">
+
+                                <button type="button"
+                                        id="markNotificationsRead">
+                                    Mark all as read
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Profile -->
+                    <div class="topbar-profile-wrapper">
+
+                        <button type="button"
+                                class="topbar-profile"
+                                id="topbarProfile"
+                                aria-expanded="false">
+
+                            <span class="profile-avatar">
+                                <i class="fa-solid fa-user-shield"></i>
+                            </span>
+
+                            <span class="profile-info">
+                                <strong id="topbarAdminName">
+                                    Administrator
+                                </strong>
+
+                                <small>
+                                    Admin
+                                </small>
+                            </span>
+
+                            <i class="fa-solid fa-chevron-down profile-chevron"></i>
+
+                        </button>
+
+
+                        <div class="profile-menu"
+                             id="adminProfileMenu"
+                             hidden>
+
+                            <a href="profile.html">
+                                <i class="fa-regular fa-user"></i>
+                                <span>My Profile</span>
+                            </a>
+
+                            <a href="settings.html">
+                                <i class="fa-solid fa-gear"></i>
+                                <span>Settings</span>
+                            </a>
+
+                            <div class="profile-menu-divider"></div>
+
+                            <button type="button"
+                                    id="profileMenuLogout">
+                                <i class="fa-solid fa-right-from-bracket"></i>
+                                <span>Logout</span>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- =================================================
+                 PAGE CONTENT
+            ================================================== -->
+            <div class="page-content">
+
+                <!-- Page Header -->
+                <section class="page-header">
+
+                    <div class="page-header-content">
+
+                        <div>
+                            <span class="page-eyebrow">
+                                Academic Management
+                            </span>
+
+                            <h1>Departments</h1>
+
+                            <p>
+                                Manage academic departments, department
+                                heads, faculty allocation and student
+                                distribution.
+                            </p>
+                        </div>
+
+
+                        <div class="page-header-actions">
+
+                            <button type="button"
+                                    class="button button-secondary"
+                                    id="exportDepartmentsButton">
+                                <i class="fa-solid fa-file-export"></i>
+                                <span>Export</span>
+                            </button>
+
+                            <button type="button"
+                                    class="button button-primary"
+                                    id="addDepartmentButton">
+                                <i class="fa-solid fa-plus"></i>
+                                <span>Add Department</span>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     DEPARTMENT STATISTICS
+                ================================================== -->
+                <section class="stats-grid department-stats"
+                         aria-label="Department statistics">
+
+                    <!-- Total Departments -->
+                    <article class="stat-card">
+
+                        <div class="stat-card-icon">
+                            <i class="fa-solid fa-building-columns"></i>
+                        </div>
+
+                        <div class="stat-card-content">
+
+                            <span class="stat-label">
+                                Total Departments
+                            </span>
+
+                            <strong class="stat-value"
+                                    id="departmentsTotal">
+                                0
+                            </strong>
+
+                            <span class="stat-description">
+                                Registered departments
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Active Departments -->
+                    <article class="stat-card">
+
+                        <div class="stat-card-icon">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+
+                        <div class="stat-card-content">
+
+                            <span class="stat-label">
+                                Active Departments
+                            </span>
+
+                            <strong class="stat-value"
+                                    id="activeDepartments">
+                                0
+                            </strong>
+
+                            <span class="stat-description">
+                                Currently operational
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Students -->
+                    <article class="stat-card">
+
+                        <div class="stat-card-icon">
+                            <i class="fa-solid fa-user-graduate"></i>
+                        </div>
+
+                        <div class="stat-card-content">
+
+                            <span class="stat-label">
+                                Students
+                            </span>
+
+                            <strong class="stat-value"
+                                    id="departmentStudents">
+                                0
+                            </strong>
+
+                            <span class="stat-description">
+                                Across all departments
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Teachers -->
+                    <article class="stat-card">
+
+                        <div class="stat-card-icon">
+                            <i class="fa-solid fa-chalkboard-user"></i>
+                        </div>
+
+                        <div class="stat-card-content">
+
+                            <span class="stat-label">
+                                Teachers
+                            </span>
+
+                            <strong class="stat-value"
+                                    id="departmentTeachers">
+                                0
+                            </strong>
+
+                            <span class="stat-description">
+                                Faculty assigned
+                            </span>
+
+                        </div>
+
+                    </article>
+
+                </section>
+
+
+                <!-- =================================================
+                     DEPARTMENT MANAGEMENT
+                ================================================== -->
+                <section class="content-card department-management-card">
+
+                    <!-- Card Header -->
+                    <div class="content-card-header">
+
+                        <div class="content-card-title">
+
+                            <span class="section-icon">
+                                <i class="fa-solid fa-building-columns"></i>
+                            </span>
+
+                            <div>
+                                <h2>Department Directory</h2>
+                                <p>
+                                    View and manage all academic departments.
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Filters -->
+                    <div class="filter-toolbar">
+
+                        <div class="filter-search">
+
+                            <label for="departmentSearch"
+                                   class="sr-only">
+                                Search departments
+                            </label>
+
+                            <div class="search-input-wrapper">
+
+                                <i class="fa-solid fa-magnifying-glass"></i>
+
+                                <input
+                                    type="search"
+                                    id="departmentSearch"
+                                    placeholder="Search by department name or code..."
+                                    autocomplete="off">
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="filter-group">
+
+                            <label for="departmentStatusFilter">
+                                Status
+                            </label>
+
+                            <select id="departmentStatusFilter">
+
+                                <option value="all">
+                                    All Statuses
+                                </option>
+
+                                <option value="active">
+                                    Active
+                                </option>
+
+                                <option value="inactive">
+                                    Inactive
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <button type="button"
+                                class="button button-ghost"
+                                id="clearDepartmentFilters">
+
+                            <i class="fa-solid fa-filter-circle-xmark"></i>
+
+                            <span>Clear Filters</span>
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- Bulk Actions -->
+                    <div class="bulk-action-bar"
+                         id="departmentBulkActionBar"
+                         hidden>
+
+                        <div class="bulk-selection-info">
+
+                            <span class="bulk-selection-icon">
+                                <i class="fa-solid fa-check-double"></i>
+                            </span>
+
+                            <strong>
+                                <span id="selectedDepartmentCount">0</span>
+                                departments selected
+                            </strong>
+
+                        </div>
+
+
+                        <div class="bulk-action-buttons">
+
+                            <button type="button"
+                                    class="button button-small"
+                                    id="bulkActivateDepartments">
+                                <i class="fa-solid fa-circle-check"></i>
+                                Activate
+                            </button>
+
+                            <button type="button"
+                                    class="button button-small"
+                                    id="bulkDeactivateDepartments">
+                                <i class="fa-solid fa-circle-pause"></i>
+                                Deactivate
+                            </button>
+
+                            <button type="button"
+                                    class="button button-small button-danger"
+                                    id="bulkDeleteDepartments">
+                                <i class="fa-solid fa-trash"></i>
+                                Delete
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Department Table -->
+                    <div class="table-container">
+
+                        <table class="data-table"
+                               id="departmentsTable">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th class="checkbox-column">
+
+                                        <label class="checkbox-wrapper">
+
+                                            <input type="checkbox"
+                                                   id="selectAllDepartments">
+
+                                            <span class="custom-checkbox"></span>
+
+                                        </label>
+
+                                    </th>
+
+                                    <th>
+                                        Department
+                                    </th>
+
+                                    <th>
+                                        Department Head
+                                    </th>
+
+                                    <th>
+                                        Students
+                                    </th>
+
+                                    <th>
+                                        Teachers
+                                    </th>
+
+                                    <th>
+                                        Subjects
+                                    </th>
+
+                                    <th>
+                                        Status
+                                    </th>
+
+                                    <th>
+                                        Created
+                                    </th>
+
+                                    <th class="actions-column">
+                                        Actions
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="departmentsTableBody">
+
+                                <!-- Empty state will be managed by JavaScript -->
+
+                                <tr class="table-empty-state">
+
+                                    <td colspan="9">
+
+                                        <div class="empty-state">
+
+                                            <div class="empty-state-icon">
+                                                <i class="fa-solid fa-building-columns"></i>
+                                            </div>
+
+                                            <h3>
+                                                No departments yet
+                                            </h3>
+
+                                            <p>
+                                                Add your first academic
+                                                department to begin managing
+                                                department information.
+                                            </p>
+
+                                            <button type="button"
+                                                    class="button button-primary"
+                                                    id="emptyAddDepartmentButton">
+
+                                                <i class="fa-solid fa-plus"></i>
+
+                                                Add Department
+
+                                            </button>
+
+                                        </div>
+
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+
+                    <!-- Table Footer / Pagination -->
+                    <div class="table-footer">
+
+                        <div class="table-summary">
+
+                            Showing
+                            <strong id="departmentShowingFrom">0</strong>
+                            –
+                            <strong id="departmentShowingTo">0</strong>
+                            of
+                            <strong id="departmentTotalCount">0</strong>
+                            departments
+
+                        </div>
+
+
+                        <div class="pagination">
+
+                            <button type="button"
+                                    class="pagination-button"
+                                    id="departmentPreviousPage"
+                                    disabled
+                                    aria-label="Previous page">
+
+                                <i class="fa-solid fa-chevron-left"></i>
+
+                            </button>
+
+
+                            <span class="pagination-current"
+                                  id="departmentCurrentPage">
+                                1
+                            </span>
+
+
+                            <button type="button"
+                                    class="pagination-button"
+                                    id="departmentNextPage"
+                                    disabled
+                                    aria-label="Next page">
+
+                                <i class="fa-solid fa-chevron-right"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     ACADEMIC STRUCTURE INFORMATION
+                ================================================== -->
+                <section class="content-card">
+
+                    <div class="content-card-header">
+
+                        <div class="content-card-title">
+
+                            <span class="section-icon">
+                                <i class="fa-solid fa-sitemap"></i>
+                            </span>
+
+                            <div>
+                                <h2>Academic Structure</h2>
+
+                                <p>
+                                    Department-level organization and
+                                    academic resources.
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="information-grid">
+
+                        <article class="information-card">
+
+                            <div class="information-card-icon">
+                                <i class="fa-solid fa-users"></i>
+                            </div>
+
+                            <div>
+
+                                <h3>Student Distribution</h3>
+
+                                <p>
+                                    Monitor student enrollment across
+                                    departments, years and sections.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="information-card">
+
+                            <div class="information-card-icon">
+                                <i class="fa-solid fa-person-chalkboard"></i>
+                            </div>
+
+                            <div>
+
+                                <h3>Faculty Allocation</h3>
+
+                                <p>
+                                    Track teachers assigned to each
+                                    department and academic area.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="information-card">
+
+                            <div class="information-card-icon">
+                                <i class="fa-solid fa-book"></i>
+                            </div>
+
+                            <div>
+
+                                <h3>Subject Management</h3>
+
+                                <p>
+                                    Manage subjects and associate them
+                                    with the appropriate department.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="information-card">
+
+                            <div class="information-card-icon">
+                                <i class="fa-solid fa-chart-pie"></i>
+                            </div>
+
+                            <div>
+
+                                <h3>Department Performance</h3>
+
+                                <p>
+                                    Analyze quiz participation and
+                                    academic performance by department.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <!-- =========================================================
+         ADD / EDIT DEPARTMENT MODAL
+    ========================================================== -->
+    <div class="modal-overlay"
+         id="departmentModal"
+         hidden>
+
+        <div class="modal modal-large"
+             role="dialog"
+             aria-modal="true"
+             aria-labelledby="departmentModalTitle">
+
+            <div class="modal-header">
+
+                <div class="modal-title">
+
+                    <span class="modal-icon">
+                        <i class="fa-solid fa-building-columns"></i>
+                    </span>
+
+                    <div>
+                        <h2 id="departmentModalTitle">
+                            Add Department
+                        </h2>
+
+                        <p>
+                            Enter the department information below.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <button type="button"
+                        class="modal-close"
+                        id="closeDepartmentModal"
+                        aria-label="Close modal">
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+            </div>
+
+
+            <form id="departmentForm"
+                  novalidate>
+
+                <input type="hidden"
+                       id="departmentRecordId"
+                       name="departmentRecordId">
+
+
+                <div class="modal-body">
+
+                    <!-- Basic Information -->
+                    <div class="form-section">
+
+                        <div class="form-section-header">
+
+                            <h3>Department Information</h3>
+
+                            <p>
+                                Provide the official department details.
+                            </p>
+
+                        </div>
+
+
+                        <div class="form-grid">
+
+                            <div class="form-field form-field-full">
+
+                                <label for="departmentName">
+                                    Department Name
+                                    <span class="required">*</span>
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="departmentName"
+                                    name="departmentName"
+                                    placeholder="e.g. Computer Science and Engineering"
+                                    maxlength="120"
+                                    required>
+
+                                <small class="form-help">
+                                    Enter the full official department name.
+                                </small>
+
+                            </div>
+
+
+                            <div class="form-field">
+
+                                <label for="departmentCode">
+                                    Department Code
+                                    <span class="required">*</span>
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="departmentCode"
+                                    name="departmentCode"
+                                    placeholder="e.g. CSE"
+                                    maxlength="20"
+                                    required>
+
+                                <small class="form-help">
+                                    Use a short unique department code.
+                                </small>
+
+                            </div>
+
+
+                            <div class="form-field">
+
+                                <label for="departmentStatus">
+                                    Status
+                                    <span class="required">*</span>
+                                </label>
+
+                                <select
+                                    id="departmentStatus"
+                                    name="departmentStatus"
+                                    required>
+
+                                    <option value="active">
+                                        Active
+                                    </option>
+
+                                    <option value="inactive">
+                                        Inactive
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="form-field form-field-full">
+
+                                <label for="departmentDescription">
+                                    Description
+                                </label>
+
+                                <textarea
+                                    id="departmentDescription"
+                                    name="departmentDescription"
+                                    rows="4"
+                                    maxlength="500"
+                                    placeholder="Enter a short description of the department..."></textarea>
+
+                                <small class="form-help">
+                                    Optional description for administrative
+                                    reference.
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Department Head -->
+                    <div class="form-section">
+
+                        <div class="form-section-header">
+
+                            <h3>Department Leadership</h3>
+
+                            <p>
+                                Assign the department head.
+                            </p>
+
+                        </div>
+
+
+                        <div class="form-grid">
+
+                            <div class="form-field form-field-full">
+
+                                <label for="departmentHead">
+                                    Department Head
+                                </label>
+
+                                <select id="departmentHead"
+                                        name="departmentHead">
+
+                                    <option value="">
+                                        Select Department Head
+                                    </option>
+
+                                </select>
+
+                                <small class="form-help">
+                                    Available faculty members will appear
+                                    here after faculty data is loaded.
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Administrative Information -->
+                    <div class="form-section">
+
+                        <div class="form-section-header">
+
+                            <h3>Administrative Notes</h3>
+
+                            <p>
+                                Additional department management information.
+                            </p>
+
+                        </div>
+
+
+                        <div class="info-message">
+
+                            <span class="info-message-icon">
+                                <i class="fa-solid fa-circle-info"></i>
+                            </span>
+
+                            <div>
+
+                                <strong>Department relationships</strong>
+
+                                <p>
+                                    Students, teachers and subjects can be
+                                    associated with this department after it
+                                    is created.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="modal-footer">
+
+                    <button type="button"
+                            class="button button-secondary"
+                            id="cancelDepartmentModal">
+
+                        Cancel
+
+                    </button>
+
+
+                    <button type="submit"
+                            class="button button-primary"
+                            id="saveDepartmentButton">
+
+                        <i class="fa-solid fa-floppy-disk"></i>
+
+                        <span>Save Department</span>
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         DELETE DEPARTMENT MODAL
+    ========================================================== -->
+    <div class="modal-overlay"
+         id="deleteDepartmentModal"
+         hidden>
+
+        <div class="modal modal-small"
+             role="dialog"
+             aria-modal="true"
+             aria-labelledby="deleteDepartmentTitle">
+
+            <div class="modal-header">
+
+                <div class="modal-title">
+
+                    <span class="modal-icon modal-icon-danger">
+                        <i class="fa-solid fa-trash"></i>
+                    </span>
+
+                    <div>
+                        <h2 id="deleteDepartmentTitle">
+                            Delete Department
+                        </h2>
+
+                        <p>
+                            This action requires confirmation.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <button type="button"
+                        class="modal-close"
+                        id="closeDeleteDepartmentModal"
+                        aria-label="Close modal">
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+                <div class="confirmation-message">
+
+                    <div class="confirmation-icon">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+
+                    <h3>
+                        Are you sure?
+                    </h3>
+
+                    <p>
+                        You are about to delete this department.
+                        Department records may be linked to students,
+                        teachers and subjects.
+                    </p>
+
+                    <p class="confirmation-warning">
+                        This action cannot be undone.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button type="button"
+                        class="button button-secondary"
+                        id="cancelDeleteDepartment">
+
+                    Cancel
+
+                </button>
+
+
+                <button type="button"
+                        class="button button-danger"
+                        id="confirmDeleteDepartment">
+
+                    <i class="fa-solid fa-trash"></i>
+
+                    Delete Department
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         TOAST NOTIFICATIONS
+    ========================================================== -->
+    <div class="toast-container"
+         id="toastContainer"
+         aria-live="polite"
+         aria-atomic="true">
+
+        <div class="toast"
+             id="adminToast"
+             hidden>
+
+            <div class="toast-icon"
+                 id="toastIcon">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+            </div>
+
+
+            <div class="toast-content">
+
+                <strong id="toastTitle">
+                    Success
+                </strong>
+
+                <p id="toastMessage">
+                    Department updated successfully.
+                </p>
+
+            </div>
+
+
+            <button type="button"
+                    class="toast-close"
+                    id="toastClose"
+                    aria-label="Close notification">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         LOGOUT CONFIRMATION MODAL
+    ========================================================== -->
+    <div class="modal-overlay"
+         id="logoutModal"
+         hidden>
+
+        <div class="modal modal-small"
+             role="dialog"
+             aria-modal="true"
+             aria-labelledby="logoutModalTitle">
+
+            <div class="modal-header">
+
+                <div class="modal-title">
+
+                    <span class="modal-icon modal-icon-warning">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                    </span>
+
+                    <div>
+
+                        <h2 id="logoutModalTitle">
+                            Sign Out
+                        </h2>
+
+                        <p>
+                            End your current administrator session.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button type="button"
+                        class="modal-close"
+                        id="closeLogoutModal"
+                        aria-label="Close modal">
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+                <div class="confirmation-message">
+
+                    <div class="confirmation-icon">
+                        <i class="fa-solid fa-circle-question"></i>
+                    </div>
+
+                    <h3>
+                        Sign out of the portal?
+                    </h3>
+
+                    <p>
+                        You will need to sign in again to access the
+                        administration panel.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button type="button"
+                        class="button button-secondary"
+                        id="cancelLogout">
+
+                    Cancel
+
+                </button>
+
+
+                <button type="button"
+                        class="button button-danger"
+                        id="confirmLogout">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    Sign Out
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         APPLICATION JAVASCRIPT
+         Functionality will be implemented later.
+    ========================================================== -->
+    <script src="../js/app.js"></script>
+
+</body>
+</html>
