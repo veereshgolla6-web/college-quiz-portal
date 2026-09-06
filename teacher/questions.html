@@ -1,0 +1,1642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Teacher Question Bank - College Quiz & Assessment Portal">
+    <title>Question Bank | College Quiz & Assessment Portal</title>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+<!-- =========================================================
+     TEACHER PORTAL
+========================================================= -->
+
+<div class="app-layout">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar" id="teacherSidebar">
+
+        <div class="sidebar-header">
+
+            <a href="dashboard.html" class="brand">
+
+                <div class="brand-logo">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+
+                <div class="brand-text">
+                    <strong>College Quiz</strong>
+                    <span>Assessment Portal</span>
+                </div>
+
+            </a>
+
+            <button
+                type="button"
+                class="sidebar-close"
+                id="sidebarCloseButton"
+                aria-label="Close sidebar">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+
+        <!-- Navigation -->
+
+        <nav class="sidebar-nav" aria-label="Teacher navigation">
+
+            <div class="nav-section">
+
+                <span class="nav-section-title">MAIN</span>
+
+                <a href="dashboard.html" class="nav-link">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="create-quiz.html" class="nav-link">
+                    <i class="fa-solid fa-circle-plus"></i>
+                    <span>Create Quiz</span>
+                </a>
+
+                <a href="questions.html"
+                   class="nav-link active"
+                   aria-current="page">
+                    <i class="fa-solid fa-database"></i>
+                    <span>Question Bank</span>
+                </a>
+
+                <a href="quizzes.html" class="nav-link">
+                    <i class="fa-solid fa-file-circle-check"></i>
+                    <span>My Quizzes</span>
+                </a>
+
+            </div>
+
+
+            <div class="nav-section">
+
+                <span class="nav-section-title">ANALYTICS</span>
+
+                <a href="results.html" class="nav-link">
+                    <i class="fa-solid fa-square-poll-vertical"></i>
+                    <span>Results</span>
+                </a>
+
+                <a href="analytics.html" class="nav-link">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    <span>Analytics</span>
+                </a>
+
+            </div>
+
+
+            <div class="nav-section">
+
+                <span class="nav-section-title">ACCOUNT</span>
+
+                <a href="profile.html" class="nav-link">
+                    <i class="fa-solid fa-user-circle"></i>
+                    <span>My Profile</span>
+                </a>
+
+                <a href="help.html" class="nav-link">
+                    <i class="fa-solid fa-circle-question"></i>
+                    <span>Help & Support</span>
+                </a>
+
+            </div>
+
+        </nav>
+
+
+        <!-- Sidebar Bottom -->
+
+        <div class="sidebar-footer">
+
+            <button
+                type="button"
+                class="sidebar-logout"
+                id="sidebarLogout">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                <span>Logout</span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN AREA ================= -->
+
+    <main class="main-content">
+
+        <!-- ================= TOPBAR ================= -->
+
+        <header class="topbar">
+
+            <div class="topbar-left">
+
+                <button
+                    type="button"
+                    class="mobile-menu-button"
+                    id="mobileMenuButton"
+                    aria-label="Open menu">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+                <div class="breadcrumb">
+
+                    <a href="dashboard.html">
+                        Teacher Portal
+                    </a>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                    <span>Question Bank</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+                <!-- Search -->
+
+                <button
+                    type="button"
+                    class="topbar-icon-button"
+                    id="globalSearchButton"
+                    aria-label="Search">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                </button>
+
+
+                <!-- Notifications -->
+
+                <div class="notification-wrapper">
+
+                    <button
+                        type="button"
+                        class="topbar-icon-button"
+                        id="notificationButton"
+                        aria-label="Notifications">
+
+                        <i class="fa-regular fa-bell"></i>
+
+                        <span
+                            class="notification-count"
+                            id="notificationCount">
+                            3
+                        </span>
+
+                    </button>
+
+                    <div
+                        class="notification-panel"
+                        id="notificationPanel">
+
+                        <div class="notification-panel-header">
+
+                            <div>
+                                <strong>Notifications</strong>
+                                <span>Recent updates</span>
+                            </div>
+
+                            <button
+                                type="button"
+                                id="markNotificationsRead">
+                                Mark all read
+                            </button>
+
+                        </div>
+
+                        <div
+                            class="notification-list"
+                            id="teacherNotificationList">
+
+                            <div class="notification-item unread">
+
+                                <div class="notification-icon">
+                                    <i class="fa-solid fa-circle-info"></i>
+                                </div>
+
+                                <div>
+                                    <strong>Quiz submission</strong>
+                                    <p>Students have completed a recent quiz.</p>
+                                    <small>Just now</small>
+                                </div>
+
+                            </div>
+
+                            <div class="notification-item">
+
+                                <div class="notification-icon">
+                                    <i class="fa-solid fa-chart-line"></i>
+                                </div>
+
+                                <div>
+                                    <strong>Results available</strong>
+                                    <p>New assessment results are ready.</p>
+                                    <small>1 hour ago</small>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <a href="#" class="view-all-notifications">
+                            View all notifications
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Teacher Profile -->
+
+                <div class="topbar-profile">
+
+                    <div class="topbar-avatar" id="topbarAvatar">
+                        T
+                    </div>
+
+                    <div class="topbar-profile-info">
+
+                        <strong id="topbarTeacherName">
+                            Teacher
+                        </strong>
+
+                        <span>Teacher</span>
+
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= PAGE CONTENT ================= -->
+
+        <div class="page-content">
+
+            <!-- Page Header -->
+
+            <section class="page-header">
+
+                <div class="page-header-content">
+
+                    <div class="page-title-area">
+
+                        <div class="page-title-icon">
+                            <i class="fa-solid fa-database"></i>
+                        </div>
+
+                        <div>
+
+                            <span class="page-eyebrow">
+                                ASSESSMENT MANAGEMENT
+                            </span>
+
+                            <h1>Question Bank</h1>
+
+                            <p>
+                                Create, organize and manage your assessment
+                                questions in one centralized workspace.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="page-header-actions">
+
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            id="importQuestionsButton">
+
+                            <i class="fa-solid fa-file-import"></i>
+                            Import Questions
+
+                        </button>
+
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            id="addQuestionButton">
+
+                            <i class="fa-solid fa-plus"></i>
+                            Add Question
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= OVERVIEW CARDS ================= -->
+
+            <section class="stats-grid question-bank-stats">
+
+                <article class="stat-card">
+
+                    <div class="stat-card-icon">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+
+                    <div class="stat-card-content">
+
+                        <span>Total Questions</span>
+
+                        <strong id="totalQuestionsCount">
+                            0
+                        </strong>
+
+                        <small>
+                            Across all subjects
+                        </small>
+
+                    </div>
+
+                </article>
+
+
+                <article class="stat-card">
+
+                    <div class="stat-card-icon">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+
+                    <div class="stat-card-content">
+
+                        <span>Published Questions</span>
+
+                        <strong id="publishedQuestionsCount">
+                            0
+                        </strong>
+
+                        <small>
+                            Available for quizzes
+                        </small>
+
+                    </div>
+
+                </article>
+
+
+                <article class="stat-card">
+
+                    <div class="stat-card-icon">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                    </div>
+
+                    <div class="stat-card-content">
+
+                        <span>Draft Questions</span>
+
+                        <strong id="draftQuestionsCount">
+                            0
+                        </strong>
+
+                        <small>
+                            Need review
+                        </small>
+
+                    </div>
+
+                </article>
+
+
+                <article class="stat-card">
+
+                    <div class="stat-card-icon">
+                        <i class="fa-solid fa-folder-tree"></i>
+                    </div>
+
+                    <div class="stat-card-content">
+
+                        <span>Subjects</span>
+
+                        <strong id="questionSubjectsCount">
+                            0
+                        </strong>
+
+                        <small>
+                            Question categories
+                        </small>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+
+            <!-- ================= QUESTION BANK ================= -->
+
+            <section class="content-card question-bank-card">
+
+                <div class="content-card-header">
+
+                    <div>
+
+                        <h2>
+                            <i class="fa-solid fa-list-check"></i>
+                            All Questions
+                        </h2>
+
+                        <p>
+                            Search and manage questions from your question bank.
+                        </p>
+
+                    </div>
+
+
+                    <div class="content-card-actions">
+
+                        <button
+                            type="button"
+                            class="icon-button"
+                            id="refreshQuestionsButton"
+                            title="Refresh questions">
+
+                            <i class="fa-solid fa-rotate"></i>
+
+                        </button>
+
+                        <button
+                            type="button"
+                            class="icon-button"
+                            id="questionViewToggle"
+                            title="Change view">
+
+                            <i class="fa-solid fa-table-cells-large"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Filters -->
+
+                <div class="filter-toolbar">
+
+                    <div class="search-field">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <input
+                            type="search"
+                            id="questionSearch"
+                            placeholder="Search questions..."
+                            autocomplete="off">
+
+                    </div>
+
+
+                    <div class="filter-field">
+
+                        <label for="questionSubjectFilter">
+                            Subject
+                        </label>
+
+                        <select id="questionSubjectFilter">
+
+                            <option value="all">
+                                All Subjects
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="filter-field">
+
+                        <label for="questionDifficultyFilter">
+                            Difficulty
+                        </label>
+
+                        <select id="questionDifficultyFilter">
+
+                            <option value="all">
+                                All Levels
+                            </option>
+
+                            <option value="easy">
+                                Easy
+                            </option>
+
+                            <option value="medium">
+                                Medium
+                            </option>
+
+                            <option value="hard">
+                                Hard
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="filter-field">
+
+                        <label for="questionTypeFilter">
+                            Type
+                        </label>
+
+                        <select id="questionTypeFilter">
+
+                            <option value="all">
+                                All Types
+                            </option>
+
+                            <option value="mcq">
+                                Multiple Choice
+                            </option>
+
+                            <option value="true-false">
+                                True / False
+                            </option>
+
+                            <option value="short-answer">
+                                Short Answer
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="filter-field">
+
+                        <label for="questionStatusFilter">
+                            Status
+                        </label>
+
+                        <select id="questionStatusFilter">
+
+                            <option value="all">
+                                All Status
+                            </option>
+
+                            <option value="published">
+                                Published
+                            </option>
+
+                            <option value="draft">
+                                Draft
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Bulk Actions -->
+
+                <div
+                    class="bulk-action-bar"
+                    id="questionBulkActionBar"
+                    hidden>
+
+                    <div>
+
+                        <i class="fa-solid fa-check-double"></i>
+
+                        <span id="selectedQuestionCount">
+                            0
+                        </span>
+
+                        questions selected
+
+                    </div>
+
+                    <div class="bulk-actions">
+
+                        <button
+                            type="button"
+                            id="bulkPublishQuestions">
+
+                            Publish
+
+                        </button>
+
+                        <button
+                            type="button"
+                            id="bulkMoveQuestions">
+
+                            Move
+
+                        </button>
+
+                        <button
+                            type="button"
+                            id="bulkDeleteQuestions">
+
+                            Delete
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Table -->
+
+                <div class="table-wrapper">
+
+                    <table
+                        class="data-table"
+                        id="questionBankTable">
+
+                        <thead>
+
+                            <tr>
+
+                                <th class="checkbox-column">
+
+                                    <input
+                                        type="checkbox"
+                                        id="selectAllQuestions"
+                                        aria-label="Select all questions">
+
+                                </th>
+
+                                <th>Question</th>
+
+                                <th>Subject</th>
+
+                                <th>Type</th>
+
+                                <th>Difficulty</th>
+
+                                <th>Marks</th>
+
+                                <th>Status</th>
+
+                                <th>Updated</th>
+
+                                <th>Actions</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="questionTableBody">
+
+                            <!-- Questions will be loaded by JavaScript -->
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <!-- Empty State -->
+
+                <div
+                    class="empty-state"
+                    id="questionEmptyState"
+                    hidden>
+
+                    <div class="empty-state-icon">
+
+                        <i class="fa-solid fa-database"></i>
+
+                    </div>
+
+                    <h3>No questions found</h3>
+
+                    <p>
+                        Your question bank is empty or no questions
+                        match the selected filters.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="btn btn-primary"
+                        id="emptyAddQuestionButton">
+
+                        <i class="fa-solid fa-plus"></i>
+                        Create Your First Question
+
+                    </button>
+
+                </div>
+
+
+                <!-- Loading State -->
+
+                <div
+                    class="loading-state"
+                    id="questionLoadingState"
+                    hidden>
+
+                    <div class="loading-spinner"></div>
+
+                    <p>
+                        Loading question bank...
+                    </p>
+
+                </div>
+
+
+                <!-- Pagination -->
+
+                <div class="pagination-container">
+
+                    <div class="pagination-info">
+
+                        Showing
+                        <strong id="questionShowingFrom">0</strong>
+                        –
+                        <strong id="questionShowingTo">0</strong>
+                        of
+                        <strong id="questionTotalCount">0</strong>
+                        questions
+
+                    </div>
+
+
+                    <div class="pagination" id="questionPagination">
+
+                        <button
+                            type="button"
+                            id="previousQuestionPage"
+                            disabled>
+
+                            <i class="fa-solid fa-chevron-left"></i>
+
+                        </button>
+
+                        <div
+                            class="page-numbers"
+                            id="questionPageNumbers">
+                        </div>
+
+                        <button
+                            type="button"
+                            id="nextQuestionPage"
+                            disabled>
+
+                            <i class="fa-solid fa-chevron-right"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= QUESTION GUIDELINES ================= -->
+
+            <section class="info-card">
+
+                <div class="info-card-icon">
+                    <i class="fa-solid fa-lightbulb"></i>
+                </div>
+
+                <div class="info-card-content">
+
+                    <h3>Question Bank Best Practices</h3>
+
+                    <ul>
+
+                        <li>
+                            Keep questions clear, concise and relevant
+                            to the selected subject.
+                        </li>
+
+                        <li>
+                            Use difficulty levels consistently to maintain
+                            balanced assessments.
+                        </li>
+
+                        <li>
+                            Review answer choices before publishing a question.
+                        </li>
+
+                        <li>
+                            Build a large reusable question bank to make
+                            future quiz creation faster.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- =========================================================
+     ADD / EDIT QUESTION MODAL
+========================================================= -->
+
+<div
+    class="modal-overlay"
+    id="questionModal"
+    hidden>
+
+    <div
+        class="modal modal-large"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="questionModalTitle">
+
+        <div class="modal-header">
+
+            <div>
+
+                <span class="modal-eyebrow">
+                    QUESTION BANK
+                </span>
+
+                <h2 id="questionModalTitle">
+                    Add Question
+                </h2>
+
+            </div>
+
+            <button
+                type="button"
+                class="modal-close"
+                id="closeQuestionModal"
+                aria-label="Close">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <form id="questionForm">
+
+            <div class="modal-body">
+
+                <!-- Basic Details -->
+
+                <div class="form-section">
+
+                    <div class="form-section-title">
+
+                        <i class="fa-solid fa-circle-info"></i>
+
+                        <div>
+
+                            <h3>Question Details</h3>
+
+                            <p>
+                                Define the subject, type and difficulty.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label for="questionSubject">
+                                Subject
+                                <span>*</span>
+                            </label>
+
+                            <select
+                                id="questionSubject"
+                                name="questionSubject"
+                                required>
+
+                                <option value="">
+                                    Select subject
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="questionType">
+                                Question Type
+                                <span>*</span>
+                            </label>
+
+                            <select
+                                id="questionType"
+                                name="questionType"
+                                required>
+
+                                <option value="mcq">
+                                    Multiple Choice
+                                </option>
+
+                                <option value="true-false">
+                                    True / False
+                                </option>
+
+                                <option value="short-answer">
+                                    Short Answer
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="questionDifficulty">
+                                Difficulty
+                                <span>*</span>
+                            </label>
+
+                            <select
+                                id="questionDifficulty"
+                                name="questionDifficulty"
+                                required>
+
+                                <option value="easy">
+                                    Easy
+                                </option>
+
+                                <option value="medium" selected>
+                                    Medium
+                                </option>
+
+                                <option value="hard">
+                                    Hard
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="questionMarks">
+                                Marks
+                                <span>*</span>
+                            </label>
+
+                            <input
+                                type="number"
+                                id="questionMarks"
+                                name="questionMarks"
+                                min="1"
+                                max="100"
+                                value="1"
+                                required>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Question -->
+
+                <div class="form-section">
+
+                    <div class="form-section-title">
+
+                        <i class="fa-solid fa-pen"></i>
+
+                        <div>
+
+                            <h3>Question</h3>
+
+                            <p>
+                                Write the question students will answer.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="questionText">
+                            Question Text
+                            <span>*</span>
+                        </label>
+
+                        <textarea
+                            id="questionText"
+                            name="questionText"
+                            rows="5"
+                            placeholder="Enter your question..."
+                            required></textarea>
+
+                        <div class="character-counter">
+                            <span id="questionCharacterCount">0</span>
+                            / 1000 characters
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Answers -->
+
+                <div
+                    class="form-section"
+                    id="answerOptionsSection">
+
+                    <div class="form-section-title">
+
+                        <i class="fa-solid fa-list"></i>
+
+                        <div>
+
+                            <h3>Answer Options</h3>
+
+                            <p>
+                                Add answer choices and select the correct answer.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="answer-option-editor">
+
+                        <div class="answer-option-row">
+
+                            <span class="answer-letter">A</span>
+
+                            <input
+                                type="text"
+                                id="optionA"
+                                name="optionA"
+                                placeholder="Enter option A">
+
+                            <label class="correct-answer-toggle">
+
+                                <input
+                                    type="radio"
+                                    name="correctAnswer"
+                                    value="A">
+
+                                <span>
+                                    Correct
+                                </span>
+
+                            </label>
+
+                        </div>
+
+
+                        <div class="answer-option-row">
+
+                            <span class="answer-letter">B</span>
+
+                            <input
+                                type="text"
+                                id="optionB"
+                                name="optionB"
+                                placeholder="Enter option B">
+
+                            <label class="correct-answer-toggle">
+
+                                <input
+                                    type="radio"
+                                    name="correctAnswer"
+                                    value="B">
+
+                                <span>
+                                    Correct
+                                </span>
+
+                            </label>
+
+                        </div>
+
+
+                        <div class="answer-option-row">
+
+                            <span class="answer-letter">C</span>
+
+                            <input
+                                type="text"
+                                id="optionC"
+                                name="optionC"
+                                placeholder="Enter option C">
+
+                            <label class="correct-answer-toggle">
+
+                                <input
+                                    type="radio"
+                                    name="correctAnswer"
+                                    value="C">
+
+                                <span>
+                                    Correct
+                                </span>
+
+                            </label>
+
+                        </div>
+
+
+                        <div class="answer-option-row">
+
+                            <span class="answer-letter">D</span>
+
+                            <input
+                                type="text"
+                                id="optionD"
+                                name="optionD"
+                                placeholder="Enter option D">
+
+                            <label class="correct-answer-toggle">
+
+                                <input
+                                    type="radio"
+                                    name="correctAnswer"
+                                    value="D">
+
+                                <span>
+                                    Correct
+                                </span>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Explanation -->
+
+                <div class="form-section">
+
+                    <div class="form-section-title">
+
+                        <i class="fa-solid fa-book-open"></i>
+
+                        <div>
+
+                            <h3>Explanation</h3>
+
+                            <p>
+                                Optional explanation for the correct answer.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="questionExplanation">
+                            Answer Explanation
+                        </label>
+
+                        <textarea
+                            id="questionExplanation"
+                            name="questionExplanation"
+                            rows="4"
+                            placeholder="Explain why the selected answer is correct..."></textarea>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Tags -->
+
+                <div class="form-section">
+
+                    <div class="form-section-title">
+
+                        <i class="fa-solid fa-tags"></i>
+
+                        <div>
+
+                            <h3>Organization</h3>
+
+                            <p>
+                                Add metadata to help organize your questions.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label for="questionTopic">
+                                Topic
+                            </label>
+
+                            <input
+                                type="text"
+                                id="questionTopic"
+                                name="questionTopic"
+                                placeholder="e.g. Arrays">
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="questionTags">
+                                Tags
+                            </label>
+
+                            <input
+                                type="text"
+                                id="questionTags"
+                                name="questionTags"
+                                placeholder="e.g. basics, programming">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    id="cancelQuestionButton">
+
+                    Cancel
+
+                </button>
+
+                <button
+                    type="submit"
+                    class="btn btn-primary"
+                    id="saveQuestionButton">
+
+                    <i class="fa-solid fa-check"></i>
+                    Save Question
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     DELETE CONFIRMATION MODAL
+========================================================= -->
+
+<div
+    class="modal-overlay"
+    id="deleteQuestionModal"
+    hidden>
+
+    <div
+        class="modal modal-small"
+        role="dialog"
+        aria-modal="true">
+
+        <div class="modal-header">
+
+            <h2>Delete Question?</h2>
+
+            <button
+                type="button"
+                class="modal-close"
+                id="closeDeleteQuestionModal">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <div class="modal-body confirmation-content">
+
+            <div class="confirmation-icon danger">
+                <i class="fa-solid fa-trash"></i>
+            </div>
+
+            <h3>
+                Are you sure?
+            </h3>
+
+            <p>
+                This question will be permanently removed from your
+                question bank. This action cannot be undone.
+            </p>
+
+        </div>
+
+
+        <div class="modal-footer">
+
+            <button
+                type="button"
+                class="btn btn-secondary"
+                id="cancelDeleteQuestion">
+
+                Cancel
+
+            </button>
+
+            <button
+                type="button"
+                class="btn btn-danger"
+                id="confirmDeleteQuestion">
+
+                <i class="fa-solid fa-trash"></i>
+                Delete Question
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     IMPORT QUESTIONS MODAL
+========================================================= -->
+
+<div
+    class="modal-overlay"
+    id="importQuestionsModal"
+    hidden>
+
+    <div
+        class="modal"
+        role="dialog"
+        aria-modal="true">
+
+        <div class="modal-header">
+
+            <div>
+
+                <span class="modal-eyebrow">
+                    BULK IMPORT
+                </span>
+
+                <h2>Import Questions</h2>
+
+            </div>
+
+            <button
+                type="button"
+                class="modal-close"
+                id="closeImportQuestionsModal">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <div class="modal-body">
+
+            <div class="upload-zone" id="questionUploadZone">
+
+                <div class="upload-icon">
+
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+
+                </div>
+
+                <h3>
+                    Upload Question File
+                </h3>
+
+                <p>
+                    Upload a CSV or Excel file containing your questions.
+                </p>
+
+                <label
+                    for="questionImportFile"
+                    class="btn btn-secondary">
+
+                    <i class="fa-solid fa-folder-open"></i>
+                    Choose File
+
+                </label>
+
+                <input
+                    type="file"
+                    id="questionImportFile"
+                    accept=".csv,.xlsx,.xls"
+                    hidden>
+
+                <small>
+                    Supported formats: CSV, XLSX, XLS
+                </small>
+
+            </div>
+
+
+            <div class="import-template">
+
+                <i class="fa-solid fa-download"></i>
+
+                <div>
+
+                    <strong>
+                        Need a template?
+                    </strong>
+
+                    <p>
+                        Download the question import template
+                        before uploading your questions.
+                    </p>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="btn btn-link"
+                    id="downloadQuestionTemplate">
+
+                    Download Template
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="modal-footer">
+
+            <button
+                type="button"
+                class="btn btn-secondary"
+                id="cancelImportQuestions">
+
+                Cancel
+
+            </button>
+
+            <button
+                type="button"
+                class="btn btn-primary"
+                id="processQuestionImport"
+                disabled>
+
+                <i class="fa-solid fa-upload"></i>
+                Import Questions
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     LOGOUT MODAL
+========================================================= -->
+
+<div
+    class="modal-overlay"
+    id="logoutModal"
+    hidden>
+
+    <div
+        class="modal modal-small"
+        role="dialog"
+        aria-modal="true">
+
+        <div class="modal-body confirmation-content">
+
+            <div class="confirmation-icon">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+            </div>
+
+            <h3>
+                Sign out of your account?
+            </h3>
+
+            <p>
+                You will need to sign in again to access the
+                Teacher Portal.
+            </p>
+
+        </div>
+
+
+        <div class="modal-footer">
+
+            <button
+                type="button"
+                class="btn btn-secondary"
+                id="cancelLogout">
+
+                Stay Signed In
+
+            </button>
+
+            <button
+                type="button"
+                class="btn btn-primary"
+                id="confirmLogout">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Sign Out
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     TOAST CONTAINER
+========================================================= -->
+
+<div
+    class="toast-container"
+    id="toastContainer"
+    aria-live="polite"
+    aria-atomic="true">
+</div>
+
+
+<!-- JavaScript will be added later -->
+<script src="../js/app.js"></script>
+
+</body>
+</html>
