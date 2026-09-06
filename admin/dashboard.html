@@ -1,0 +1,1760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Quiz Portal Administrator Dashboard">
+    <meta name="author" content="Quiz Portal">
+
+    <title>Admin Dashboard | Quiz Portal</title>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="dashboard-page admin-dashboard-page">
+
+    <!-- =========================================================
+         ADMIN APPLICATION WRAPPER
+    ========================================================== -->
+    <div class="app-layout">
+
+        <!-- =====================================================
+             SIDEBAR
+        ====================================================== -->
+        <aside class="sidebar" id="adminSidebar">
+
+            <!-- Brand -->
+            <div class="sidebar-brand">
+
+                <div class="brand-logo">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+
+                <div class="brand-text">
+                    <h2>Quiz Portal</h2>
+                    <span>Administration</span>
+                </div>
+
+            </div>
+
+
+            <!-- Navigation -->
+            <nav class="sidebar-navigation" aria-label="Admin navigation">
+
+                <!-- Main -->
+                <div class="nav-section">
+
+                    <div class="nav-section-title">
+                        Main
+                    </div>
+
+                    <a
+                        href="dashboard.html"
+                        class="nav-link active"
+                        data-page="dashboard"
+                    >
+                        <i class="fa-solid fa-grid-2"></i>
+                        <span>Dashboard</span>
+                    </a>
+
+                </div>
+
+
+                <!-- Management -->
+                <div class="nav-section">
+
+                    <div class="nav-section-title">
+                        Management
+                    </div>
+
+                    <a
+                        href="students.html"
+                        class="nav-link"
+                        data-page="students"
+                    >
+                        <i class="fa-solid fa-user-graduate"></i>
+                        <span>Students</span>
+                    </a>
+
+                    <a
+                        href="teachers.html"
+                        class="nav-link"
+                        data-page="teachers"
+                    >
+                        <i class="fa-solid fa-chalkboard-user"></i>
+                        <span>Teachers</span>
+                    </a>
+
+                    <a
+                        href="departments.html"
+                        class="nav-link"
+                        data-page="departments"
+                    >
+                        <i class="fa-solid fa-building-columns"></i>
+                        <span>Departments</span>
+                    </a>
+
+                    <a
+                        href="subjects.html"
+                        class="nav-link"
+                        data-page="subjects"
+                    >
+                        <i class="fa-solid fa-book-open"></i>
+                        <span>Subjects</span>
+                    </a>
+
+                    <a
+                        href="quizzes.html"
+                        class="nav-link"
+                        data-page="quizzes"
+                    >
+                        <i class="fa-solid fa-clipboard-question"></i>
+                        <span>Quizzes</span>
+                    </a>
+
+                </div>
+
+
+                <!-- Performance -->
+                <div class="nav-section">
+
+                    <div class="nav-section-title">
+                        Performance
+                    </div>
+
+                    <a
+                        href="results.html"
+                        class="nav-link"
+                        data-page="results"
+                    >
+                        <i class="fa-solid fa-chart-column"></i>
+                        <span>Results</span>
+                    </a>
+
+                    <a
+                        href="leaderboard.html"
+                        class="nav-link"
+                        data-page="leaderboard"
+                    >
+                        <i class="fa-solid fa-ranking-star"></i>
+                        <span>Leaderboard</span>
+                    </a>
+
+                    <a
+                        href="reports.html"
+                        class="nav-link"
+                        data-page="reports"
+                    >
+                        <i class="fa-solid fa-file-lines"></i>
+                        <span>Reports</span>
+                    </a>
+
+                </div>
+
+
+                <!-- System -->
+                <div class="nav-section">
+
+                    <div class="nav-section-title">
+                        System
+                    </div>
+
+                    <a
+                        href="settings.html"
+                        class="nav-link"
+                        data-page="settings"
+                    >
+                        <i class="fa-solid fa-gear"></i>
+                        <span>Settings</span>
+                    </a>
+
+                    <a
+                        href="profile.html"
+                        class="nav-link"
+                        data-page="profile"
+                    >
+                        <i class="fa-solid fa-user-circle"></i>
+                        <span>My Profile</span>
+                    </a>
+
+                    <a
+                        href="help.html"
+                        class="nav-link"
+                        data-page="help"
+                    >
+                        <i class="fa-solid fa-circle-question"></i>
+                        <span>Help & Support</span>
+                    </a>
+
+                </div>
+
+            </nav>
+
+
+            <!-- Sidebar Bottom -->
+            <div class="sidebar-bottom">
+
+                <button
+                    type="button"
+                    class="sidebar-logout"
+                    id="sidebarLogout"
+                >
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Logout</span>
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =====================================================
+             MAIN CONTENT
+        ====================================================== -->
+        <main class="main-content">
+
+            <!-- =================================================
+                 TOPBAR
+            ================================================== -->
+            <header class="topbar">
+
+                <div class="topbar-left">
+
+                    <button
+                        type="button"
+                        class="mobile-menu-button"
+                        id="mobileMenuButton"
+                        aria-label="Open navigation menu"
+                    >
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+
+                    <div class="breadcrumb">
+
+                        <span class="breadcrumb-muted">
+                            Administration
+                        </span>
+
+                        <i class="fa-solid fa-chevron-right"></i>
+
+                        <span class="breadcrumb-current">
+                            Dashboard
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="topbar-right">
+
+                    <!-- Notifications -->
+                    <button
+                        type="button"
+                        class="notification-button"
+                        id="notificationButton"
+                        aria-label="Notifications"
+                    >
+                        <i class="fa-regular fa-bell"></i>
+
+                        <span
+                            class="notification-count"
+                            id="notificationCount"
+                        >
+                            4
+                        </span>
+                    </button>
+
+
+                    <!-- Admin Account -->
+                    <button
+                        type="button"
+                        class="topbar-profile"
+                        id="topbarProfile"
+                    >
+
+                        <div class="topbar-avatar" id="topbarAvatar">
+                            A
+                        </div>
+
+                        <div class="topbar-profile-info">
+
+                            <strong id="topbarAdminName">
+                                Administrator
+                            </strong>
+
+                            <span>
+                                Admin
+                            </span>
+
+                        </div>
+
+                        <i class="fa-solid fa-chevron-down"></i>
+
+                    </button>
+
+                </div>
+
+            </header>
+
+
+            <!-- =================================================
+                 PAGE CONTENT
+            ================================================== -->
+            <section class="page-content">
+
+
+                <!-- =============================================
+                     WELCOME HEADER
+                ============================================== -->
+                <div class="page-header admin-welcome-header">
+
+                    <div class="page-header-content">
+
+                        <div class="page-header-icon">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+
+                        <div>
+
+                            <p class="page-eyebrow">
+                                ADMINISTRATION CENTER
+                            </p>
+
+                            <h1>
+                                Welcome back,
+                                <span id="welcomeAdminName">
+                                    Administrator
+                                </span>
+                            </h1>
+
+                            <p class="page-description">
+                                Manage your quiz platform, users,
+                                assessments and performance from one place.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="page-header-actions">
+
+                        <div class="dashboard-date">
+
+                            <i class="fa-regular fa-calendar"></i>
+
+                            <span id="dashboardDate">
+                                Today
+                            </span>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            id="createQuizButton"
+                        >
+                            <i class="fa-solid fa-plus"></i>
+                            Create Quiz
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =============================================
+                     SYSTEM STATUS
+                ============================================== -->
+                <div class="system-status-bar">
+
+                    <div class="system-status-content">
+
+                        <span class="status-indicator online"></span>
+
+                        <div>
+
+                            <strong>
+                                All systems operational
+                            </strong>
+
+                            <span>
+                                Quiz Portal is running normally.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <span
+                        class="system-last-updated"
+                        id="systemLastUpdated"
+                    >
+                        Updated just now
+                    </span>
+
+                </div>
+
+
+                <!-- =============================================
+                     KEY STATISTICS
+                ============================================== -->
+                <section
+                    class="dashboard-section"
+                    aria-labelledby="overviewTitle"
+                >
+
+                    <div class="section-heading">
+
+                        <div>
+                            <p class="section-eyebrow">
+                                PLATFORM OVERVIEW
+                            </p>
+
+                            <h2 id="overviewTitle">
+                                At a glance
+                            </h2>
+                        </div>
+
+                        <span class="section-period">
+                            Current statistics
+                        </span>
+
+                    </div>
+
+
+                    <div class="stats-grid admin-stats-grid">
+
+
+                        <!-- Students -->
+                        <article class="stat-card">
+
+                            <div class="stat-card-top">
+
+                                <div class="stat-icon">
+                                    <i class="fa-solid fa-user-graduate"></i>
+                                </div>
+
+                                <span class="stat-trend positive">
+                                    <i class="fa-solid fa-arrow-up"></i>
+                                    <span id="studentGrowth">
+                                        8.4%
+                                    </span>
+                                </span>
+
+                            </div>
+
+                            <div class="stat-card-body">
+
+                                <span class="stat-label">
+                                    Total Students
+                                </span>
+
+                                <strong
+                                    class="stat-value"
+                                    id="totalStudents"
+                                >
+                                    0
+                                </strong>
+
+                                <span class="stat-description">
+                                    Registered students
+                                </span>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- Teachers -->
+                        <article class="stat-card">
+
+                            <div class="stat-card-top">
+
+                                <div class="stat-icon">
+                                    <i class="fa-solid fa-chalkboard-user"></i>
+                                </div>
+
+                                <span class="stat-trend positive">
+                                    <i class="fa-solid fa-arrow-up"></i>
+                                    <span id="teacherGrowth">
+                                        5.2%
+                                    </span>
+                                </span>
+
+                            </div>
+
+                            <div class="stat-card-body">
+
+                                <span class="stat-label">
+                                    Total Teachers
+                                </span>
+
+                                <strong
+                                    class="stat-value"
+                                    id="totalTeachers"
+                                >
+                                    0
+                                </strong>
+
+                                <span class="stat-description">
+                                    Active teaching accounts
+                                </span>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- Quizzes -->
+                        <article class="stat-card">
+
+                            <div class="stat-card-top">
+
+                                <div class="stat-icon">
+                                    <i class="fa-solid fa-clipboard-question"></i>
+                                </div>
+
+                                <span class="stat-trend positive">
+                                    <i class="fa-solid fa-arrow-up"></i>
+                                    <span id="quizGrowth">
+                                        12.6%
+                                    </span>
+                                </span>
+
+                            </div>
+
+                            <div class="stat-card-body">
+
+                                <span class="stat-label">
+                                    Total Quizzes
+                                </span>
+
+                                <strong
+                                    class="stat-value"
+                                    id="totalQuizzes"
+                                >
+                                    0
+                                </strong>
+
+                                <span class="stat-description">
+                                    Created assessments
+                                </span>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- Active Quizzes -->
+                        <article class="stat-card">
+
+                            <div class="stat-card-top">
+
+                                <div class="stat-icon">
+                                    <i class="fa-solid fa-bolt"></i>
+                                </div>
+
+                                <span class="stat-badge">
+                                    Live
+                                </span>
+
+                            </div>
+
+                            <div class="stat-card-body">
+
+                                <span class="stat-label">
+                                    Active Quizzes
+                                </span>
+
+                                <strong
+                                    class="stat-value"
+                                    id="activeQuizzes"
+                                >
+                                    0
+                                </strong>
+
+                                <span class="stat-description">
+                                    Currently available
+                                </span>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- Attempts -->
+                        <article class="stat-card">
+
+                            <div class="stat-card-top">
+
+                                <div class="stat-icon">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </div>
+
+                                <span class="stat-trend positive">
+                                    <i class="fa-solid fa-arrow-up"></i>
+                                    <span id="attemptGrowth">
+                                        15.8%
+                                    </span>
+                                </span>
+
+                            </div>
+
+                            <div class="stat-card-body">
+
+                                <span class="stat-label">
+                                    Total Attempts
+                                </span>
+
+                                <strong
+                                    class="stat-value"
+                                    id="totalAttempts"
+                                >
+                                    0
+                                </strong>
+
+                                <span class="stat-description">
+                                    Quiz submissions
+                                </span>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- Average Score -->
+                        <article class="stat-card">
+
+                            <div class="stat-card-top">
+
+                                <div class="stat-icon">
+                                    <i class="fa-solid fa-chart-line"></i>
+                                </div>
+
+                                <span class="stat-trend positive">
+                                    <i class="fa-solid fa-arrow-up"></i>
+                                    <span id="scoreGrowth">
+                                        3.1%
+                                    </span>
+                                </span>
+
+                            </div>
+
+                            <div class="stat-card-body">
+
+                                <span class="stat-label">
+                                    Overall Average
+                                </span>
+
+                                <strong
+                                    class="stat-value"
+                                    id="overallAverage"
+                                >
+                                    0%
+                                </strong>
+
+                                <span class="stat-description">
+                                    Platform performance
+                                </span>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =============================================
+                     QUICK ACTIONS
+                ============================================== -->
+                <section class="dashboard-section">
+
+                    <div class="section-heading">
+
+                        <div>
+                            <p class="section-eyebrow">
+                                ADMIN TOOLS
+                            </p>
+
+                            <h2>
+                                Quick actions
+                            </h2>
+                        </div>
+
+                    </div>
+
+
+                    <div class="quick-actions-grid">
+
+
+                        <a
+                            href="students.html"
+                            class="quick-action-card"
+                            id="addStudentAction"
+                        >
+
+                            <div class="quick-action-icon">
+                                <i class="fa-solid fa-user-plus"></i>
+                            </div>
+
+                            <div class="quick-action-content">
+
+                                <strong>
+                                    Add Student
+                                </strong>
+
+                                <span>
+                                    Register a new student account
+                                </span>
+
+                            </div>
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+
+                        <a
+                            href="teachers.html"
+                            class="quick-action-card"
+                            id="addTeacherAction"
+                        >
+
+                            <div class="quick-action-icon">
+                                <i class="fa-solid fa-user-tie"></i>
+                            </div>
+
+                            <div class="quick-action-content">
+
+                                <strong>
+                                    Add Teacher
+                                </strong>
+
+                                <span>
+                                    Create a teacher account
+                                </span>
+
+                            </div>
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+
+                        <a
+                            href="quizzes.html"
+                            class="quick-action-card"
+                            id="manageQuizAction"
+                        >
+
+                            <div class="quick-action-icon">
+                                <i class="fa-solid fa-list-check"></i>
+                            </div>
+
+                            <div class="quick-action-content">
+
+                                <strong>
+                                    Manage Quizzes
+                                </strong>
+
+                                <span>
+                                    Review and manage assessments
+                                </span>
+
+                            </div>
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+
+                        <a
+                            href="subjects.html"
+                            class="quick-action-card"
+                            id="manageSubjectsAction"
+                        >
+
+                            <div class="quick-action-icon">
+                                <i class="fa-solid fa-book"></i>
+                            </div>
+
+                            <div class="quick-action-content">
+
+                                <strong>
+                                    Manage Subjects
+                                </strong>
+
+                                <span>
+                                    Configure academic subjects
+                                </span>
+
+                            </div>
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =============================================
+                     ANALYTICS ROW
+                ============================================== -->
+                <div class="dashboard-two-column">
+
+
+                    <!-- Quiz Activity -->
+                    <section class="dashboard-card chart-card">
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <p class="card-eyebrow">
+                                    ACTIVITY
+                                </p>
+
+                                <h2>
+                                    Quiz activity
+                                </h2>
+
+                            </div>
+
+
+                            <div class="card-header-actions">
+
+                                <label
+                                    for="quizActivityPeriod"
+                                    class="sr-only"
+                                >
+                                    Activity period
+                                </label>
+
+                                <select
+                                    id="quizActivityPeriod"
+                                    class="select-control"
+                                >
+                                    <option value="7">
+                                        Last 7 days
+                                    </option>
+
+                                    <option value="30">
+                                        Last 30 days
+                                    </option>
+
+                                    <option value="90">
+                                        Last 90 days
+                                    </option>
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="chart-container">
+
+                            <div
+                                class="chart-placeholder"
+                                id="quizActivityChart"
+                                aria-label="Quiz activity chart"
+                            >
+
+                                <div class="chart-placeholder-content">
+
+                                    <i class="fa-solid fa-chart-line"></i>
+
+                                    <strong>
+                                        Quiz activity analytics
+                                    </strong>
+
+                                    <span>
+                                        Activity data will appear here.
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                            <div
+                                class="chart-empty"
+                                id="quizActivityEmpty"
+                                hidden
+                            >
+                                No quiz activity available for this period.
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- User Distribution -->
+                    <section class="dashboard-card chart-card">
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <p class="card-eyebrow">
+                                    USERS
+                                </p>
+
+                                <h2>
+                                    User distribution
+                                </h2>
+
+                            </div>
+
+                            <a
+                                href="reports.html"
+                                class="card-link"
+                            >
+                                View report
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+
+                        <div class="distribution-content">
+
+                            <div
+                                class="donut-placeholder"
+                                id="userDistributionChart"
+                                aria-label="User distribution chart"
+                            >
+
+                                <div class="donut-center">
+
+                                    <strong id="totalPlatformUsers">
+                                        0
+                                    </strong>
+
+                                    <span>
+                                        Total users
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="distribution-legend">
+
+                                <div class="legend-item">
+
+                                    <span class="legend-marker students"></span>
+
+                                    <div>
+                                        <strong>
+                                            Students
+                                        </strong>
+
+                                        <span id="studentPercentage">
+                                            0%
+                                        </span>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="legend-item">
+
+                                    <span class="legend-marker teachers"></span>
+
+                                    <div>
+                                        <strong>
+                                            Teachers
+                                        </strong>
+
+                                        <span id="teacherPercentage">
+                                            0%
+                                        </span>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="legend-item">
+
+                                    <span class="legend-marker admins"></span>
+
+                                    <div>
+                                        <strong>
+                                            Administrators
+                                        </strong>
+
+                                        <span id="adminPercentage">
+                                            0%
+                                        </span>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+                </div>
+
+
+                <!-- =============================================
+                     RECENT QUIZ ACTIVITY
+                ============================================== -->
+                <section class="dashboard-section">
+
+                    <div class="section-heading">
+
+                        <div>
+
+                            <p class="section-eyebrow">
+                                RECENT ACTIVITY
+                            </p>
+
+                            <h2>
+                                Recent quiz activity
+                            </h2>
+
+                        </div>
+
+                        <a
+                            href="quizzes.html"
+                            class="section-link"
+                        >
+                            View all quizzes
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+
+                    <div class="dashboard-card table-card">
+
+                        <div class="table-responsive">
+
+                            <table class="data-table">
+
+                                <thead>
+
+                                    <tr>
+
+                                        <th>
+                                            Quiz
+                                        </th>
+
+                                        <th>
+                                            Subject
+                                        </th>
+
+                                        <th>
+                                            Teacher
+                                        </th>
+
+                                        <th>
+                                            Attempts
+                                        </th>
+
+                                        <th>
+                                            Average
+                                        </th>
+
+                                        <th>
+                                            Status
+                                        </th>
+
+                                        <th>
+                                            Activity
+                                        </th>
+
+                                    </tr>
+
+                                </thead>
+
+
+                                <tbody id="recentQuizActivity">
+
+                                    <tr class="table-empty-row">
+
+                                        <td colspan="7">
+
+                                            <div class="table-empty-state">
+
+                                                <i class="fa-solid fa-clipboard-list"></i>
+
+                                                <strong>
+                                                    No recent quiz activity
+                                                </strong>
+
+                                                <span>
+                                                    Quiz activity will appear here
+                                                    once students start participating.
+                                                </span>
+
+                                            </div>
+
+                                        </td>
+
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =============================================
+                     LOWER DASHBOARD GRID
+                ============================================== -->
+                <div class="dashboard-three-column">
+
+
+                    <!-- Upcoming Quizzes -->
+                    <section class="dashboard-card">
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <p class="card-eyebrow">
+                                    SCHEDULE
+                                </p>
+
+                                <h2>
+                                    Upcoming quizzes
+                                </h2>
+
+                            </div>
+
+                            <a
+                                href="quizzes.html"
+                                class="card-link"
+                            >
+                                View all
+                            </a>
+
+                        </div>
+
+
+                        <div
+                            class="activity-list"
+                            id="upcomingQuizzes"
+                        >
+
+                            <div class="list-empty-state">
+
+                                <i class="fa-regular fa-calendar-days"></i>
+
+                                <strong>
+                                    No upcoming quizzes
+                                </strong>
+
+                                <span>
+                                    Scheduled quizzes will appear here.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- Recent Registrations -->
+                    <section class="dashboard-card">
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <p class="card-eyebrow">
+                                    USERS
+                                </p>
+
+                                <h2>
+                                    Recent registrations
+                                </h2>
+
+                            </div>
+
+                            <a
+                                href="students.html"
+                                class="card-link"
+                            >
+                                View students
+                            </a>
+
+                        </div>
+
+
+                        <div
+                            class="activity-list"
+                            id="recentRegistrations"
+                        >
+
+                            <div class="list-empty-state">
+
+                                <i class="fa-solid fa-users"></i>
+
+                                <strong>
+                                    No recent registrations
+                                </strong>
+
+                                <span>
+                                    New users will appear here.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- System Alerts -->
+                    <section class="dashboard-card">
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <p class="card-eyebrow">
+                                    SYSTEM
+                                </p>
+
+                                <h2>
+                                    System alerts
+                                </h2>
+
+                            </div>
+
+                            <a
+                                href="settings.html"
+                                class="card-link"
+                            >
+                                Settings
+                            </a>
+
+                        </div>
+
+
+                        <div
+                            class="alert-list"
+                            id="systemAlerts"
+                        >
+
+                            <div class="system-alert info">
+
+                                <div class="alert-icon">
+                                    <i class="fa-solid fa-circle-info"></i>
+                                </div>
+
+                                <div class="alert-content">
+
+                                    <strong>
+                                        Welcome to Admin Portal
+                                    </strong>
+
+                                    <span>
+                                        Complete your platform setup
+                                        to get started.
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="system-alert success">
+
+                                <div class="alert-icon">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                </div>
+
+                                <div class="alert-content">
+
+                                    <strong>
+                                        System operational
+                                    </strong>
+
+                                    <span>
+                                        All core services are available.
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+                </div>
+
+
+                <!-- =============================================
+                     DEPARTMENT PERFORMANCE
+                ============================================== -->
+                <section class="dashboard-section">
+
+                    <div class="section-heading">
+
+                        <div>
+
+                            <p class="section-eyebrow">
+                                ACADEMIC PERFORMANCE
+                            </p>
+
+                            <h2>
+                                Department performance
+                            </h2>
+
+                        </div>
+
+                        <a
+                            href="reports.html"
+                            class="section-link"
+                        >
+                            Detailed reports
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+
+                    <div class="dashboard-card table-card">
+
+                        <div class="table-responsive">
+
+                            <table class="data-table performance-table">
+
+                                <thead>
+
+                                    <tr>
+
+                                        <th>
+                                            Department
+                                        </th>
+
+                                        <th>
+                                            Students
+                                        </th>
+
+                                        <th>
+                                            Quizzes
+                                        </th>
+
+                                        <th>
+                                            Attempts
+                                        </th>
+
+                                        <th>
+                                            Average Score
+                                        </th>
+
+                                        <th>
+                                            Pass Rate
+                                        </th>
+
+                                        <th>
+                                            Performance
+                                        </th>
+
+                                    </tr>
+
+                                </thead>
+
+
+                                <tbody id="departmentPerformance">
+
+                                    <tr class="table-empty-row">
+
+                                        <td colspan="7">
+
+                                            <div class="table-empty-state">
+
+                                                <i class="fa-solid fa-building-columns"></i>
+
+                                                <strong>
+                                                    No department data
+                                                </strong>
+
+                                                <span>
+                                                    Department analytics will appear
+                                                    when quiz results are available.
+                                                </span>
+
+                                            </div>
+
+                                        </td>
+
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =============================================
+                     FOOTER INFORMATION
+                ============================================== -->
+                <footer class="dashboard-footer">
+
+                    <div>
+
+                        <strong>
+                            Quiz Portal Administration
+                        </strong>
+
+                        <span>
+                            Manage your assessment platform efficiently.
+                        </span>
+
+                    </div>
+
+                    <div class="footer-meta">
+
+                        <span>
+                            <i class="fa-solid fa-shield-halved"></i>
+                            Admin Access
+                        </span>
+
+                        <span>
+                            <i class="fa-solid fa-circle-check"></i>
+                            System Online
+                        </span>
+
+                    </div>
+
+                </footer>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- =========================================================
+         NOTIFICATION PANEL
+    ========================================================== -->
+    <aside
+        class="notification-panel"
+        id="notificationPanel"
+        aria-hidden="true"
+    >
+
+        <div class="notification-panel-header">
+
+            <div>
+
+                <span class="panel-eyebrow">
+                    ADMIN CENTER
+                </span>
+
+                <h2>
+                    Notifications
+                </h2>
+
+            </div>
+
+            <button
+                type="button"
+                class="panel-close-button"
+                id="notificationPanelClose"
+                aria-label="Close notifications"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+
+        <div
+            class="notification-list"
+            id="notificationList"
+        >
+
+            <div class="notification-item unread">
+
+                <div class="notification-icon">
+                    <i class="fa-solid fa-user-plus"></i>
+                </div>
+
+                <div class="notification-content">
+
+                    <strong>
+                        New activity
+                    </strong>
+
+                    <span>
+                        New user activity is available.
+                    </span>
+
+                    <small>
+                        Recently
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="notification-item">
+
+                <div class="notification-icon">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+
+                <div class="notification-content">
+
+                    <strong>
+                        Performance update
+                    </strong>
+
+                    <span>
+                        New quiz performance data is available.
+                    </span>
+
+                    <small>
+                        Recently
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="notification-panel-footer">
+
+            <button
+                type="button"
+                id="markNotificationsRead"
+                class="btn btn-secondary"
+            >
+                Mark all as read
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================================================
+         LOGOUT MODAL
+    ========================================================== -->
+    <div
+        class="modal-overlay"
+        id="logoutModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal logout-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="logoutModalTitle"
+        >
+
+            <div class="modal-icon warning">
+                <i class="fa-solid fa-right-from-bracket"></i>
+            </div>
+
+            <div class="modal-content">
+
+                <h2 id="logoutModalTitle">
+                    Sign out?
+                </h2>
+
+                <p>
+                    Are you sure you want to sign out of
+                    the administrator account?
+                </p>
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    id="cancelLogout"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="button"
+                    class="btn btn-danger"
+                    id="confirmLogout"
+                >
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Sign Out
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         ADMIN PROFILE MENU
+    ========================================================== -->
+    <div
+        class="profile-menu"
+        id="adminProfileMenu"
+        hidden
+    >
+
+        <div class="profile-menu-header">
+
+            <div class="profile-menu-avatar">
+                A
+            </div>
+
+            <div>
+
+                <strong id="profileMenuAdminName">
+                    Administrator
+                </strong>
+
+                <span>
+                    Administrator Account
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="profile-menu-divider"></div>
+
+
+        <a href="profile.html" class="profile-menu-item">
+
+            <i class="fa-solid fa-user"></i>
+
+            <span>
+                My Profile
+            </span>
+
+        </a>
+
+
+        <a href="settings.html" class="profile-menu-item">
+
+            <i class="fa-solid fa-gear"></i>
+
+            <span>
+                Settings
+            </span>
+
+        </a>
+
+
+        <div class="profile-menu-divider"></div>
+
+
+        <button
+            type="button"
+            class="profile-menu-item danger"
+            id="profileMenuLogout"
+        >
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            <span>
+                Logout
+            </span>
+
+        </button>
+
+    </div>
+
+
+    <!-- =========================================================
+         TOAST NOTIFICATION
+    ========================================================== -->
+    <div
+        class="toast-container"
+        id="toastContainer"
+        aria-live="polite"
+        aria-atomic="true"
+    >
+
+        <div
+            class="toast"
+            id="adminToast"
+            hidden
+        >
+
+            <div class="toast-icon">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+
+            <div class="toast-content">
+
+                <strong id="toastTitle">
+                    Success
+                </strong>
+
+                <span id="toastMessage">
+                    Action completed successfully.
+                </span>
+
+            </div>
+
+            <button
+                type="button"
+                class="toast-close"
+                id="toastClose"
+                aria-label="Close notification"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+         Functionality will be implemented in the JS phase.
+    ========================================================== -->
+    <script src="../js/app.js"></script>
+
+</body>
+</html>
