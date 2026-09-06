@@ -1,0 +1,1845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Admin Quiz Management - Quiz & Assessment Portal">
+
+    <meta name="author"
+          content="Quiz & Assessment Portal">
+
+    <title>Quizzes | Admin | Quiz & Assessment Portal</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Application CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <!-- =========================================================
+         ADMIN APPLICATION
+    ========================================================== -->
+    <div class="app-shell" id="adminApp">
+
+        <!-- =====================================================
+             SIDEBAR
+        ====================================================== -->
+        <aside class="sidebar" id="adminSidebar">
+
+            <div class="sidebar-header">
+
+                <a href="dashboard.html" class="brand">
+
+                    <span class="brand-icon">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </span>
+
+                    <span class="brand-content">
+                        <strong>Quiz Portal</strong>
+                        <small>Administration</small>
+                    </span>
+
+                </a>
+
+                <button type="button"
+                        class="sidebar-close"
+                        id="sidebarClose"
+                        aria-label="Close navigation">
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+            </div>
+
+
+            <!-- =================================================
+                 NAVIGATION
+            ================================================== -->
+            <nav class="sidebar-navigation"
+                 aria-label="Admin navigation">
+
+                <!-- Main -->
+                <div class="nav-section">
+
+                    <span class="nav-section-title">
+                        Main
+                    </span>
+
+                    <a href="dashboard.html"
+                       class="nav-link">
+
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-grid-2"></i>
+                        </span>
+
+                        <span>Dashboard</span>
+
+                    </a>
+
+                </div>
+
+
+                <!-- Management -->
+                <div class="nav-section">
+
+                    <span class="nav-section-title">
+                        Management
+                    </span>
+
+                    <a href="students.html"
+                       class="nav-link">
+
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-user-graduate"></i>
+                        </span>
+
+                        <span>Students</span>
+
+                    </a>
+
+
+                    <a href="teachers.html"
+                       class="nav-link">
+
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-chalkboard-user"></i>
+                        </span>
+
+                        <span>Teachers</span>
+
+                    </a>
+
+
+                    <a href="departments.html"
+                       class="nav-link">
+
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-building-columns"></i>
+                        </span>
+
+                        <span>Departments</span>
+
+                    </a>
+
+
+                    <a href="subjects.html"
+                       class="nav-link">
+
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-book-open"></i>
+                        </span>
+
+                        <span>Subjects</span>
+
+                    </a>
+
+
+                    <a href="quizzes.html"
+                       class="nav-link active"
+                       aria-current="page">
+
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-circle-question"></i>
+                        </span>
+
+                        <span>Quizzes</span>
+
+                    </a>
+
+                </div>
+
+
+                <!-- Performance -->
+                <div class="nav-section">
+
+                    <span class="nav-section-title">
+                        Performance
+                    </span>
+
+                    <a href="results.html"
+                       class="nav-link">
+
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-square-poll-vertical"></i>
+                        </span>
+
+                        <span>Results</span>
+
+                    </a>
+
+
+                    <a href="leaderboard.html"
+                       class="nav-link">
+
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-ranking-star"></i>
+                        </span>
+
+                        <span>Leaderboard</span>
+
+                    </a>
+
+
+                    <a href="reports.html"
+                       class="nav-link">
+
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </span>
+
+                        <span>Reports</span>
+
+                    </a>
+
+                </div>
+
+
+                <!-- System -->
+                <div class="nav-section">
+
+                    <span class="nav-section-title">
+                        System
+                    </span>
+
+                    <a href="settings.html"
+                       class="nav-link">
+
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-gear"></i>
+                        </span>
+
+                        <span>Settings</span>
+
+                    </a>
+
+
+                    <a href="profile.html"
+                       class="nav-link">
+
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-user-circle"></i>
+                        </span>
+
+                        <span>My Profile</span>
+
+                    </a>
+
+
+                    <a href="help.html"
+                       class="nav-link">
+
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-circle-question"></i>
+                        </span>
+
+                        <span>Help &amp; Support</span>
+
+                    </a>
+
+                </div>
+
+            </nav>
+
+
+            <!-- Sidebar Footer -->
+            <div class="sidebar-footer">
+
+                <button type="button"
+                        class="sidebar-logout"
+                        id="sidebarLogout">
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                    </span>
+
+                    <span>Logout</span>
+
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- Mobile Overlay -->
+        <div class="sidebar-overlay"
+             id="sidebarOverlay">
+        </div>
+
+
+        <!-- =====================================================
+             MAIN CONTENT
+        ====================================================== -->
+        <main class="main-content">
+
+            <!-- =================================================
+                 TOPBAR
+            ================================================== -->
+            <header class="topbar">
+
+                <div class="topbar-left">
+
+                    <button type="button"
+                            class="mobile-menu-button"
+                            id="mobileMenuButton"
+                            aria-label="Open navigation">
+
+                        <i class="fa-solid fa-bars"></i>
+
+                    </button>
+
+
+                    <div class="breadcrumb">
+
+                        <a href="dashboard.html">
+                            Admin
+                        </a>
+
+                        <span class="breadcrumb-separator">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </span>
+
+                        <span>
+                            Quizzes
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="topbar-right">
+
+                    <!-- Notifications -->
+                    <div class="topbar-notifications">
+
+                        <button type="button"
+                                class="topbar-icon-button"
+                                id="notificationButton"
+                                aria-label="Notifications"
+                                aria-expanded="false">
+
+                            <i class="fa-regular fa-bell"></i>
+
+                            <span class="notification-count"
+                                  id="notificationCount">
+                                0
+                            </span>
+
+                        </button>
+
+
+                        <div class="notification-panel"
+                             id="notificationPanel"
+                             hidden>
+
+                            <div class="notification-panel-header">
+
+                                <div>
+
+                                    <strong>
+                                        Notifications
+                                    </strong>
+
+                                    <small id="notificationSummary">
+                                        No new notifications
+                                    </small>
+
+                                </div>
+
+
+                                <button type="button"
+                                        id="notificationPanelClose"
+                                        aria-label="Close notifications">
+
+                                    <i class="fa-solid fa-xmark"></i>
+
+                                </button>
+
+                            </div>
+
+
+                            <div class="notification-list"
+                                 id="notificationList">
+
+                                <div class="notification-empty">
+
+                                    <i class="fa-regular fa-bell-slash"></i>
+
+                                    <p>
+                                        No new notifications
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="notification-panel-footer">
+
+                                <button type="button"
+                                        id="markNotificationsRead">
+
+                                    Mark all as read
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Profile -->
+                    <div class="topbar-profile-wrapper">
+
+                        <button type="button"
+                                class="topbar-profile"
+                                id="topbarProfile"
+                                aria-expanded="false">
+
+                            <span class="profile-avatar">
+                                <i class="fa-solid fa-user-shield"></i>
+                            </span>
+
+
+                            <span class="profile-info">
+
+                                <strong id="topbarAdminName">
+                                    Administrator
+                                </strong>
+
+                                <small>
+                                    Admin
+                                </small>
+
+                            </span>
+
+
+                            <i class="fa-solid fa-chevron-down profile-chevron"></i>
+
+                        </button>
+
+
+                        <div class="profile-menu"
+                             id="adminProfileMenu"
+                             hidden>
+
+                            <a href="profile.html">
+
+                                <i class="fa-regular fa-user"></i>
+
+                                <span>
+                                    My Profile
+                                </span>
+
+                            </a>
+
+
+                            <a href="settings.html">
+
+                                <i class="fa-solid fa-gear"></i>
+
+                                <span>
+                                    Settings
+                                </span>
+
+                            </a>
+
+
+                            <div class="profile-menu-divider"></div>
+
+
+                            <button type="button"
+                                    id="profileMenuLogout">
+
+                                <i class="fa-solid fa-right-from-bracket"></i>
+
+                                <span>
+                                    Logout
+                                </span>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- =================================================
+                 PAGE CONTENT
+            ================================================== -->
+            <div class="page-content">
+
+                <!-- Page Header -->
+                <section class="page-header">
+
+                    <div class="page-header-content">
+
+                        <div>
+
+                            <span class="page-eyebrow">
+                                Assessment Management
+                            </span>
+
+                            <h1>
+                                Quizzes
+                            </h1>
+
+                            <p>
+                                Manage quizzes created by teachers,
+                                publication status, schedules, attempts
+                                and assessment activity.
+                            </p>
+
+                        </div>
+
+
+                        <div class="page-header-actions">
+
+                            <button type="button"
+                                    class="button button-secondary"
+                                    id="exportQuizzesButton">
+
+                                <i class="fa-solid fa-file-export"></i>
+
+                                <span>
+                                    Export
+                                </span>
+
+                            </button>
+
+
+                            <button type="button"
+                                    class="button button-primary"
+                                    id="createAdminQuizButton">
+
+                                <i class="fa-solid fa-plus"></i>
+
+                                <span>
+                                    Create Quiz
+                                </span>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     QUIZ STATISTICS
+                ================================================== -->
+                <section class="stats-grid quiz-stats"
+                         aria-label="Quiz statistics">
+
+                    <!-- Total -->
+                    <article class="stat-card">
+
+                        <div class="stat-card-icon">
+                            <i class="fa-solid fa-layer-group"></i>
+                        </div>
+
+
+                        <div class="stat-card-content">
+
+                            <span class="stat-label">
+                                Total Quizzes
+                            </span>
+
+                            <strong class="stat-value"
+                                    id="quizzesTotal">
+                                0
+                            </strong>
+
+                            <span class="stat-description">
+                                All assessments
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Published -->
+                    <article class="stat-card">
+
+                        <div class="stat-card-icon">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+
+
+                        <div class="stat-card-content">
+
+                            <span class="stat-label">
+                                Published
+                            </span>
+
+                            <strong class="stat-value"
+                                    id="publishedQuizzes">
+                                0
+                            </strong>
+
+                            <span class="stat-description">
+                                Available assessments
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Drafts -->
+                    <article class="stat-card">
+
+                        <div class="stat-card-icon">
+                            <i class="fa-solid fa-file-pen"></i>
+                        </div>
+
+
+                        <div class="stat-card-content">
+
+                            <span class="stat-label">
+                                Drafts
+                            </span>
+
+                            <strong class="stat-value"
+                                    id="draftQuizzes">
+                                0
+                            </strong>
+
+                            <span class="stat-description">
+                                Unpublished quizzes
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Attempts -->
+                    <article class="stat-card">
+
+                        <div class="stat-card-icon">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+
+
+                        <div class="stat-card-content">
+
+                            <span class="stat-label">
+                                Total Attempts
+                            </span>
+
+                            <strong class="stat-value"
+                                    id="quizAttempts">
+                                0
+                            </strong>
+
+                            <span class="stat-description">
+                                Student submissions
+                            </span>
+
+                        </div>
+
+                    </article>
+
+                </section>
+
+
+                <!-- =================================================
+                     QUIZ MANAGEMENT
+                ================================================== -->
+                <section class="content-card quiz-management-card">
+
+                    <div class="content-card-header">
+
+                        <div class="content-card-title">
+
+                            <span class="section-icon">
+                                <i class="fa-solid fa-circle-question"></i>
+                            </span>
+
+                            <div>
+
+                                <h2>
+                                    Quiz Directory
+                                </h2>
+
+                                <p>
+                                    View and manage all platform quizzes.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         FILTERS
+                    ================================================== -->
+                    <div class="filter-toolbar">
+
+                        <!-- Search -->
+                        <div class="filter-search">
+
+                            <label for="quizSearch"
+                                   class="sr-only">
+                                Search quizzes
+                            </label>
+
+                            <div class="search-input-wrapper">
+
+                                <i class="fa-solid fa-magnifying-glass"></i>
+
+                                <input
+                                    type="search"
+                                    id="quizSearch"
+                                    placeholder="Search by quiz title, subject or teacher..."
+                                    autocomplete="off">
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Subject -->
+                        <div class="filter-group">
+
+                            <label for="quizSubjectFilter">
+                                Subject
+                            </label>
+
+                            <select id="quizSubjectFilter">
+
+                                <option value="all">
+                                    All Subjects
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- Teacher -->
+                        <div class="filter-group">
+
+                            <label for="quizTeacherFilter">
+                                Teacher
+                            </label>
+
+                            <select id="quizTeacherFilter">
+
+                                <option value="all">
+                                    All Teachers
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- Status -->
+                        <div class="filter-group">
+
+                            <label for="quizStatusFilter">
+                                Status
+                            </label>
+
+                            <select id="quizStatusFilter">
+
+                                <option value="all">
+                                    All Statuses
+                                </option>
+
+                                <option value="draft">
+                                    Draft
+                                </option>
+
+                                <option value="scheduled">
+                                    Scheduled
+                                </option>
+
+                                <option value="published">
+                                    Published
+                                </option>
+
+                                <option value="completed">
+                                    Completed
+                                </option>
+
+                                <option value="archived">
+                                    Archived
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- Clear -->
+                        <button type="button"
+                                class="button button-ghost"
+                                id="clearQuizFilters">
+
+                            <i class="fa-solid fa-filter-circle-xmark"></i>
+
+                            <span>
+                                Clear Filters
+                            </span>
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         BULK ACTIONS
+                    ================================================== -->
+                    <div class="bulk-action-bar"
+                         id="quizBulkActionBar"
+                         hidden>
+
+                        <div class="bulk-selection-info">
+
+                            <span class="bulk-selection-icon">
+                                <i class="fa-solid fa-check-double"></i>
+                            </span>
+
+                            <strong>
+
+                                <span id="selectedQuizCount">
+                                    0
+                                </span>
+
+                                quizzes selected
+
+                            </strong>
+
+                        </div>
+
+
+                        <div class="bulk-action-buttons">
+
+                            <button type="button"
+                                    class="button button-small"
+                                    id="bulkPublishQuizzes">
+
+                                <i class="fa-solid fa-cloud-arrow-up"></i>
+
+                                Publish
+
+                            </button>
+
+
+                            <button type="button"
+                                    class="button button-small"
+                                    id="bulkArchiveQuizzes">
+
+                                <i class="fa-solid fa-box-archive"></i>
+
+                                Archive
+
+                            </button>
+
+
+                            <button type="button"
+                                    class="button button-small button-danger"
+                                    id="bulkDeleteQuizzes">
+
+                                <i class="fa-solid fa-trash"></i>
+
+                                Delete
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         QUIZ TABLE
+                    ================================================== -->
+                    <div class="table-container">
+
+                        <table class="data-table"
+                               id="quizzesTable">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th class="checkbox-column">
+
+                                        <label class="checkbox-wrapper">
+
+                                            <input type="checkbox"
+                                                   id="selectAllQuizzes">
+
+                                            <span class="custom-checkbox"></span>
+
+                                        </label>
+
+                                    </th>
+
+
+                                    <th>
+                                        Quiz
+                                    </th>
+
+
+                                    <th>
+                                        Subject
+                                    </th>
+
+
+                                    <th>
+                                        Created By
+                                    </th>
+
+
+                                    <th>
+                                        Questions
+                                    </th>
+
+
+                                    <th>
+                                        Duration
+                                    </th>
+
+
+                                    <th>
+                                        Attempts
+                                    </th>
+
+
+                                    <th>
+                                        Status
+                                    </th>
+
+
+                                    <th>
+                                        Schedule
+                                    </th>
+
+
+                                    <th class="actions-column">
+                                        Actions
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="quizzesTableBody">
+
+                                <!-- Dynamic quiz records -->
+
+                                <tr class="table-empty-state">
+
+                                    <td colspan="10">
+
+                                        <div class="empty-state">
+
+                                            <div class="empty-state-icon">
+
+                                                <i class="fa-solid fa-circle-question"></i>
+
+                                            </div>
+
+
+                                            <h3>
+                                                No quizzes yet
+                                            </h3>
+
+
+                                            <p>
+                                                Quizzes created by teachers
+                                                will appear here for
+                                                administrative management.
+                                            </p>
+
+
+                                            <button type="button"
+                                                    class="button button-primary"
+                                                    id="emptyCreateQuizButton">
+
+                                                <i class="fa-solid fa-plus"></i>
+
+                                                Create Quiz
+
+                                            </button>
+
+                                        </div>
+
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         TABLE FOOTER
+                    ================================================== -->
+                    <div class="table-footer">
+
+                        <div class="table-summary">
+
+                            Showing
+
+                            <strong id="quizShowingFrom">
+                                0
+                            </strong>
+
+                            –
+
+                            <strong id="quizShowingTo">
+                                0
+                            </strong>
+
+                            of
+
+                            <strong id="quizTotalCount">
+                                0
+                            </strong>
+
+                            quizzes
+
+                        </div>
+
+
+                        <div class="pagination">
+
+                            <button type="button"
+                                    class="pagination-button"
+                                    id="quizPreviousPage"
+                                    disabled
+                                    aria-label="Previous page">
+
+                                <i class="fa-solid fa-chevron-left"></i>
+
+                            </button>
+
+
+                            <span class="pagination-current"
+                                  id="quizCurrentPage">
+                                1
+                            </span>
+
+
+                            <button type="button"
+                                    class="pagination-button"
+                                    id="quizNextPage"
+                                    disabled
+                                    aria-label="Next page">
+
+                                <i class="fa-solid fa-chevron-right"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     QUIZ ACTIVITY
+                ================================================== -->
+                <section class="content-card">
+
+                    <div class="content-card-header">
+
+                        <div class="content-card-title">
+
+                            <span class="section-icon">
+                                <i class="fa-solid fa-chart-line"></i>
+                            </span>
+
+                            <div>
+
+                                <h2>
+                                    Quiz Activity
+                                </h2>
+
+                                <p>
+                                    Monitor assessment activity across
+                                    the platform.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="content-card-actions">
+
+                            <select id="quizActivityPeriod"
+                                    aria-label="Quiz activity period">
+
+                                <option value="7">
+                                    Last 7 Days
+                                </option>
+
+                                <option value="30">
+                                    Last 30 Days
+                                </option>
+
+                                <option value="90">
+                                    Last 90 Days
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chart-container"
+                         id="quizActivityChart">
+
+                        <div class="chart-empty"
+                             id="quizActivityEmpty">
+
+                            <div class="empty-state-icon">
+                                <i class="fa-solid fa-chart-column"></i>
+                            </div>
+
+                            <h3>
+                                No activity data
+                            </h3>
+
+                            <p>
+                                Quiz activity will appear here after
+                                students begin attempting assessments.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     QUIZ MANAGEMENT GUIDANCE
+                ================================================== -->
+                <section class="content-card">
+
+                    <div class="content-card-header">
+
+                        <div class="content-card-title">
+
+                            <span class="section-icon">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </span>
+
+                            <div>
+
+                                <h2>
+                                    Assessment Controls
+                                </h2>
+
+                                <p>
+                                    Administrative controls for platform
+                                    assessments.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="information-grid">
+
+                        <article class="information-card">
+
+                            <div class="information-card-icon">
+                                <i class="fa-solid fa-eye"></i>
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Publication Control
+                                </h3>
+
+                                <p>
+                                    Review quiz status and control when
+                                    assessments become available to students.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="information-card">
+
+                            <div class="information-card-icon">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Scheduling
+                                </h3>
+
+                                <p>
+                                    Monitor scheduled assessments and their
+                                    configured start and end times.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="information-card">
+
+                            <div class="information-card-icon">
+                                <i class="fa-solid fa-users"></i>
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Participation
+                                </h3>
+
+                                <p>
+                                    Track student attempts, submissions
+                                    and participation across assessments.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="information-card">
+
+                            <div class="information-card-icon">
+                                <i class="fa-solid fa-chart-pie"></i>
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Performance
+                                </h3>
+
+                                <p>
+                                    Analyze assessment results and identify
+                                    trends in student performance.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <!-- =========================================================
+         QUIZ DETAILS MODAL
+    ========================================================== -->
+    <div class="modal-overlay"
+         id="quizDetailsModal"
+         hidden>
+
+        <div class="modal modal-large"
+             role="dialog"
+             aria-modal="true"
+             aria-labelledby="quizDetailsTitle">
+
+            <div class="modal-header">
+
+                <div class="modal-title">
+
+                    <span class="modal-icon">
+                        <i class="fa-solid fa-circle-question"></i>
+                    </span>
+
+                    <div>
+
+                        <h2 id="quizDetailsTitle">
+                            Quiz Details
+                        </h2>
+
+                        <p>
+                            Review assessment information.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button type="button"
+                        class="modal-close"
+                        id="closeQuizDetailsModal"
+                        aria-label="Close modal">
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+                <input type="hidden"
+                       id="quizDetailsRecordId">
+
+
+                <!-- Quiz Summary -->
+                <div class="detail-summary-card">
+
+                    <div class="detail-summary-main">
+
+                        <span class="detail-summary-icon">
+                            <i class="fa-solid fa-file-circle-question"></i>
+                        </span>
+
+                        <div>
+
+                            <span class="detail-label">
+                                Quiz
+                            </span>
+
+                            <h3 id="quizDetailsName">
+                                —
+                            </h3>
+
+                            <p id="quizDetailsDescription">
+                                —
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <span class="status-badge"
+                          id="quizDetailsStatus">
+                        —
+                    </span>
+
+                </div>
+
+
+                <!-- Quiz Information -->
+                <div class="detail-grid">
+
+                    <div class="detail-item">
+
+                        <span class="detail-label">
+                            Subject
+                        </span>
+
+                        <strong id="quizDetailsSubject">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <span class="detail-label">
+                            Created By
+                        </span>
+
+                        <strong id="quizDetailsTeacher">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <span class="detail-label">
+                            Questions
+                        </span>
+
+                        <strong id="quizDetailsQuestions">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <span class="detail-label">
+                            Total Marks
+                        </span>
+
+                        <strong id="quizDetailsMarks">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <span class="detail-label">
+                            Duration
+                        </span>
+
+                        <strong id="quizDetailsDuration">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <span class="detail-label">
+                            Attempts
+                        </span>
+
+                        <strong id="quizDetailsAttempts">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <span class="detail-label">
+                            Start Date
+                        </span>
+
+                        <strong id="quizDetailsStartDate">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <span class="detail-label">
+                            End Date
+                        </span>
+
+                        <strong id="quizDetailsEndDate">
+                            —
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Quiz Settings -->
+                <div class="form-section">
+
+                    <div class="form-section-header">
+
+                        <h3>
+                            Assessment Settings
+                        </h3>
+
+                        <p>
+                            Configured rules for this assessment.
+                        </p>
+
+                    </div>
+
+
+                    <div class="settings-summary-grid">
+
+                        <div class="setting-summary-item">
+
+                            <span>
+                                Random Questions
+                            </span>
+
+                            <strong id="quizDetailsRandomQuestions">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="setting-summary-item">
+
+                            <span>
+                                Negative Marking
+                            </span>
+
+                            <strong id="quizDetailsNegativeMarking">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="setting-summary-item">
+
+                            <span>
+                                Maximum Attempts
+                            </span>
+
+                            <strong id="quizDetailsMaxAttempts">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="setting-summary-item">
+
+                            <span>
+                                Result Visibility
+                            </span>
+
+                            <strong id="quizDetailsResultVisibility">
+                                —
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button type="button"
+                        class="button button-secondary"
+                        id="closeQuizDetailsButton">
+
+                    Close
+
+                </button>
+
+
+                <button type="button"
+                        class="button button-primary"
+                        id="editQuizButton">
+
+                    <i class="fa-solid fa-pen"></i>
+
+                    Edit Quiz
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         DELETE QUIZ MODAL
+    ========================================================== -->
+    <div class="modal-overlay"
+         id="deleteQuizModal"
+         hidden>
+
+        <div class="modal modal-small"
+             role="dialog"
+             aria-modal="true"
+             aria-labelledby="deleteQuizTitle">
+
+            <div class="modal-header">
+
+                <div class="modal-title">
+
+                    <span class="modal-icon modal-icon-danger">
+                        <i class="fa-solid fa-trash"></i>
+                    </span>
+
+
+                    <div>
+
+                        <h2 id="deleteQuizTitle">
+                            Delete Quiz
+                        </h2>
+
+                        <p>
+                            This action requires confirmation.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button type="button"
+                        class="modal-close"
+                        id="closeDeleteQuizModal"
+                        aria-label="Close modal">
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+                <div class="confirmation-message">
+
+                    <div class="confirmation-icon">
+
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+
+                    </div>
+
+
+                    <h3>
+                        Are you sure?
+                    </h3>
+
+
+                    <p>
+                        You are about to delete this quiz and its
+                        administrative record.
+                    </p>
+
+
+                    <p class="confirmation-warning">
+                        Existing student attempts and results may depend
+                        on this assessment.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button type="button"
+                        class="button button-secondary"
+                        id="cancelDeleteQuiz">
+
+                    Cancel
+
+                </button>
+
+
+                <button type="button"
+                        class="button button-danger"
+                        id="confirmDeleteQuiz">
+
+                    <i class="fa-solid fa-trash"></i>
+
+                    Delete Quiz
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         TOAST
+    ========================================================== -->
+    <div class="toast-container"
+         id="toastContainer"
+         aria-live="polite"
+         aria-atomic="true">
+
+        <div class="toast"
+             id="adminToast"
+             hidden>
+
+            <div class="toast-icon"
+                 id="toastIcon">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+            </div>
+
+
+            <div class="toast-content">
+
+                <strong id="toastTitle">
+                    Success
+                </strong>
+
+
+                <p id="toastMessage">
+                    Quiz updated successfully.
+                </p>
+
+            </div>
+
+
+            <button type="button"
+                    class="toast-close"
+                    id="toastClose"
+                    aria-label="Close notification">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         LOGOUT MODAL
+    ========================================================== -->
+    <div class="modal-overlay"
+         id="logoutModal"
+         hidden>
+
+        <div class="modal modal-small"
+             role="dialog"
+             aria-modal="true"
+             aria-labelledby="logoutModalTitle">
+
+            <div class="modal-header">
+
+                <div class="modal-title">
+
+                    <span class="modal-icon modal-icon-warning">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                    </span>
+
+
+                    <div>
+
+                        <h2 id="logoutModalTitle">
+                            Sign Out
+                        </h2>
+
+                        <p>
+                            End your current administrator session.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button type="button"
+                        class="modal-close"
+                        id="closeLogoutModal"
+                        aria-label="Close modal">
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+                <div class="confirmation-message">
+
+                    <div class="confirmation-icon">
+                        <i class="fa-solid fa-circle-question"></i>
+                    </div>
+
+
+                    <h3>
+                        Sign out of the portal?
+                    </h3>
+
+
+                    <p>
+                        You will need to sign in again to access the
+                        administration panel.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button type="button"
+                        class="button button-secondary"
+                        id="cancelLogout">
+
+                    Cancel
+
+                </button>
+
+
+                <button type="button"
+                        class="button button-danger"
+                        id="confirmLogout">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    Sign Out
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         APPLICATION JAVASCRIPT
+         Functionality will be implemented later.
+    ========================================================== -->
+    <script src="../js/app.js"></script>
+
+</body>
+</html>
