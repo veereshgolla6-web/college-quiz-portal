@@ -1,0 +1,1956 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Profile | Quiz Portal</title>
+
+    <meta name="description"
+          content="Manage administrator profile, account information and security settings.">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+<div class="app-layout">
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="sidebar" id="adminSidebar">
+
+        <div class="sidebar-header">
+
+            <a href="dashboard.html" class="brand">
+
+                <div class="brand-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+
+                <div class="brand-text">
+
+                    <span class="brand-title">
+                        Quiz Portal
+                    </span>
+
+                    <span class="brand-subtitle">
+                        Administration
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <button class="sidebar-close"
+                    id="sidebarClose"
+                    type="button"
+                    aria-label="Close navigation">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <nav class="sidebar-navigation"
+             aria-label="Admin navigation">
+
+            <!-- MAIN -->
+
+            <div class="nav-section">
+
+                <p class="nav-section-title">
+                    Main
+                </p>
+
+                <a href="dashboard.html"
+                   class="nav-link">
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-chart-pie"></i>
+                    </span>
+
+                    <span>
+                        Dashboard
+                    </span>
+
+                </a>
+
+            </div>
+
+
+            <!-- MANAGEMENT -->
+
+            <div class="nav-section">
+
+                <p class="nav-section-title">
+                    Management
+                </p>
+
+                <a href="students.html"
+                   class="nav-link">
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-user-graduate"></i>
+                    </span>
+
+                    <span>
+                        Students
+                    </span>
+
+                </a>
+
+
+                <a href="teachers.html"
+                   class="nav-link">
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-chalkboard-user"></i>
+                    </span>
+
+                    <span>
+                        Teachers
+                    </span>
+
+                </a>
+
+
+                <a href="departments.html"
+                   class="nav-link">
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-building-columns"></i>
+                    </span>
+
+                    <span>
+                        Departments
+                    </span>
+
+                </a>
+
+
+                <a href="subjects.html"
+                   class="nav-link">
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-book-open"></i>
+                    </span>
+
+                    <span>
+                        Subjects
+                    </span>
+
+                </a>
+
+
+                <a href="quizzes.html"
+                   class="nav-link">
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-circle-question"></i>
+                    </span>
+
+                    <span>
+                        Quizzes
+                    </span>
+
+                </a>
+
+            </div>
+
+
+            <!-- PERFORMANCE -->
+
+            <div class="nav-section">
+
+                <p class="nav-section-title">
+                    Performance
+                </p>
+
+
+                <a href="results.html"
+                   class="nav-link">
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-square-poll-vertical"></i>
+                    </span>
+
+                    <span>
+                        Results
+                    </span>
+
+                </a>
+
+
+                <a href="leaderboard.html"
+                   class="nav-link">
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-ranking-star"></i>
+                    </span>
+
+                    <span>
+                        Leaderboard
+                    </span>
+
+                </a>
+
+
+                <a href="reports.html"
+                   class="nav-link">
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-file-lines"></i>
+                    </span>
+
+                    <span>
+                        Reports
+                    </span>
+
+                </a>
+
+            </div>
+
+
+            <!-- SYSTEM -->
+
+            <div class="nav-section">
+
+                <p class="nav-section-title">
+                    System
+                </p>
+
+
+                <a href="settings.html"
+                   class="nav-link">
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-gear"></i>
+                    </span>
+
+                    <span>
+                        Settings
+                    </span>
+
+                </a>
+
+
+                <a href="profile.html"
+                   class="nav-link active"
+                   aria-current="page">
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-user-circle"></i>
+                    </span>
+
+                    <span>
+                        My Profile
+                    </span>
+
+                </a>
+
+
+                <a href="help.html"
+                   class="nav-link">
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-circle-question"></i>
+                    </span>
+
+                    <span>
+                        Help &amp; Support
+                    </span>
+
+                </a>
+
+            </div>
+
+        </nav>
+
+
+        <div class="sidebar-footer">
+
+            <button class="sidebar-logout"
+                    id="sidebarLogout"
+                    type="button">
+
+                <span class="nav-icon">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                </span>
+
+                <span>
+                    Logout
+                </span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <div class="topbar-left">
+
+                <button class="mobile-menu-button"
+                        id="mobileMenuButton"
+                        type="button"
+                        aria-label="Open navigation">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+
+                <div class="breadcrumb">
+
+                    <a href="dashboard.html">
+                        Dashboard
+                    </a>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                    <span>
+                        My Profile
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+                <!-- NOTIFICATIONS -->
+
+                <button class="topbar-icon-button"
+                        id="notificationButton"
+                        type="button"
+                        aria-label="Notifications">
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span class="notification-badge"
+                          id="notificationCount">
+                        0
+                    </span>
+
+                </button>
+
+
+                <!-- PROFILE -->
+
+                <div class="topbar-profile-wrapper">
+
+                    <button class="topbar-profile"
+                            id="topbarProfile"
+                            type="button">
+
+                        <div class="profile-avatar">
+                            <i class="fa-solid fa-user-shield"></i>
+                        </div>
+
+                        <div class="profile-info">
+
+                            <span class="profile-name">
+                                Administrator
+                            </span>
+
+                            <span class="profile-role">
+                                Admin
+                            </span>
+
+                        </div>
+
+                        <i class="fa-solid fa-chevron-down profile-arrow"></i>
+
+                    </button>
+
+
+                    <div class="profile-menu"
+                         id="adminProfileMenu">
+
+                        <a href="profile.html">
+
+                            <i class="fa-solid fa-user"></i>
+
+                            My Profile
+
+                        </a>
+
+
+                        <a href="settings.html">
+
+                            <i class="fa-solid fa-gear"></i>
+
+                            Settings
+
+                        </a>
+
+
+                        <button type="button"
+                                id="profileMenuLogout">
+
+                            <i class="fa-solid fa-right-from-bracket"></i>
+
+                            Logout
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             PAGE CONTENT
+        ================================================== -->
+
+        <section class="page-content">
+
+            <!-- PAGE HEADER -->
+
+            <div class="page-header">
+
+                <div class="page-header-content">
+
+                    <div class="page-header-icon">
+
+                        <i class="fa-solid fa-user-circle"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h1>
+                            My Profile
+                        </h1>
+
+                        <p>
+                            Manage your administrator account and security information.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="page-header-actions">
+
+                    <button class="button button-secondary"
+                            id="cancelProfileChanges"
+                            type="button">
+
+                        Cancel
+
+                    </button>
+
+
+                    <button class="button button-primary"
+                            id="saveProfileButton"
+                            type="button">
+
+                        <i class="fa-solid fa-floppy-disk"></i>
+
+                        Save Changes
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 PROFILE OVERVIEW
+            ================================================== -->
+
+            <section class="profile-overview-card">
+
+                <div class="profile-cover">
+
+                    <div class="profile-large-avatar">
+
+                        <i class="fa-solid fa-user-shield"></i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="profile-overview-content">
+
+                    <div>
+
+                        <h2 id="profileDisplayName">
+                            Administrator
+                        </h2>
+
+                        <p id="profileDisplayRole">
+                            System Administrator
+                        </p>
+
+                        <span class="status-badge status-active"
+                              id="profileAccountStatus">
+
+                            <i class="fa-solid fa-circle"></i>
+
+                            Active
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="profile-overview-actions">
+
+                        <button class="button button-secondary"
+                                id="changeProfilePhotoButton"
+                                type="button">
+
+                            <i class="fa-solid fa-camera"></i>
+
+                            Change Photo
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 ACCOUNT SUMMARY
+            ================================================== -->
+
+            <div class="stats-grid profile-stats">
+
+                <article class="stat-card">
+
+                    <div class="stat-card-icon">
+
+                        <i class="fa-solid fa-calendar-check"></i>
+
+                    </div>
+
+                    <div class="stat-card-content">
+
+                        <span class="stat-label">
+                            Account Created
+                        </span>
+
+                        <strong class="stat-value"
+                                id="profileCreatedDate">
+                            —
+                        </strong>
+
+                        <span class="stat-description">
+                            Account registration date
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+                <article class="stat-card">
+
+                    <div class="stat-card-icon">
+
+                        <i class="fa-solid fa-right-to-bracket"></i>
+
+                    </div>
+
+                    <div class="stat-card-content">
+
+                        <span class="stat-label">
+                            Last Login
+                        </span>
+
+                        <strong class="stat-value"
+                                id="profileLastLogin">
+                            —
+                        </strong>
+
+                        <span class="stat-description">
+                            Most recent login
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+                <article class="stat-card">
+
+                    <div class="stat-card-icon">
+
+                        <i class="fa-solid fa-shield-halved"></i>
+
+                    </div>
+
+                    <div class="stat-card-content">
+
+                        <span class="stat-label">
+                            Security Status
+                        </span>
+
+                        <strong class="stat-value"
+                                id="profileSecurityStatus">
+                            Secure
+                        </strong>
+
+                        <span class="stat-description">
+                            Account protection
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+                <article class="stat-card">
+
+                    <div class="stat-card-icon">
+
+                        <i class="fa-solid fa-clock"></i>
+
+                    </div>
+
+                    <div class="stat-card-content">
+
+                        <span class="stat-label">
+                            Active Sessions
+                        </span>
+
+                        <strong class="stat-value"
+                                id="profileActiveSessions">
+                            1
+                        </strong>
+
+                        <span class="stat-description">
+                            Current sessions
+                        </span>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <!-- =================================================
+                 PROFILE INFORMATION
+            ================================================== -->
+
+            <section class="content-card">
+
+                <div class="content-card-header">
+
+                    <div>
+
+                        <h2>
+                            <i class="fa-solid fa-id-card"></i>
+                            Personal Information
+                        </h2>
+
+                        <p>
+                            Update the information associated with your administrator account.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <form id="profileForm">
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label for="profileFullName">
+                                Full Name
+                            </label>
+
+                            <input type="text"
+                                   id="profileFullName"
+                                   name="profileFullName"
+                                   value="Administrator"
+                                   autocomplete="name"
+                                   placeholder="Enter full name">
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="profileUsername">
+                                Username
+                            </label>
+
+                            <input type="text"
+                                   id="profileUsername"
+                                   name="profileUsername"
+                                   value="admin"
+                                   autocomplete="username"
+                                   readonly>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="profileEmail">
+                                Email Address
+                            </label>
+
+                            <input type="email"
+                                   id="profileEmail"
+                                   name="profileEmail"
+                                   placeholder="admin@example.com"
+                                   autocomplete="email">
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="profilePhone">
+                                Phone Number
+                            </label>
+
+                            <input type="tel"
+                                   id="profilePhone"
+                                   name="profilePhone"
+                                   placeholder="Enter phone number"
+                                   autocomplete="tel">
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="profileDesignation">
+                                Designation
+                            </label>
+
+                            <input type="text"
+                                   id="profileDesignation"
+                                   name="profileDesignation"
+                                   value="System Administrator"
+                                   placeholder="Enter designation">
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="profileDepartment">
+                                Department
+                            </label>
+
+                            <input type="text"
+                                   id="profileDepartment"
+                                   name="profileDepartment"
+                                   value="Administration"
+                                   placeholder="Enter department">
+
+                        </div>
+
+
+                        <div class="form-group form-group-full">
+
+                            <label for="profileBio">
+                                About
+                            </label>
+
+                            <textarea id="profileBio"
+                                      name="profileBio"
+                                      rows="4"
+                                      placeholder="Write a short description about your role..."></textarea>
+
+                        </div>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+
+            <!-- =================================================
+                 ACCOUNT DETAILS
+            ================================================== -->
+
+            <section class="content-card">
+
+                <div class="content-card-header">
+
+                    <div>
+
+                        <h2>
+                            <i class="fa-solid fa-circle-info"></i>
+                            Account Information
+                        </h2>
+
+                        <p>
+                            View important account details.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="detail-grid">
+
+                    <div class="detail-item">
+
+                        <span class="detail-label">
+                            Account ID
+                        </span>
+
+                        <strong id="profileAccountId">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <span class="detail-label">
+                            Account Role
+                        </span>
+
+                        <strong id="profileAccountRole">
+                            Administrator
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <span class="detail-label">
+                            Account Status
+                        </span>
+
+                        <strong id="profileAccountStatusDetail">
+                            Active
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <span class="detail-label">
+                            Authentication
+                        </span>
+
+                        <strong id="profileAuthenticationMethod">
+                            Password
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <span class="detail-label">
+                            Created
+                        </span>
+
+                        <strong id="profileAccountCreated">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <span class="detail-label">
+                            Last Updated
+                        </span>
+
+                        <strong id="profileLastUpdated">
+                            —
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 PASSWORD & SECURITY
+            ================================================== -->
+
+            <section class="content-card">
+
+                <div class="content-card-header">
+
+                    <div>
+
+                        <h2>
+                            <i class="fa-solid fa-lock"></i>
+                            Password &amp; Security
+                        </h2>
+
+                        <p>
+                            Protect your administrator account.
+                        </p>
+
+                    </div>
+
+
+                    <button class="button button-secondary"
+                            id="changePasswordButton"
+                            type="button">
+
+                        <i class="fa-solid fa-key"></i>
+
+                        Change Password
+
+                    </button>
+
+                </div>
+
+
+                <div class="security-status-panel">
+
+                    <div class="security-status-icon">
+
+                        <i class="fa-solid fa-shield-check"></i>
+
+                    </div>
+
+
+                    <div class="security-status-content">
+
+                        <strong>
+                            Your account is protected
+                        </strong>
+
+                        <p>
+                            Keep your password private and use a strong,
+                            unique password for your administrator account.
+                        </p>
+
+                    </div>
+
+
+                    <span class="status-badge status-active">
+
+                        <i class="fa-solid fa-circle-check"></i>
+
+                        Secure
+
+                    </span>
+
+                </div>
+
+
+                <div class="settings-option-list">
+
+                    <div class="settings-option">
+
+                        <div class="settings-option-content">
+
+                            <strong>
+                                Login Activity Tracking
+                            </strong>
+
+                            <span>
+                                Record administrator login and logout activity.
+                            </span>
+
+                        </div>
+
+
+                        <label class="toggle-switch">
+
+                            <input type="checkbox"
+                                   id="profileLoginTracking"
+                                   checked>
+
+                            <span class="toggle-slider"></span>
+
+                        </label>
+
+                    </div>
+
+
+                    <div class="settings-option">
+
+                        <div class="settings-option-content">
+
+                            <strong>
+                                Session Protection
+                            </strong>
+
+                            <span>
+                                Automatically protect inactive administrator sessions.
+                            </span>
+
+                        </div>
+
+
+                        <label class="toggle-switch">
+
+                            <input type="checkbox"
+                                   id="profileSessionProtection"
+                                   checked>
+
+                            <span class="toggle-slider"></span>
+
+                        </label>
+
+                    </div>
+
+
+                    <div class="settings-option">
+
+                        <div class="settings-option-content">
+
+                            <strong>
+                                Security Notifications
+                            </strong>
+
+                            <span>
+                                Receive alerts about important account security events.
+                            </span>
+
+                        </div>
+
+
+                        <label class="toggle-switch">
+
+                            <input type="checkbox"
+                                   id="profileSecurityNotifications"
+                                   checked>
+
+                            <span class="toggle-slider"></span>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 LOGIN ACTIVITY
+            ================================================== -->
+
+            <section class="content-card">
+
+                <div class="content-card-header">
+
+                    <div>
+
+                        <h2>
+                            <i class="fa-solid fa-clock-rotate-left"></i>
+                            Recent Login Activity
+                        </h2>
+
+                        <p>
+                            Review recent administrator account activity.
+                        </p>
+
+                    </div>
+
+
+                    <button class="button button-secondary"
+                            id="viewAllLoginActivityButton"
+                            type="button">
+
+                        View All
+
+                    </button>
+
+                </div>
+
+
+                <div class="table-responsive">
+
+                    <table class="data-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Date &amp; Time
+                                </th>
+
+                                <th>
+                                    Device
+                                </th>
+
+                                <th>
+                                    Browser
+                                </th>
+
+                                <th>
+                                    Location
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="loginActivityTableBody">
+
+                            <!-- JavaScript will populate activity -->
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <div class="empty-state"
+                     id="loginActivityEmpty">
+
+                    <div class="empty-state-icon">
+
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+
+                    </div>
+
+                    <h3>
+                        No login activity
+                    </h3>
+
+                    <p>
+                        Recent administrator login activity will appear here.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 NOTIFICATION PREFERENCES
+            ================================================== -->
+
+            <section class="content-card">
+
+                <div class="content-card-header">
+
+                    <div>
+
+                        <h2>
+                            <i class="fa-regular fa-bell"></i>
+                            Notification Preferences
+                        </h2>
+
+                        <p>
+                            Choose which administrator notifications you want to receive.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="settings-option-list">
+
+                    <div class="settings-option">
+
+                        <div class="settings-option-content">
+
+                            <strong>
+                                New Quiz Notifications
+                            </strong>
+
+                            <span>
+                                Receive alerts when quizzes are created or published.
+                            </span>
+
+                        </div>
+
+
+                        <label class="toggle-switch">
+
+                            <input type="checkbox"
+                                   id="profileQuizNotifications"
+                                   checked>
+
+                            <span class="toggle-slider"></span>
+
+                        </label>
+
+                    </div>
+
+
+                    <div class="settings-option">
+
+                        <div class="settings-option-content">
+
+                            <strong>
+                                New User Notifications
+                            </strong>
+
+                            <span>
+                                Receive alerts when students or teachers are added.
+                            </span>
+
+                        </div>
+
+
+                        <label class="toggle-switch">
+
+                            <input type="checkbox"
+                                   id="profileUserNotifications"
+                                   checked>
+
+                            <span class="toggle-slider"></span>
+
+                        </label>
+
+                    </div>
+
+
+                    <div class="settings-option">
+
+                        <div class="settings-option-content">
+
+                            <strong>
+                                System Notifications
+                            </strong>
+
+                            <span>
+                                Receive important system-level notifications.
+                            </span>
+
+                        </div>
+
+
+                        <label class="toggle-switch">
+
+                            <input type="checkbox"
+                                   id="profileSystemNotifications"
+                                   checked>
+
+                            <span class="toggle-slider"></span>
+
+                        </label>
+
+                    </div>
+
+
+                    <div class="settings-option">
+
+                        <div class="settings-option-content">
+
+                            <strong>
+                                Report Notifications
+                            </strong>
+
+                            <span>
+                                Receive notifications when scheduled reports are ready.
+                            </span>
+
+                        </div>
+
+
+                        <label class="toggle-switch">
+
+                            <input type="checkbox"
+                                   id="profileReportNotifications"
+                                   checked>
+
+                            <span class="toggle-slider"></span>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 DANGER ZONE
+            ================================================== -->
+
+            <section class="content-card danger-zone">
+
+                <div class="content-card-header">
+
+                    <div>
+
+                        <h2>
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                            Account Actions
+                        </h2>
+
+                        <p>
+                            Important actions related to your administrator account.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="danger-action">
+
+                    <div>
+
+                        <strong>
+                            Sign Out From All Devices
+                        </strong>
+
+                        <p>
+                            End all active administrator sessions except the current session.
+                        </p>
+
+                    </div>
+
+
+                    <button class="button button-danger-outline"
+                            id="logoutAllDevicesButton"
+                            type="button">
+
+                        <i class="fa-solid fa-right-from-bracket"></i>
+
+                        Sign Out All Devices
+
+                    </button>
+
+                </div>
+
+            </section>
+
+        </section>
+
+
+        <!-- =================================================
+             FOOTER
+        ================================================== -->
+
+        <footer class="app-footer">
+
+            <span>
+                &copy; 2026 Quiz Portal. All rights reserved.
+            </span>
+
+            <span>
+                Administration Panel
+            </span>
+
+        </footer>
+
+    </main>
+
+</div>
+
+
+<!-- =====================================================
+     NOTIFICATION PANEL
+====================================================== -->
+
+<div class="notification-panel"
+     id="notificationPanel"
+     aria-hidden="true">
+
+    <div class="notification-panel-header">
+
+        <div>
+
+            <h3>
+                Notifications
+            </h3>
+
+            <span id="notificationSummary">
+                No new notifications
+            </span>
+
+        </div>
+
+
+        <button type="button"
+                id="notificationPanelClose"
+                aria-label="Close notifications">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+    </div>
+
+
+    <div class="notification-list"
+         id="notificationList">
+
+        <div class="notification-empty">
+
+            <i class="fa-regular fa-bell-slash"></i>
+
+            <p>
+                No notifications available.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="notification-panel-footer">
+
+        <button type="button"
+                id="markNotificationsRead">
+
+            Mark all as read
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     CHANGE PASSWORD MODAL
+====================================================== -->
+
+<div class="modal-overlay"
+     id="changePasswordModal"
+     aria-hidden="true">
+
+    <div class="modal modal-medium">
+
+        <div class="modal-header">
+
+            <div>
+
+                <h2>
+                    Change Password
+                </h2>
+
+                <p>
+                    Update your administrator account password.
+                </p>
+
+            </div>
+
+
+            <button type="button"
+                    class="modal-close"
+                    id="closeChangePasswordModal"
+                    aria-label="Close dialog">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <div class="modal-body">
+
+            <form id="changePasswordForm">
+
+                <div class="form-group">
+
+                    <label for="currentPassword">
+                        Current Password
+                    </label>
+
+                    <div class="password-input-wrapper">
+
+                        <input type="password"
+                               id="currentPassword"
+                               name="currentPassword"
+                               autocomplete="current-password"
+                               placeholder="Enter current password">
+
+                        <button type="button"
+                                class="password-toggle"
+                                id="toggleCurrentPassword"
+                                aria-label="Show current password">
+
+                            <i class="fa-regular fa-eye"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="newPassword">
+                        New Password
+                    </label>
+
+                    <div class="password-input-wrapper">
+
+                        <input type="password"
+                               id="newPassword"
+                               name="newPassword"
+                               autocomplete="new-password"
+                               placeholder="Enter new password">
+
+                        <button type="button"
+                                class="password-toggle"
+                                id="toggleNewPassword"
+                                aria-label="Show new password">
+
+                            <i class="fa-regular fa-eye"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="password-strength"
+                     id="passwordStrength">
+
+                    <div class="password-strength-header">
+
+                        <span>
+                            Password strength
+                        </span>
+
+                        <strong id="passwordStrengthText">
+                            —
+                        </strong>
+
+                    </div>
+
+                    <div class="password-strength-track">
+
+                        <div class="password-strength-bar"
+                             id="passwordStrengthBar">
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="confirmNewPassword">
+                        Confirm New Password
+                    </label>
+
+                    <div class="password-input-wrapper">
+
+                        <input type="password"
+                               id="confirmNewPassword"
+                               name="confirmNewPassword"
+                               autocomplete="new-password"
+                               placeholder="Confirm new password">
+
+                        <button type="button"
+                                class="password-toggle"
+                                id="toggleConfirmPassword"
+                                aria-label="Show password confirmation">
+
+                            <i class="fa-regular fa-eye"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+
+
+        <div class="modal-footer">
+
+            <button class="button button-secondary"
+                    id="cancelChangePassword"
+                    type="button">
+
+                Cancel
+
+            </button>
+
+
+            <button class="button button-primary"
+                    id="saveNewPassword"
+                    type="button">
+
+                <i class="fa-solid fa-key"></i>
+
+                Update Password
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     PROFILE PHOTO MODAL
+====================================================== -->
+
+<div class="modal-overlay"
+     id="profilePhotoModal"
+     aria-hidden="true">
+
+    <div class="modal modal-small">
+
+        <div class="modal-header">
+
+            <div>
+
+                <h2>
+                    Profile Photo
+                </h2>
+
+                <p>
+                    Update your administrator profile photo.
+                </p>
+
+            </div>
+
+
+            <button type="button"
+                    class="modal-close"
+                    id="closeProfilePhotoModal"
+                    aria-label="Close dialog">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <div class="modal-body">
+
+            <div class="profile-photo-upload">
+
+                <div class="profile-photo-preview"
+                     id="profilePhotoPreview">
+
+                    <i class="fa-solid fa-user-shield"></i>
+
+                </div>
+
+
+                <label for="profilePhotoInput"
+                       class="button button-secondary">
+
+                    <i class="fa-solid fa-upload"></i>
+
+                    Choose Photo
+
+                </label>
+
+
+                <input type="file"
+                       id="profilePhotoInput"
+                       accept="image/png,image/jpeg,image/webp"
+                       hidden>
+
+                <p>
+                    JPG, PNG or WebP. Recommended square image.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="modal-footer">
+
+            <button class="button button-secondary"
+                    id="cancelProfilePhoto"
+                    type="button">
+
+                Cancel
+
+            </button>
+
+
+            <button class="button button-primary"
+                    id="saveProfilePhoto"
+                    type="button">
+
+                <i class="fa-solid fa-check"></i>
+
+                Save Photo
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     LOGOUT ALL DEVICES MODAL
+====================================================== -->
+
+<div class="modal-overlay"
+     id="logoutAllDevicesModal"
+     aria-hidden="true">
+
+    <div class="modal modal-small">
+
+        <div class="modal-header">
+
+            <div>
+
+                <h2>
+                    Sign Out All Devices
+                </h2>
+
+                <p>
+                    End all other active administrator sessions.
+                </p>
+
+            </div>
+
+
+            <button type="button"
+                    class="modal-close"
+                    id="closeLogoutAllDevicesModal"
+                    aria-label="Close dialog">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <div class="modal-body">
+
+            <div class="confirmation-content">
+
+                <div class="confirmation-icon">
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                </div>
+
+                <p>
+                    All other active sessions will be signed out.
+                    Your current session will remain active.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="modal-footer">
+
+            <button class="button button-secondary"
+                    id="cancelLogoutAllDevices"
+                    type="button">
+
+                Cancel
+
+            </button>
+
+
+            <button class="button button-danger"
+                    id="confirmLogoutAllDevices"
+                    type="button">
+
+                Sign Out All
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     LOGOUT MODAL
+====================================================== -->
+
+<div class="modal-overlay"
+     id="logoutModal"
+     aria-hidden="true">
+
+    <div class="modal modal-small">
+
+        <div class="modal-header">
+
+            <div>
+
+                <h2>
+                    Confirm Logout
+                </h2>
+
+                <p>
+                    Are you sure you want to sign out?
+                </p>
+
+            </div>
+
+
+            <button type="button"
+                    class="modal-close"
+                    id="closeLogoutModal"
+                    aria-label="Close logout dialog">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <div class="modal-body">
+
+            <div class="confirmation-content">
+
+                <div class="confirmation-icon">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                </div>
+
+                <p>
+                    Your current admin session will be ended.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="modal-footer">
+
+            <button class="button button-secondary"
+                    id="cancelLogout"
+                    type="button">
+
+                Cancel
+
+            </button>
+
+
+            <button class="button button-danger"
+                    id="confirmLogout"
+                    type="button">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     TOAST
+====================================================== -->
+
+<div class="toast-container"
+     id="toastContainer"
+     aria-live="polite">
+
+    <div class="toast"
+         id="adminToast"
+         hidden>
+
+        <div class="toast-icon">
+
+            <i class="fa-solid fa-circle-check"></i>
+
+        </div>
+
+
+        <div class="toast-content">
+
+            <strong id="toastTitle">
+                Success
+            </strong>
+
+            <p id="toastMessage">
+                Operation completed successfully.
+            </p>
+
+        </div>
+
+
+        <button type="button"
+                id="toastClose"
+                aria-label="Close notification">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- JavaScript will be implemented later -->
+
+<script src="../js/app.js"></script>
+
+</body>
+</html>
