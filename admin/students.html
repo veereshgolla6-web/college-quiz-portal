@@ -1,0 +1,2042 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Manage students in the Quiz Portal Admin Dashboard">
+
+    <title>Students | Admin | Quiz Portal</title>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="dashboard-page admin-page">
+
+<div class="app-layout">
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+    <aside class="sidebar" id="adminSidebar">
+
+        <div class="sidebar-brand">
+
+            <div class="brand-logo">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+
+            <div class="brand-text">
+                <h2>Quiz Portal</h2>
+                <span>Administration</span>
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-navigation" aria-label="Admin navigation">
+
+            <!-- Main -->
+            <div class="nav-section">
+
+                <div class="nav-section-title">
+                    Main
+                </div>
+
+                <a href="dashboard.html" class="nav-link">
+                    <i class="fa-solid fa-grid-2"></i>
+                    <span>Dashboard</span>
+                </a>
+
+            </div>
+
+
+            <!-- Management -->
+            <div class="nav-section">
+
+                <div class="nav-section-title">
+                    Management
+                </div>
+
+                <a
+                    href="students.html"
+                    class="nav-link active"
+                    data-page="students"
+                >
+                    <i class="fa-solid fa-user-graduate"></i>
+                    <span>Students</span>
+                </a>
+
+                <a
+                    href="teachers.html"
+                    class="nav-link"
+                    data-page="teachers"
+                >
+                    <i class="fa-solid fa-chalkboard-user"></i>
+                    <span>Teachers</span>
+                </a>
+
+                <a
+                    href="departments.html"
+                    class="nav-link"
+                    data-page="departments"
+                >
+                    <i class="fa-solid fa-building-columns"></i>
+                    <span>Departments</span>
+                </a>
+
+                <a
+                    href="subjects.html"
+                    class="nav-link"
+                    data-page="subjects"
+                >
+                    <i class="fa-solid fa-book-open"></i>
+                    <span>Subjects</span>
+                </a>
+
+                <a
+                    href="quizzes.html"
+                    class="nav-link"
+                    data-page="quizzes"
+                >
+                    <i class="fa-solid fa-clipboard-question"></i>
+                    <span>Quizzes</span>
+                </a>
+
+            </div>
+
+
+            <!-- Performance -->
+            <div class="nav-section">
+
+                <div class="nav-section-title">
+                    Performance
+                </div>
+
+                <a href="results.html" class="nav-link">
+                    <i class="fa-solid fa-chart-column"></i>
+                    <span>Results</span>
+                </a>
+
+                <a href="leaderboard.html" class="nav-link">
+                    <i class="fa-solid fa-ranking-star"></i>
+                    <span>Leaderboard</span>
+                </a>
+
+                <a href="reports.html" class="nav-link">
+                    <i class="fa-solid fa-file-lines"></i>
+                    <span>Reports</span>
+                </a>
+
+            </div>
+
+
+            <!-- System -->
+            <div class="nav-section">
+
+                <div class="nav-section-title">
+                    System
+                </div>
+
+                <a href="settings.html" class="nav-link">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Settings</span>
+                </a>
+
+                <a href="profile.html" class="nav-link">
+                    <i class="fa-solid fa-user-circle"></i>
+                    <span>My Profile</span>
+                </a>
+
+                <a href="help.html" class="nav-link">
+                    <i class="fa-solid fa-circle-question"></i>
+                    <span>Help & Support</span>
+                </a>
+
+            </div>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <button
+                type="button"
+                class="sidebar-logout"
+                id="sidebarLogout"
+            >
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <div class="topbar-left">
+
+                <button
+                    type="button"
+                    class="mobile-menu-button"
+                    id="mobileMenuButton"
+                    aria-label="Open navigation menu"
+                >
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div class="breadcrumb">
+
+                    <span class="breadcrumb-muted">
+                        Administration
+                    </span>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                    <span class="breadcrumb-current">
+                        Students
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+                <!-- Notifications -->
+                <button
+                    type="button"
+                    class="notification-button"
+                    id="notificationButton"
+                    aria-label="Notifications"
+                >
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span
+                        class="notification-count"
+                        id="notificationCount"
+                    >
+                        4
+                    </span>
+
+                </button>
+
+
+                <!-- Profile -->
+                <button
+                    type="button"
+                    class="topbar-profile"
+                    id="topbarProfile"
+                >
+
+                    <div
+                        class="topbar-avatar"
+                        id="topbarAvatar"
+                    >
+                        A
+                    </div>
+
+                    <div class="topbar-profile-info">
+
+                        <strong id="topbarAdminName">
+                            Administrator
+                        </strong>
+
+                        <span>
+                            Admin
+                        </span>
+
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             PAGE CONTENT
+        ================================================== -->
+        <section class="page-content">
+
+
+            <!-- PAGE HEADER -->
+            <div class="page-header">
+
+                <div class="page-header-content">
+
+                    <div class="page-header-icon">
+                        <i class="fa-solid fa-user-graduate"></i>
+                    </div>
+
+                    <div>
+
+                        <p class="page-eyebrow">
+                            USER MANAGEMENT
+                        </p>
+
+                        <h1>
+                            Students
+                        </h1>
+
+                        <p class="page-description">
+                            Manage student accounts, academic information,
+                            access permissions and quiz participation.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="page-header-actions">
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        id="importStudentsButton"
+                    >
+                        <i class="fa-solid fa-file-import"></i>
+                        Import Students
+                    </button>
+
+                    <button
+                        type="button"
+                        class="btn btn-primary"
+                        id="addStudentButton"
+                    >
+                        <i class="fa-solid fa-user-plus"></i>
+                        Add Student
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 STUDENT STATISTICS
+            ================================================== -->
+            <section class="dashboard-section">
+
+                <div class="stats-grid">
+
+
+                    <!-- Total Students -->
+                    <article class="stat-card">
+
+                        <div class="stat-card-top">
+
+                            <div class="stat-icon">
+                                <i class="fa-solid fa-users"></i>
+                            </div>
+
+                        </div>
+
+                        <div class="stat-card-body">
+
+                            <span class="stat-label">
+                                Total Students
+                            </span>
+
+                            <strong
+                                class="stat-value"
+                                id="studentsTotal"
+                            >
+                                0
+                            </strong>
+
+                            <span class="stat-description">
+                                Registered accounts
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Active -->
+                    <article class="stat-card">
+
+                        <div class="stat-card-top">
+
+                            <div class="stat-icon">
+                                <i class="fa-solid fa-user-check"></i>
+                            </div>
+
+                            <span class="stat-badge">
+                                Active
+                            </span>
+
+                        </div>
+
+                        <div class="stat-card-body">
+
+                            <span class="stat-label">
+                                Active Students
+                            </span>
+
+                            <strong
+                                class="stat-value"
+                                id="activeStudents"
+                            >
+                                0
+                            </strong>
+
+                            <span class="stat-description">
+                                Currently active
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- New Students -->
+                    <article class="stat-card">
+
+                        <div class="stat-card-top">
+
+                            <div class="stat-icon">
+                                <i class="fa-solid fa-user-clock"></i>
+                            </div>
+
+                        </div>
+
+                        <div class="stat-card-body">
+
+                            <span class="stat-label">
+                                New Students
+                            </span>
+
+                            <strong
+                                class="stat-value"
+                                id="newStudents"
+                            >
+                                0
+                            </strong>
+
+                            <span class="stat-description">
+                                Registered this month
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Participation -->
+                    <article class="stat-card">
+
+                        <div class="stat-card-top">
+
+                            <div class="stat-icon">
+                                <i class="fa-solid fa-chart-line"></i>
+                            </div>
+
+                        </div>
+
+                        <div class="stat-card-body">
+
+                            <span class="stat-label">
+                                Participation
+                            </span>
+
+                            <strong
+                                class="stat-value"
+                                id="studentParticipation"
+                            >
+                                0%
+                            </strong>
+
+                            <span class="stat-description">
+                                Quiz participation rate
+                            </span>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 FILTERS
+            ================================================== -->
+            <section class="dashboard-card filter-card">
+
+                <div class="filter-card-header">
+
+                    <div>
+
+                        <p class="card-eyebrow">
+                            STUDENT DIRECTORY
+                        </p>
+
+                        <h2>
+                            Search & Filter
+                        </h2>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="btn btn-text"
+                        id="clearStudentFilters"
+                    >
+                        <i class="fa-solid fa-rotate-left"></i>
+                        Clear Filters
+                    </button>
+
+                </div>
+
+
+                <div class="filter-grid">
+
+
+                    <!-- Search -->
+                    <div class="form-group">
+
+                        <label for="studentSearch">
+                            Search students
+                        </label>
+
+                        <div class="input-with-icon">
+
+                            <i class="fa-solid fa-magnifying-glass"></i>
+
+                            <input
+                                type="search"
+                                id="studentSearch"
+                                name="studentSearch"
+                                placeholder="Search by name, ID or username..."
+                                autocomplete="off"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Department -->
+                    <div class="form-group">
+
+                        <label for="studentDepartmentFilter">
+                            Department
+                        </label>
+
+                        <select
+                            id="studentDepartmentFilter"
+                            name="department"
+                        >
+
+                            <option value="">
+                                All Departments
+                            </option>
+
+                            <option value="cse">
+                                Computer Science & Engineering
+                            </option>
+
+                            <option value="cseai">
+                                CSE - Artificial Intelligence
+                            </option>
+
+                            <option value="ece">
+                                Electronics & Communication
+                            </option>
+
+                            <option value="eee">
+                                Electrical & Electronics
+                            </option>
+
+                            <option value="civil">
+                                Civil Engineering
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Year -->
+                    <div class="form-group">
+
+                        <label for="studentYearFilter">
+                            Year
+                        </label>
+
+                        <select
+                            id="studentYearFilter"
+                            name="year"
+                        >
+
+                            <option value="">
+                                All Years
+                            </option>
+
+                            <option value="1">
+                                First Year
+                            </option>
+
+                            <option value="2">
+                                Second Year
+                            </option>
+
+                            <option value="3">
+                                Third Year
+                            </option>
+
+                            <option value="4">
+                                Fourth Year
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Section -->
+                    <div class="form-group">
+
+                        <label for="studentSectionFilter">
+                            Section
+                        </label>
+
+                        <select
+                            id="studentSectionFilter"
+                            name="section"
+                        >
+
+                            <option value="">
+                                All Sections
+                            </option>
+
+                            <option value="A">Section A</option>
+                            <option value="B">Section B</option>
+                            <option value="C">Section C</option>
+                            <option value="D">Section D</option>
+                            <option value="E">Section E</option>
+                            <option value="F">Section F</option>
+                            <option value="G">Section G</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Status -->
+                    <div class="form-group">
+
+                        <label for="studentStatusFilter">
+                            Status
+                        </label>
+
+                        <select
+                            id="studentStatusFilter"
+                            name="status"
+                        >
+
+                            <option value="">
+                                All Statuses
+                            </option>
+
+                            <option value="active">
+                                Active
+                            </option>
+
+                            <option value="inactive">
+                                Inactive
+                            </option>
+
+                            <option value="blocked">
+                                Blocked
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 BULK ACTION BAR
+            ================================================== -->
+            <div
+                class="bulk-action-bar"
+                id="studentBulkActionBar"
+                hidden
+            >
+
+                <div class="bulk-selection-info">
+
+                    <i class="fa-solid fa-check-double"></i>
+
+                    <strong id="selectedStudentCount">
+                        0
+                    </strong>
+
+                    <span>
+                        students selected
+                    </span>
+
+                </div>
+
+
+                <div class="bulk-actions">
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        id="bulkActivateStudents"
+                    >
+                        <i class="fa-solid fa-user-check"></i>
+                        Activate
+                    </button>
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        id="bulkDeactivateStudents"
+                    >
+                        <i class="fa-solid fa-user-slash"></i>
+                        Deactivate
+                    </button>
+
+                    <button
+                        type="button"
+                        class="btn btn-danger"
+                        id="bulkDeleteStudents"
+                    >
+                        <i class="fa-solid fa-trash"></i>
+                        Delete
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 STUDENT TABLE
+            ================================================== -->
+            <section class="dashboard-card table-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <p class="card-eyebrow">
+                            STUDENTS
+                        </p>
+
+                        <h2>
+                            Student Directory
+                        </h2>
+
+                    </div>
+
+
+                    <div class="table-header-actions">
+
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            id="exportStudentsButton"
+                        >
+                            <i class="fa-solid fa-file-export"></i>
+                            Export
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="table-responsive">
+
+                    <table class="data-table student-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th class="checkbox-column">
+
+                                    <input
+                                        type="checkbox"
+                                        id="selectAllStudents"
+                                        aria-label="Select all students"
+                                    >
+
+                                </th>
+
+                                <th>
+                                    Student
+                                </th>
+
+                                <th>
+                                    Student ID
+                                </th>
+
+                                <th>
+                                    Department
+                                </th>
+
+                                <th>
+                                    Year
+                                </th>
+
+                                <th>
+                                    Section
+                                </th>
+
+                                <th>
+                                    Quizzes
+                                </th>
+
+                                <th>
+                                    Average
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                                <th>
+                                    Actions
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="studentsTableBody">
+
+                            <tr class="table-empty-row">
+
+                                <td colspan="10">
+
+                                    <div class="table-empty-state">
+
+                                        <i class="fa-solid fa-user-graduate"></i>
+
+                                        <strong>
+                                            No students found
+                                        </strong>
+
+                                        <span>
+                                            Student records will appear here
+                                            once students are registered.
+                                        </span>
+
+                                        <button
+                                            type="button"
+                                            class="btn btn-primary"
+                                            id="emptyAddStudentButton"
+                                        >
+                                            <i class="fa-solid fa-user-plus"></i>
+                                            Add First Student
+                                        </button>
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <!-- Pagination -->
+                <div class="table-pagination">
+
+                    <div class="pagination-info">
+
+                        Showing
+                        <strong id="studentShowingFrom">
+                            0
+                        </strong>
+                        -
+                        <strong id="studentShowingTo">
+                            0
+                        </strong>
+                        of
+                        <strong id="studentTotalCount">
+                            0
+                        </strong>
+                        students
+
+                    </div>
+
+
+                    <div class="pagination-controls">
+
+                        <button
+                            type="button"
+                            class="pagination-button"
+                            id="studentPreviousPage"
+                            disabled
+                            aria-label="Previous page"
+                        >
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
+
+                        <span
+                            class="pagination-current"
+                            id="studentCurrentPage"
+                        >
+                            1
+                        </span>
+
+                        <button
+                            type="button"
+                            class="pagination-button"
+                            id="studentNextPage"
+                            disabled
+                            aria-label="Next page"
+                        >
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 STUDENT MANAGEMENT INFORMATION
+            ================================================== -->
+            <div class="dashboard-two-column">
+
+
+                <!-- Account Management -->
+                <section class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <p class="card-eyebrow">
+                                ACCOUNT MANAGEMENT
+                            </p>
+
+                            <h2>
+                                Student access
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="info-list">
+
+                        <div class="info-list-item">
+
+                            <div class="info-list-icon">
+                                <i class="fa-solid fa-user-check"></i>
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Active accounts
+                                </strong>
+
+                                <span>
+                                    Students who can currently access
+                                    the quiz portal.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="info-list-item">
+
+                            <div class="info-list-icon">
+                                <i class="fa-solid fa-user-lock"></i>
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Account restrictions
+                                </strong>
+
+                                <span>
+                                    Block or deactivate student accounts
+                                    when necessary.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="info-list-item">
+
+                            <div class="info-list-icon">
+                                <i class="fa-solid fa-key"></i>
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Password management
+                                </strong>
+
+                                <span>
+                                    Reset student credentials securely
+                                    from their account.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- Academic Management -->
+                <section class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <p class="card-eyebrow">
+                                ACADEMIC DATA
+                            </p>
+
+                            <h2>
+                                Student information
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="info-list">
+
+                        <div class="info-list-item">
+
+                            <div class="info-list-icon">
+                                <i class="fa-solid fa-building"></i>
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Department
+                                </strong>
+
+                                <span>
+                                    Assign students to their academic
+                                    department.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="info-list-item">
+
+                            <div class="info-list-icon">
+                                <i class="fa-solid fa-layer-group"></i>
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Year & Section
+                                </strong>
+
+                                <span>
+                                    Maintain accurate academic
+                                    grouping information.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="info-list-item">
+
+                            <div class="info-list-icon">
+                                <i class="fa-solid fa-chart-simple"></i>
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Performance
+                                </strong>
+
+                                <span>
+                                    Review quiz participation and
+                                    student performance.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+
+            <!-- FOOTER -->
+            <footer class="dashboard-footer">
+
+                <div>
+
+                    <strong>
+                        Quiz Portal Administration
+                    </strong>
+
+                    <span>
+                        Student management and academic administration.
+                    </span>
+
+                </div>
+
+                <div class="footer-meta">
+
+                    <span>
+                        <i class="fa-solid fa-shield-halved"></i>
+                        Admin Access
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-circle-check"></i>
+                        System Online
+                    </span>
+
+                </div>
+
+            </footer>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- =========================================================
+     ADD / EDIT STUDENT MODAL
+========================================================== -->
+<div
+    class="modal-overlay"
+    id="studentModal"
+    aria-hidden="true"
+>
+
+    <div
+        class="modal large-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="studentModalTitle"
+    >
+
+        <div class="modal-header">
+
+            <div>
+
+                <p class="modal-eyebrow">
+                    STUDENT MANAGEMENT
+                </p>
+
+                <h2 id="studentModalTitle">
+                    Add Student
+                </h2>
+
+            </div>
+
+            <button
+                type="button"
+                class="modal-close-button"
+                id="closeStudentModal"
+                aria-label="Close modal"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+
+        <form
+            id="studentForm"
+            class="modal-form"
+            novalidate
+        >
+
+            <input
+                type="hidden"
+                id="studentRecordId"
+                name="studentRecordId"
+            >
+
+
+            <!-- Personal -->
+            <div class="form-section">
+
+                <div class="form-section-heading">
+
+                    <h3>
+                        Personal Information
+                    </h3>
+
+                    <span>
+                        Basic student details
+                    </span>
+
+                </div>
+
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label for="studentFullName">
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="studentFullName"
+                            name="fullName"
+                            placeholder="Enter full name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="studentUsername">
+                            Username
+                        </label>
+
+                        <input
+                            type="text"
+                            id="studentUsername"
+                            name="username"
+                            placeholder="Enter username"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="studentEmail">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="studentEmail"
+                            name="email"
+                            placeholder="student@example.com"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="studentId">
+                            Student ID
+                        </label>
+
+                        <input
+                            type="text"
+                            id="studentId"
+                            name="studentId"
+                            placeholder="Enter student ID"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Academic -->
+            <div class="form-section">
+
+                <div class="form-section-heading">
+
+                    <h3>
+                        Academic Information
+                    </h3>
+
+                    <span>
+                        Course and class details
+                    </span>
+
+                </div>
+
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label for="studentDepartment">
+                            Department
+                        </label>
+
+                        <select
+                            id="studentDepartment"
+                            name="department"
+                            required
+                        >
+
+                            <option value="">
+                                Select Department
+                            </option>
+
+                            <option value="cse">
+                                Computer Science & Engineering
+                            </option>
+
+                            <option value="cseai">
+                                CSE - Artificial Intelligence
+                            </option>
+
+                            <option value="ece">
+                                Electronics & Communication
+                            </option>
+
+                            <option value="eee">
+                                Electrical & Electronics
+                            </option>
+
+                            <option value="civil">
+                                Civil Engineering
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="studentYear">
+                            Year
+                        </label>
+
+                        <select
+                            id="studentYear"
+                            name="year"
+                            required
+                        >
+
+                            <option value="">
+                                Select Year
+                            </option>
+
+                            <option value="1">
+                                First Year
+                            </option>
+
+                            <option value="2">
+                                Second Year
+                            </option>
+
+                            <option value="3">
+                                Third Year
+                            </option>
+
+                            <option value="4">
+                                Fourth Year
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="studentSection">
+                            Section
+                        </label>
+
+                        <select
+                            id="studentSection"
+                            name="section"
+                            required
+                        >
+
+                            <option value="">
+                                Select Section
+                            </option>
+
+                            <option value="A">Section A</option>
+                            <option value="B">Section B</option>
+                            <option value="C">Section C</option>
+                            <option value="D">Section D</option>
+                            <option value="E">Section E</option>
+                            <option value="F">Section F</option>
+                            <option value="G">Section G</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="studentStatus">
+                            Account Status
+                        </label>
+
+                        <select
+                            id="studentStatus"
+                            name="status"
+                        >
+
+                            <option value="active">
+                                Active
+                            </option>
+
+                            <option value="inactive">
+                                Inactive
+                            </option>
+
+                            <option value="blocked">
+                                Blocked
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Account -->
+            <div class="form-section">
+
+                <div class="form-section-heading">
+
+                    <h3>
+                        Account Security
+                    </h3>
+
+                    <span>
+                        Login credentials
+                    </span>
+
+                </div>
+
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label for="studentPassword">
+                            Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="studentPassword"
+                            name="password"
+                            placeholder="Create password"
+                            autocomplete="new-password"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="studentConfirmPassword">
+                            Confirm Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="studentConfirmPassword"
+                            name="confirmPassword"
+                            placeholder="Confirm password"
+                            autocomplete="new-password"
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Actions -->
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    id="cancelStudentModal"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    class="btn btn-primary"
+                    id="saveStudentButton"
+                >
+                    <i class="fa-solid fa-user-plus"></i>
+                    Save Student
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     IMPORT STUDENTS MODAL
+========================================================== -->
+<div
+    class="modal-overlay"
+    id="importStudentsModal"
+    aria-hidden="true"
+>
+
+    <div
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="importStudentsTitle"
+    >
+
+        <div class="modal-header">
+
+            <div>
+
+                <p class="modal-eyebrow">
+                    BULK IMPORT
+                </p>
+
+                <h2 id="importStudentsTitle">
+                    Import Students
+                </h2>
+
+            </div>
+
+            <button
+                type="button"
+                class="modal-close-button"
+                id="closeImportStudentsModal"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+
+        <div class="import-content">
+
+            <div class="import-info">
+
+                <div class="import-icon">
+                    <i class="fa-solid fa-file-csv"></i>
+                </div>
+
+                <div>
+
+                    <strong>
+                        Import student records
+                    </strong>
+
+                    <p>
+                        Upload a supported CSV file containing
+                        student information.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="upload-area" id="studentUploadArea">
+
+                <i class="fa-solid fa-cloud-arrow-up"></i>
+
+                <strong>
+                    Choose a file
+                </strong>
+
+                <span>
+                    CSV files supported
+                </span>
+
+                <input
+                    type="file"
+                    id="studentImportFile"
+                    accept=".csv"
+                >
+
+            </div>
+
+
+            <div class="import-template">
+
+                <i class="fa-solid fa-circle-info"></i>
+
+                <span>
+                    Use the official student import template
+                    to avoid formatting errors.
+                </span>
+
+                <button
+                    type="button"
+                    class="btn btn-text"
+                    id="downloadStudentTemplate"
+                >
+                    Download Template
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="modal-actions">
+
+            <button
+                type="button"
+                class="btn btn-secondary"
+                id="cancelImportStudents"
+            >
+                Cancel
+            </button>
+
+            <button
+                type="button"
+                class="btn btn-primary"
+                id="processStudentImport"
+            >
+                <i class="fa-solid fa-upload"></i>
+                Import Students
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     DELETE CONFIRMATION
+========================================================== -->
+<div
+    class="modal-overlay"
+    id="deleteStudentModal"
+    aria-hidden="true"
+>
+
+    <div
+        class="modal confirmation-modal"
+        role="dialog"
+        aria-modal="true"
+    >
+
+        <div class="modal-icon danger">
+            <i class="fa-solid fa-trash"></i>
+        </div>
+
+        <div class="modal-content">
+
+            <h2>
+                Delete Student?
+            </h2>
+
+            <p>
+                This action will permanently remove the selected
+                student account and associated information.
+            </p>
+
+            <div class="warning-message">
+
+                <i class="fa-solid fa-triangle-exclamation"></i>
+
+                <span>
+                    This action cannot be undone.
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="modal-actions">
+
+            <button
+                type="button"
+                class="btn btn-secondary"
+                id="cancelDeleteStudent"
+            >
+                Cancel
+            </button>
+
+            <button
+                type="button"
+                class="btn btn-danger"
+                id="confirmDeleteStudent"
+            >
+                <i class="fa-solid fa-trash"></i>
+                Delete Student
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     NOTIFICATION PANEL
+========================================================== -->
+<aside
+    class="notification-panel"
+    id="notificationPanel"
+    aria-hidden="true"
+>
+
+    <div class="notification-panel-header">
+
+        <div>
+
+            <span class="panel-eyebrow">
+                ADMIN CENTER
+            </span>
+
+            <h2>
+                Notifications
+            </h2>
+
+        </div>
+
+        <button
+            type="button"
+            class="panel-close-button"
+            id="notificationPanelClose"
+        >
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+    </div>
+
+
+    <div
+        class="notification-list"
+        id="notificationList"
+    >
+
+        <div class="notification-item unread">
+
+            <div class="notification-icon">
+                <i class="fa-solid fa-user-plus"></i>
+            </div>
+
+            <div class="notification-content">
+
+                <strong>
+                    Student management
+                </strong>
+
+                <span>
+                    Review recently registered students.
+                </span>
+
+                <small>
+                    Recently
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="notification-item">
+
+            <div class="notification-icon">
+                <i class="fa-solid fa-chart-line"></i>
+            </div>
+
+            <div class="notification-content">
+
+                <strong>
+                    Platform activity
+                </strong>
+
+                <span>
+                    New quiz participation data is available.
+                </span>
+
+                <small>
+                    Recently
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="notification-panel-footer">
+
+        <button
+            type="button"
+            class="btn btn-secondary"
+            id="markNotificationsRead"
+        >
+            Mark all as read
+        </button>
+
+    </div>
+
+</aside>
+
+
+<!-- =========================================================
+     PROFILE MENU
+========================================================== -->
+<div
+    class="profile-menu"
+    id="adminProfileMenu"
+    hidden
+>
+
+    <div class="profile-menu-header">
+
+        <div class="profile-menu-avatar">
+            A
+        </div>
+
+        <div>
+
+            <strong>
+                Administrator
+            </strong>
+
+            <span>
+                Administrator Account
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="profile-menu-divider"></div>
+
+
+    <a
+        href="profile.html"
+        class="profile-menu-item"
+    >
+        <i class="fa-solid fa-user"></i>
+        <span>My Profile</span>
+    </a>
+
+
+    <a
+        href="settings.html"
+        class="profile-menu-item"
+    >
+        <i class="fa-solid fa-gear"></i>
+        <span>Settings</span>
+    </a>
+
+
+    <div class="profile-menu-divider"></div>
+
+
+    <button
+        type="button"
+        class="profile-menu-item danger"
+        id="profileMenuLogout"
+    >
+        <i class="fa-solid fa-right-from-bracket"></i>
+        <span>Logout</span>
+    </button>
+
+</div>
+
+
+<!-- =========================================================
+     LOGOUT MODAL
+========================================================== -->
+<div
+    class="modal-overlay"
+    id="logoutModal"
+    aria-hidden="true"
+>
+
+    <div
+        class="modal logout-modal"
+        role="dialog"
+        aria-modal="true"
+    >
+
+        <div class="modal-icon warning">
+            <i class="fa-solid fa-right-from-bracket"></i>
+        </div>
+
+        <div class="modal-content">
+
+            <h2>
+                Sign out?
+            </h2>
+
+            <p>
+                Are you sure you want to sign out of the
+                administrator account?
+            </p>
+
+        </div>
+
+
+        <div class="modal-actions">
+
+            <button
+                type="button"
+                class="btn btn-secondary"
+                id="cancelLogout"
+            >
+                Cancel
+            </button>
+
+            <button
+                type="button"
+                class="btn btn-danger"
+                id="confirmLogout"
+            >
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Sign Out
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     TOAST
+========================================================== -->
+<div
+    class="toast-container"
+    id="toastContainer"
+    aria-live="polite"
+    aria-atomic="true"
+>
+
+    <div
+        class="toast"
+        id="adminToast"
+        hidden
+    >
+
+        <div class="toast-icon">
+            <i class="fa-solid fa-circle-check"></i>
+        </div>
+
+        <div class="toast-content">
+
+            <strong id="toastTitle">
+                Success
+            </strong>
+
+            <span id="toastMessage">
+                Action completed successfully.
+            </span>
+
+        </div>
+
+        <button
+            type="button"
+            class="toast-close"
+            id="toastClose"
+        >
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+     Functionality will be added during JS phase.
+========================================================== -->
+<script src="../js/app.js"></script>
+
+</body>
+</html>
